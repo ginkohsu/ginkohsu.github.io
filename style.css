@@ -252,3 +252,33 @@ p {
     }
 }
 
+@media (max-width: 768px) {
+  .info-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.85); /* slightly more transparent */
+    padding: 8px 12px;
+    border-radius: 12px;
+    z-index: 1000;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Make it collapsible to reduce overlap */
+  .info-container:hover {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  /* Smaller icons to save space */
+  .info-container img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Optional: reduce text size on mobile */
+  .info-container h2 a {
+    font-size: 14px;
+  }
+}
