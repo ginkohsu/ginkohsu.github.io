@@ -1,229 +1,133 @@
-/* Resetting default margin and padding */
-* {
+/* === GLOBAL STYLING === */
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: 'Syne Mono', monospace;
+    background-color: #fff;
+    color: #000;
 }
 
-/* Body styling */
-body, .content {
-    font-family: Helvetica, sans-serif;
-    line-height: 1.8;
-    font-size: 14px;
-}
-
-/* Container setup */
-.container {
-    display: flex;
-    min-height: 100vh; /* Full height of the viewport */
-}
-
-/* Side navigation styling */
+/* === SIDEBAR NAV === */
 .side-nav {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
-    overflow-y: auto;
-    flex-shrink: 0; 
-    width: 30%; /* Fixed width for the sidebar */
+    width: 30%;
     height: 100vh;
     padding: 5%;
-    font-family: "Syne Mono", monospace;
-    background-color: #f4f4f4; /* Optional: adds a background color for better visual separation */
-}
-
-/* Info container styling */
-.info-container {
+    background-color: #f4f4f4;
     display: flex;
-    align-items: center; /* Align items vertically */
-    justify-content: space-between; /* Space between heading and image */
-    margin-top: auto; /* Pushes this section to the bottom of the sidebar */
+    flex-direction: column;
+    overflow-y: auto;
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
-/* List styling */
+.side-nav h1 {
+    margin: 0 0 20px 0;
+    font-size: 1.8rem;
+}
+
+.side-nav h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.side-nav h2 {
+    margin: 20px 0 10px 0;
+    font-size: 1.2rem;
+}
 
 .side-nav ul {
-    list-style-type: none;
-    padding: 0; /* Remove padding */
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .side-nav ul li {
-    margin: 10px 0;
-    font-size: 14px;
+    margin-bottom: 10px;
+    font-size: 1rem;
 }
 
 .side-nav ul li a {
-    display: block; /* Makes the link take up the full line */
-    color: rgb(15, 15, 15);
     text-decoration: none;
-    padding: 3px;
-    text-align: left;
-   
+    color: inherit;
 }
 
-.side-nav ul li a:hover {
-    background-color: #dddddd;
+/* Highlight current page (remove link) */
+.side-nav ul li.current {
+    font-weight: bold;
 }
 
-/* Main content styling */
+/* INFO section at the bottom */
+.info-container {
+    margin-top: auto;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Instagram icon */
+.info-container svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* === MAIN CONTENT === */
 .content {
     margin-left: 30%;
-    flex-grow: 1; /* Allows the content area to take up the remaining space */
-    padding-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    
-}
- .part {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10%;
+    padding: 5%;
+    box-sizing: border-box;
 }
 
-/* Header styling */
-h2 {
-    color: rgb(68, 221, 152);
-}
-h1 a, .content a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-}
-h2 a {
-    text-decoration: none;
-    color: rgb(88, 247, 175);
-}
-
-h1 a:hover {
-    color:  rgb(68, 221, 152);
-}
-
-h2 a:hover, .content a:hover {
-    color:  rgb(68, 221, 152);
-}
-
-h1 {
-    font-family: "Helvetica", sans-serif;
-    padding-top: 30px;
-    text-align: left;
-    font-size: 25px;
-}
-
-.side-nav h1, .side-nav h2 {
-    color: color: #6cf08f;
-    margin-top: 30px;
-    font-size: 18px;
-    
-}
-
-p {
-    font-size: 1.1em;
-}
-
-/* Info container image styling */
-.info-container img {
-    max-width: 30px; /* Adjust based on desired image size */
-    height: auto; /* Maintain aspect ratio */
-}
-
-/* Info container heading styling */
-.info-container h2 {
-    margin: 0; /* Remove default margin */
-    text-align: left;
-    font-size: 1rem; /* Adjust font size as needed */
-    font-weight: 600;
-    font-family: "Syne Mono", monospace; /* Use the desired font */
-}
-
-/* Style for the Instagram link */
-.info-container a {
-    text-decoration: none; /* Remove underline from links */
-}
-
-/*style for content*/
-.content h2 {
-   font-size: 15px; 
-   font-family: "Syne Mono", monospace;
-   color:rgb(160, 154, 154);
-}
-
-.content img {
-    padding: 5% 10%;
-    max-width: 80%;
+main img {
+    width: 100%;
     height: auto;
-    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* === IMAGE GROUPS === */
+.part {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .part img {
-    max-width: 48%;
-    height: auto;
-    object-fit: cover;
-
+    flex: 1 1 48%; /* two images side by side */
 }
 
-#small {
-    max-width: 70%;
-    height: auto; 
-}
-#watcherIcon {
-    max-width: 25%;
-    height: auto;
-    padding: 50px;
-}
-
-#demian {
-    max-width: 80%;
-    height: auto;
-    object-fit: cover;
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+    .side-nav {
+        width: 35%;
+    }
+    .content {
+        margin-left: 35%;
+    }
 }
 
-#demian2 {
-    max-width: 60%;
-    height: auto;
-    object-fit: cover;
-    margin-right: 20px;
-}
+@media (max-width: 768px) {
+    .side-nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        padding: 10px 5%;
+    }
 
-#demianStudio {
-    max-width: 30%;
-    height: auto;
-    object-fit: cover;
-    margin-right: 20px; 
-}
+    .content {
+        margin-left: 0;
+        padding: 10px 5%;
+    }
 
-#page-header {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-}
-.content .frontpic {
-    position: relative; /* Set the container as a relative position reference */
-    height: auto; /* Adjust height as needed */
-    padding: 20px;
-}
-.content p {
-    padding: 20px;
-}
+    .info-container {
+        margin-top: 20px;
+        justify-content: flex-start;
+    }
 
-@media (min-width: 600px) {
-  .frontpic img {
-    width: 80%;
-  }
-}
-
-/* Large screens (desktops) */
-@media (min-width: 1024px) {
-    .frontpic img {
-    width: 60%;
-  }
-}
-
-/* Extra large screens (large desktops) */
-@media (min-width: 1440px) {
-    .frontpic img {
-    width: 60%;
-  }
+    .part img {
+        flex: 1 1 100%; /* stacked on small screens */
+    }
 }
