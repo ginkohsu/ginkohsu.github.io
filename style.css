@@ -122,27 +122,6 @@ h1 {
 p {
     font-size: 1.1em;
 }
-.leaves {
-  position: absolute;
-  top: -10px;  /* slightly above the logo text */
-  left: 0;
-  width: 100%;
-  height: 40px;  /* smaller to fit nav bar */
-  pointer-events: none;
-}
-
-.leaf {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  opacity: 0;
-  transform: scale(0) rotate(0deg);
-  animation: growLeaf 6s ease-in-out infinite alternate;
-}
-
-.leaf1 { top: 0; left: 5%; animation-delay: 0s; }
-.leaf2 { top: 5px; left: 40%; animation-delay: 1s; }
-.leaf3 { top: 2px; left: 75%; animation-delay: 2s; }
 
 @keyframes growLeaf {
   0% { transform: scale(0) rotate(-10deg); opacity: 0; }
