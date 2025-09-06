@@ -271,10 +271,9 @@ p {
     opacity: 1;
   }
 
-  /* Smaller icons to save space */
+  /* remove icons to save space */
   .info-container img {
-    width: 30px;
-    height: 30px;
+ display: none;
   }
 
   /* Optional: reduce text size on mobile */
