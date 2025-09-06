@@ -123,8 +123,8 @@ h1 {
   position: absolute;
   top: -20px;
   left: 0;
-  width: 100px;  /* adjust size */
-  height: 100px;
+  width: 150px;  /* adjust size */
+  height: 150px;
   pointer-events: none; /* so clicks go through */
   opacity: 0.8;          /* optional subtle transparency */
 }
