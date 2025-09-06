@@ -227,26 +227,3 @@ p {
     width: 60%;
   }
 }
-/* --- Mobile fix for sidebar scroll --- */
-@media (max-width: 768px) {
-    .side-nav {
-        position: relative;   /* sidebar scrolls naturally */
-        width: 100%;          /* full width on small screens */
-        height: auto;         /* allow full height for content */
-        overflow-y: visible;  /* allow scrolling to see INFO section */
-    }
-
-    .content {
-        margin-left: 0;       /* content takes full width */
-        padding: 10px 5%;     /* slightly smaller padding for mobile */
-    }
-
-    .part {
-        flex-direction: column; /* stack images vertically */
-        gap: 10%;
-    }
-
-    .part img {
-        max-width: 100%;       /* full width for stacked images */
-    }
-}
