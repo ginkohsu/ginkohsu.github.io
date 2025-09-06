@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ginko Hsu Artist</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,100;1,200&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- nav will be injected here -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Content Section -->
+    <main class="content">
+      <h2>Bio</h2>
+      <p>My work lives in the space between memory and myth, where fragments of memory collide with established 
+      archives. To access what has been lost, I turn to the body and its afterimages – tracing how bodies unfold in 
+      fragmented visual landscapes: in flesh, in clay, in plastic, and in broken syntax. My work interrogates how 
+      bodies – gendered, sacred, or discarded – are replaced across cultural, social, and political systems.</p>
+
+      <p>I work across mediums, including glass, ceramics, textiles, moving images, found objects, poems, ritual 
+      gestures and interactive installations. My practice embraces materials rich with contraction and hybridity: 
+      glass and ceramics that fracture yet endure, textiles that whisper both domestic and transcultural narrations,
+      words that knots past to present. Specifically, glass recurs in my practice - its reflective and refractive 
+      qualities mirror how memories both distort and illuminate. Resisting the single-story logic of archives, my 
+      work makes room for reflection, for intimacy, for what’s lost or barely imagined, and for transformation yet 
+      to take shape.</p>
+
+      <h2>Open for collab & enquiry</h2>
+      <p>Email: ginkohsu@gmail.com</p>
+      <p>instagram: @ginkohsu</p>
+
+      <h2>CV</h2>
+      <a href="resources/CV_Ginko_Hsu.pdf" download>Download my CV</a>
+    </main>
+  </div>
+
+  <script>
+    fetch("nav.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("nav-placeholder").innerHTML = data;
+      });
+  </script>
+</body>
+</html>

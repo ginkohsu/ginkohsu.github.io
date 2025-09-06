@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demian | Ginko Hsu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- nav will be injected here -->
+    <div id="nav-placeholder"></div>
+
+ <!-- Content Section -->
+ <main class="content">
+  <img src="resources/Xu_01_01_Here Be the Water.jpg" alt="ceramic_porcelain_sculpture">
+  <img src="resources/Ginko Hsu2.jpg" alt="ceramic_porcelain_sculpture">
+  <img src="resources/Here, be the water.jpg" alt="ceramic_porcelain_sculpture">
+  <img src="resources/water_2.JPG" alt="ceramic_porcelain_sculpture">
+ 
+</main>
+</div>
+
+<!-- Load nav.html dynamically -->
+<script>
+fetch("nav.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("nav-placeholder").innerHTML = data;
+  });
+</script>
+</body>
+</html>

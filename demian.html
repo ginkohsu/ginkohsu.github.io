@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demian | Ginko Hsu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- nav will be injected here -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Content Section -->
+    <main class="content">
+      <img id="demian" src="resources/Demian.jpg" alt="demian_concrete_sculpture_portrait">
+
+      <div class="part">
+        <img src="resources/demian_part1.jpg" alt="demian_concrete_sculpture_detail">
+        <img src="resources/demian_part2.jpg" alt="demian_concrete_sculpture_detail">
+      </div>
+
+      <img id="demian2" src="resources/Demian_s.jpg" alt="demian_concrete_sculpture_small">
+      <img id="demianStudio" src="resources/demian_studio.jpg" alt="demian_concrete_sculpture_studio">
+    </main>
+  </div>
+
+  <!-- Load nav.html dynamically -->
+  <script>
+    fetch("nav.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("nav-placeholder").innerHTML = data;
+      });
+  </script>
+</body>
+</html>
