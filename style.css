@@ -121,10 +121,10 @@ h1 {
 
 .leaf {
   position: absolute;
-  top: -20px;
+  top: 0px;
   left: 0;
-  width: 150px;  /* adjust size */
-  height: 150px;
+  width: 200px;  /* adjust size */
+  height: 200px;
   pointer-events: none; /* so clicks go through */
   opacity: 0.8;          /* optional subtle transparency */
 }
