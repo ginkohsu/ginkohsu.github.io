@@ -25,6 +25,7 @@ body, .content {
     left: 0;
     z-index: 1000;
     overflow-y: auto;
+    overflow: visible;
     flex-shrink: 0; 
     width: 30%; /* Fixed width for the sidebar */
     height: 100vh;
