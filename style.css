@@ -121,7 +121,7 @@ h1 {
 
 .leaf {
   position: absolute;
-  top: -100px;
+  top: 150px;
   left: 0;
   width: 300px;  /* adjust size */
   height: 200px;
