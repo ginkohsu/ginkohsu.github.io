@@ -1,119 +1,23 @@
-/* ---------------- Base Styles ---------------- */
-body {
-    margin: 0;
-    font-family: 'Syne Mono', monospace;
-    background-color: #fff;
-    color: #000;
-}
-
-.container {
-    display: flex;
-    min-height: 100vh;
-}
-
-/* --- Sidebar --- */
-.side-nav {
-    background-color: #f5f5f5;
-    width: 250px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: fixed;
-    height: 100vh;
-    box-sizing: border-box;
-}
-
-.side-nav h1, .side-nav h2 {
-    margin: 0 0 20px 0;
-}
-
-.side-nav h1 a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.side-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.side-nav ul li, .side-nav ul li a {
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: #000;
-}
-
-.side-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-.info-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 20px;
-}
-
-.info-container h2 a {
-    text-decoration: none;
-    color: #000;
-    margin-bottom: 10px;
-}
-
-.info-container a img {
-    width: 30px;
-    height: 30px;
-}
-
-/* --- Main Content --- */
-.content {
-    margin-left: 250px;
-    padding: 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.content img {
-    max-width: 100%;
-    height: auto;
-}
-
-.part {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-/* ---------------- Mobile Responsive Fix ---------------- */
+/* --- Mobile fix for sidebar scroll --- */
 @media (max-width: 768px) {
     .side-nav {
-        position: relative;       /* sidebar scrolls naturally */
-        width: 100%;              /* full width */
-        height: auto;             /* grow with content */
-        padding: 10px 5%;
-        overflow-y: visible;      /* natural scrolling */
+        position: relative;   /* sidebar scrolls naturally */
+        width: 100%;          /* full width on small screens */
+        height: auto;         /* allow full height for content */
+        overflow-y: visible;  /* allow scrolling to see INFO section */
     }
 
     .content {
-        margin-left: 0;           /* content full width */
-        padding: 10px 5%;
-    }
-
-    .info-container {
-        margin-top: 20px;
-        justify-content: flex-start;
+        margin-left: 0;       /* content takes full width */
+        padding: 10px 5%;     /* slightly smaller padding for mobile */
     }
 
     .part {
-        flex-direction: column;   /* stack images vertically */
-        gap: 10px;
+        flex-direction: column; /* stack images vertically */
+        gap: 10%;
     }
 
     .part img {
-        max-width: 100%;
+        max-width: 100%;       /* full width for stacked images */
     }
 }
