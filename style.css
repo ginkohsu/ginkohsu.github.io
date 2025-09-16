@@ -8,7 +8,7 @@
 /* Body styling */
 body, .content {
     font-family: Helvetica, sans-serif;
-    line-height: 1.8;
+    line-height: 1.6;
     font-size: 14px;
 }
 
@@ -24,29 +24,27 @@ body, .content {
     top: 0;
     left: 0;
     z-index: 1000;
-    /*overflow-y: auto;*/
     overflow: visible;
     flex-shrink: 0; 
-    width: 30%; /* Fixed width for the sidebar */
+    width: 30%;
     height: 100vh;
     padding: 5%;
     font-family: "Syne Mono", monospace;
-    background-color: #f4f4f4; /* Optional: adds a background color for better visual separation */
+    background-color: #f4f4f4;
 }
 
 /* Info container styling */
 .info-container {
     display: flex;
-    align-items: center; /* Align items vertically */
-    justify-content: space-between; /* Space between heading and image */
-    margin-top: auto; /* Pushes this section to the bottom of the sidebar */
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
 }
 
 /* List styling */
-
 .side-nav ul {
     list-style-type: none;
-    padding: 0; /* Remove padding */
+    padding: 0;
 }
 
 .side-nav ul li {
@@ -55,12 +53,11 @@ body, .content {
 }
 
 .side-nav ul li a {
-    display: block; /* Makes the link take up the full line */
+    display: block;
     color: rgb(15, 15, 15);
     text-decoration: none;
     padding: 3px;
     text-align: left;
-   
 }
 
 .side-nav ul li a:hover {
@@ -70,42 +67,29 @@ body, .content {
 /* Main content styling */
 .content {
     margin-left: 30%;
-    flex-grow: 1; /* Allows the content area to take up the remaining space */
+    flex-grow: 1;
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    
 }
- .part {
+
+/* Part (image row) styling */
+.part {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10%;
+    gap: 3%; /* 缩小图片间距 */
+    margin: 10px 0;
+}
+
+.part img {
+    max-width: 45%;
+    height: auto;
+    object-fit: cover;
 }
 
 /* Header styling */
-h2 {
-    color: rgb(68, 221, 152);
-}
-h1 a, .content a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-}
-h2 a {
-    text-decoration: none;
-    color: rgb(88, 247, 175);
-}
-
-h1 a:hover {
-    color:  rgb(68, 221, 152);
-}
-
-h2 a:hover, .content a:hover {
-    color:  rgb(68, 221, 152);
-}
-
 h1 {
     font-family: "Helvetica", sans-serif;
     padding-top: 30px;
@@ -113,75 +97,83 @@ h1 {
     font-size: 25px;
 }
 
+h1 a, .content a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+h1 a:hover {
+    color: rgb(68, 221, 152);
+}
+
+h2, .content h2 {
+    font-family: "Syne Mono", monospace;
+}
+
+h2 a {
+    text-decoration: none;
+    color: rgb(88, 247, 175);
+}
+
+h2 a:hover, .content a:hover {
+    color: rgb(68, 221, 152);
+}
+
+.content h2 {
+    margin: 24px 0 12px 0; /* 控制标题和段落间距 */
+    font-size: 15px;
+    color: rgb(160, 154, 154);
+}
+
 .side-nav h1, .side-nav h2 {
     color: #6cf08f;
     margin-top: 30px;
     font-size: 18px;
-    
 }
 
-.side-nav .leaf {
-  position: absolute;
-  top: 150px;
-  left: 0;
-  width: 280px;  /* adjust size */
-  height: auto;
-  pointer-events: none; /* so clicks go through */
-  opacity: 0.8;          /* optional subtle transparency */
-}
-
-
+/* Paragraph styling */
 p {
     font-size: 1.1em;
 }
 
+.content p {
+    margin: 12px 0;   /* 控制段落上下间距 */
+    padding: 0;
+    line-height: 1.6;
+}
 
 /* Info container image styling */
 .info-container img {
-    max-width: 30px; /* Adjust based on desired image size */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 30px;
+    height: auto;
 }
 
 /* Info container heading styling */
 .info-container h2 {
-    margin: 0; /* Remove default margin */
+    margin: 0;
     text-align: left;
-    font-size: 1rem; /* Adjust font size as needed */
+    font-size: 1rem;
     font-weight: 600;
-    font-family: "Syne Mono", monospace; /* Use the desired font */
+    font-family: "Syne Mono", monospace;
 }
 
-/* Style for the Instagram link */
 .info-container a {
-    text-decoration: none; /* Remove underline from links */
+    text-decoration: none;
 }
 
-/*style for content*/
-.content h2 {
-    margin: 20px 0 10px 0; 
-   font-size: 15px; 
-   font-family: "Syne Mono", monospace;
-   color:rgb(160, 154, 154);
-}
-
+/* Content images styling */
 .content img {
-    padding: 5% 10%;
-    max-width: 80%;
+    padding: 10px 0;   /* 缩小图片上下空间 */
+    max-width: 75%;
     height: auto;
     object-fit: cover;
-}
-
-.part img {
-    max-width: 48%;
-    height: auto;
-    object-fit: cover;
-
 }
 
 #small {
     max-width: 70%;
     height: auto; 
 }
+
 #watcherIcon {
     max-width: 25%;
     height: auto;
@@ -213,91 +205,66 @@ p {
     font-weight: 400;
     font-style: italic;
 }
+
 .content .frontpic {
-    position: relative; /* Set the container as a relative position reference */
-    height: auto; /* Adjust height as needed */
-    padding: 20px;
-}
-.content p {
-    margin: 8px 0;   /* 控制段落上下间距 */
-    padding: 0;      /* 移除多余 padding */
-    line-height: 1.6;
-
+    position: relative;
+    height: auto;
+    padding: 10px; /* 减少 padding */
 }
 
+/* Media queries for responsive */
 @media (min-width: 600px) {
-  .frontpic img {
-    width: 80%;
-  }
+  .frontpic img { width: 80%; }
 }
 
-/* Large screens (desktops) */
 @media (min-width: 1024px) {
-    .frontpic img {
-    width: 60%;
-  }
+  .frontpic img { width: 60%; }
 }
 
-/* Extra large screens (large desktops) */
 @media (min-width: 1440px) {
-    .frontpic img {
-    width: 60%;
-  }
+  .frontpic img { width: 60%; }
 }
 
-/* --- Mobile fix for sidebar scroll --- */
+/* Mobile sidebar fix */
 @media (max-width: 768px) {
     .side-nav {
-        position: relative;   /* sidebar scrolls naturally */
-        width: 100%;          /* full width on small screens */
-        height: auto;         /* allow full height for content */
-        overflow-y: visible;  /* allow scrolling to see INFO section */
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow-y: visible;
     }
 
     .content {
-        margin-left: 0;       /* content takes full width */
-        padding: 10px 5%;     /* slightly smaller padding for mobile */
+        margin-left: 0;
+        padding: 10px 5%;
     }
 
     .part {
-        flex-direction: column; /* stack images vertically */
-        gap: 10%;
+        flex-direction: column;
+        gap: 5%;
     }
 
     .part img {
-        max-width: 100%;       /* full width for stacked images */
+        max-width: 100%;
     }
+
+    .info-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 8px 12px;
+        border-radius: 12px;
+        z-index: 1000;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .info-container:hover {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    .info-container img { display: none; }
+    .info-container h2 a { font-size: 14px; }
 }
-
-@media (max-width: 768px) {
-  .info-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.85); /* slightly more transparent */
-    padding: 8px 12px;
-    border-radius: 12px;
-    z-index: 1000;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-
-  /* Make it collapsible to reduce overlap */
-  .info-container:hover {
-    transform: scale(1.05);
-    opacity: 1;
-  }
-
-  /* remove icons to save space */
-  .info-container img {
- display: none;
-  }
-
-  /* Optional: reduce text size on mobile */
-  .info-container h2 a {
-    font-size: 14px;
-  }
-}
-
-
-
