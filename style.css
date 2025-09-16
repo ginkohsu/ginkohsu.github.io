@@ -219,8 +219,10 @@ p {
     padding: 20px;
 }
 .content p {
-    padding: 10px 0;
+    margin: 8px 0;   /* 控制段落上下间距 */
+    padding: 0;      /* 移除多余 padding */
     line-height: 1.6;
+
 }
 
 @media (min-width: 600px) {
