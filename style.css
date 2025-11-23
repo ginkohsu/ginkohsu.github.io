@@ -268,3 +268,12 @@ p {
     .info-container img { display: none; }
     .info-container h2 a { font-size: 14px; }
 }
+
+/* Flipbook image styling */
+#flipbook img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* ensures image fills page proportionally */
+    display: block;
+}
+
