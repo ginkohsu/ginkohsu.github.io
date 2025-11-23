@@ -10,118 +10,89 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-
-  <!-- jQuery compatible with Turn.js v3 -->
   <script src="libs/jquery.min.js"></script>
-  <!-- Use CDN Turn.js to ensure it loads -->
-	<script src="libs/turn.min.js"></script>
-
-  <style>
-    /* Flipbook container responsive */
-    #flipbook {
-      width: 100%;
-      max-width: 1200px;
-      margin: 40px auto;
-      height: 0;
-      padding-top: 60%; /* aspect ratio of pages */
-    }
-
-    /* Flipbook page images */
-    #flipbook img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-  </style>
+  <script src="libs/turn.min.js"></script>
 </head>
 <body>
   <div class="container">
-    <!-- nav placeholder -->
+    <!-- nav will be injected here -->
     <div id="nav-placeholder"></div>
 
-    <!-- Content Section -->
-    <main class="content">
-      <h1>A long-term project in research phase (to be updated)</h1>
+ <!-- Content Section -->
+ <main class="content">
+   <h1>A long-term project in research phase (to be updated)</h1>
+   <div id="flipbook" style="width: 100%; max-width: 900px; height: 500px; margin: 40px auto;"></div>
+   <script>
+// Total pages
+const totalPages = 22;
 
-      <!-- Flipbook container -->
-      <div id="flipbook"></div>
+// Base path to images
+const path = "images/page"; // e.g., page1.jpg, page2.jpg, etc.
 
-      <!-- Flipbook script -->
-      <script>
-      $(document).ready(function() {
-        const actualPages = 22; // your real book pages
-        let totalPages = actualPages;
+// Create the flipbook container
+const flipbook = $("#flipbook");
 
-        // Add blank page if number of pages is odd
-        if (totalPages % 2 !== 0) {
-          totalPages += 1;
-        }
+// Add pages dynamically
+for (let i = 1; i <= totalPages; i++) {
+  const pageDiv = $("<div>").append(`<img src="${path}${i}.jpg">`);
+  flipbook.append(pageDiv);
+}
 
-        const path = "images/page"; // e.g., images/page1.jpg
-        const flipbook = $("#flipbook");
+// Initialize Turn.js
+flipbook.turn({
+  width: 900,
+  height: 500,
+  autoCenter: true,
+  gradients: true,
+  acceleration: true,
+  display: "double", // middle pages as spreads
+  when: {
+    turning: function(e, page) {
+      const last = flipbook.turn("pages");
+      // First page and last page as single
+      if (page === 1 || page === last) {
+        $(this).turn("display", "single");
+      } else {
+        $(this).turn("display", "double");
+      }
+    }
+  }
+});
+</script>
 
-        // Add pages dynamically
-        for (let i = 1; i <= totalPages; i++) {
-          let pageDiv;
-          if (i <= actualPages) {
-            pageDiv = $("<div>").append(`<img src="${path}${i}.jpg">`);
-          } else {
-            pageDiv = $("<div>"); // blank page
-          }
-          flipbook.append(pageDiv);
-        }
+     <img src="resources/chongshan.JPG" alt="photography">
+<img src="resources/chongshan_2.jpg" alt="photography">
+   <img src="resources/accra.jpg" alt="photography">
 
-        // Initialize Turn.js
-        flipbook.turn({
-          width: flipbook.width(),
-          height: flipbook.height(),
-          autoCenter: true,
-          display: "double",
-          gradients: true,
-          acceleration: true,
-          when: {
-            turning: function(e, page) {
-              const last = flipbook.turn("pages");
-              if (page === 1 || page === last) {
-                $(this).turn("display", "single"); // cover/back cover
-              } else {
-                $(this).turn("display", "double"); // middle spreads
-              }
-            }
-          }
-        });
+  <h2>Olla ei mistään kotoisin (Of No Origin)</h2>
 
-        // Responsive: update size on window resize
-        $(window).resize(function() {
-          flipbook.turn("size", flipbook.width(), flipbook.height());
-        });
-      });
-      </script>
+  <p>I came across the Finnish phrase “olla ei mistään kotoisin” when discussing with researcher/artist Dr. Lena Seraphin. Literally meaning “from nowhere,” it can imply low quality or no worth. What does it mean to come from nowhere? Who decides whose lives and histories are worth archiving?</p>
 
-      <!-- Existing content below flipbook -->
-      <img src="resources/chongshan.JPG" alt="photography">
-      <img src="resources/chongshan_2.jpg" alt="photography">
-      <img src="resources/accra.jpg" alt="photography">
+  <p>My project titled <em>Olla ei mistään kotoisin (Of No Origin)</em> seeks to explore how fragmented memory, inherited grief, and cultural displacement shape the perception and construction of the body. To access memories that cannot be fully told, I turn to ruptures, uncontained forms, and broken syntax.</p>
 
-      <h2>Olla ei mistään kotoisin (Of No Origin)</h2>
-      <p>I came across the Finnish phrase “olla ei mistään kotoisin”...</p>
-      <p>My project titled <em>Olla ei mistään kotoisin (Of No Origin)</em>...</p>
-      <p>The body is a central anchor in my artistic research...</p>
-      <p>The body also extends into proxy materialities...</p>
+  <p>The body is a central anchor in my artistic research, as both a personal and cultural site of memory—especially the feminine body, the queer body, the “incomplete” or illegible body across borders.</p>
 
-      <div class="part"></div>
-    </main>
+  <p>The body also extends into proxy materialities: fragments, extension parts, or replicas of the body. Through field studies, I documented repeating visual patterns across the globe: In the yard of a factory exporting worldwide in my hometown’s Buddha Making Village, Chongshan Village, Suzhou, China, I observed piles of deserted Buddha statues and molds; and on the central streets of Accra, Ghana, I witnessed mounting sacks of discarded mannequin torsos, during the Praxica postcolonial research residency in Villa Karo, West Africa.</p>
+  <div class="part">
+ 
   </div>
+</main>
+</div>
 
-  <!-- Load nav.html dynamically -->
-  <script>
-  fetch("nav.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("nav-placeholder").innerHTML = data;
-    });
-  </script>
+<!-- Load nav.html dynamically -->
+<script>
+fetch("nav.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("nav-placeholder").innerHTML = data;
+  });
+</script>
 </body>
+
 </html>
+
+
+
+
+
 
