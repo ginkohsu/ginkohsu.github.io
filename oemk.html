@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <script src="libs/jquery.min.js"></script>
+  <script src="libs/turn.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -19,6 +21,45 @@
  <!-- Content Section -->
  <main class="content">
    <h1>A long-term project in research phase (to be updated)</h1>
+   <div id="flipbook" style="width: 100%; max-width: 900px; height: 500px; margin: 40px auto;"></div>
+   <script>
+// Total pages
+const totalPages = 22;
+
+// Base path to images
+const path = "images/page"; // e.g., page1.jpg, page2.jpg, etc.
+
+// Create the flipbook container
+const flipbook = $("#flipbook");
+
+// Add pages dynamically
+for (let i = 1; i <= totalPages; i++) {
+  const pageDiv = $("<div>").append(`<img src="${path}${i}.jpg">`);
+  flipbook.append(pageDiv);
+}
+
+// Initialize Turn.js
+flipbook.turn({
+  width: 900,
+  height: 500,
+  autoCenter: true,
+  gradients: true,
+  acceleration: true,
+  display: "double", // middle pages as spreads
+  when: {
+    turning: function(e, page) {
+      const last = flipbook.turn("pages");
+      // First page and last page as single
+      if (page === 1 || page === last) {
+        $(this).turn("display", "single");
+      } else {
+        $(this).turn("display", "double");
+      }
+    }
+  }
+});
+</script>
+
      <img src="resources/chongshan.JPG" alt="photography">
 <img src="resources/chongshan_2.jpg" alt="photography">
    <img src="resources/accra.jpg" alt="photography">
@@ -49,6 +90,7 @@ fetch("nav.html")
 </body>
 
 </html>
+
 
 
 
