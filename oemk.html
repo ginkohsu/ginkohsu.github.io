@@ -14,7 +14,7 @@
     /* Additional styles for the flipbook */
     .flipbook-container {
       width: 100%;
-      max-width: 700px; /* Reduced for portrait */
+      max-width: 700px;
       margin: 40px auto;
       position: relative;
     }
@@ -28,12 +28,9 @@
     #flipbook .page {
       background: white;
       overflow: hidden;
-    }
-    
-    #flipbook img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+      margin: 0;
+      padding: 0;
+      border: none;
     }
     
     /* Navigation controls */
@@ -50,6 +47,11 @@
       border: none;
       cursor: pointer;
       border-radius: 4px;
+      font-family: inherit;
+    }
+    
+    .flipbook-controls button:hover {
+      background: #555;
     }
   </style>
 </head>
@@ -65,7 +67,6 @@
         <div id="flipbook"></div>
         <div class="flipbook-controls">
           <button id="prev-page">Previous</button>
-          <span id="page-info">Page 1 of 22</span>
           <button id="next-page">Next</button>
         </div>
       </div>
@@ -136,13 +137,11 @@
       // Clear any existing content
       flipbook.empty();
       
-      // Calculate dimensions for portrait pages
-      // Since your images are 1749x2481 (portrait), we need to adjust
+      // Calculate dimensions
       const containerWidth = $('.flipbook-container').width();
-      const pageWidth = containerWidth / 2; // Each page is half the container width
-      const pageHeight = 500; // Fixed height
+      const pageHeight = 500;
       
-      console.log("Container width:", containerWidth, "Page width:", pageWidth);
+      console.log("Container width:", containerWidth);
       
       // Create pages
       for (let i = 1; i <= totalPages; i++) {
@@ -160,7 +159,8 @@
                 'justify-content': 'center',
                 'height': '100%',
                 'color': '#999',
-                'font-family': 'Arial, sans-serif'
+                'font-family': 'Arial, sans-serif',
+                'background': '#f0f0f0'
               }).text(`Page ${i}`)
             );
           });
@@ -169,26 +169,22 @@
         flipbook.append(page);
       }
       
-      // Initialize turn.js with optimized settings for portrait
+      // Initialize turn.js with optimized settings
       try {
         flipbook.turn({
-          width: containerWidth, // Total width for spread
-          height: pageHeight,    // Height of pages
+          width: containerWidth,
+          height: pageHeight,
           autoCenter: true,
-          elevation: 20,         // Reduced for less distortion
-          gradients: false,      // Disable gradients for cleaner look
-          acceleration: false,   // Disable acceleration for better control
-          duration: 800,         // Slightly slower for smoother animation
-          display: 'double',     // Show two pages
-          turnCorners: 'bl,br',  // Only bottom corners for portrait
+          elevation: 20,
+          gradients: false,
+          acceleration: false,
+          duration: 800,
+          display: 'double',
+          turnCorners: 'bl,br',
+          pageSeparation: 0, // No gap between pages
           when: {
             turning: function(event, page, view) {
-              // Update page info
-              updatePageInfo(page);
-            },
-            turned: function(event, page) {
-              // Update page info after turn complete
-              updatePageInfo(page);
+              // Optional: Add any custom behavior during page turn
             }
           }
         });
@@ -204,8 +200,14 @@
           flipbook.turn('next');
         });
         
-        // Initialize page info
-        updatePageInfo(1);
+        // Also allow keyboard navigation
+        $(document).keydown(function(e) {
+          if (e.keyCode == 37) { // Left arrow
+            flipbook.turn('previous');
+          } else if (e.keyCode == 39) { // Right arrow
+            flipbook.turn('next');
+          }
+        });
         
       } catch (error) {
         console.error("Error initializing flipbook:", error);
@@ -217,16 +219,6 @@
           '</div>'
         );
       }
-    }
-    
-    function updatePageInfo(currentPage) {
-      const totalPages = 22;
-      // Convert from spread page number to actual page number
-      let displayPage = Math.ceil(currentPage / 2);
-      if (displayPage < 1) displayPage = 1;
-      if (displayPage > totalPages) displayPage = totalPages;
-      
-      $('#page-info').text(`Page ${displayPage} of ${totalPages}`);
     }
   </script>
 </body>

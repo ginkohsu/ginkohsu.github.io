@@ -274,6 +274,7 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;  /* ensures image fills page proportionally */
-    display: block;
+    object-position: center;
+	display: block;
 }
 
