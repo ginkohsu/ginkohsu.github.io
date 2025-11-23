@@ -10,8 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.1/turn.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -34,10 +32,29 @@
     </main>
   </div>
 
-  <!-- Load nav and initialize flipbook -->
+  <!-- Load libraries first -->
+  <script src="libs/jquery.min.js"></script>
+  <script src="libs/turn.min.js"></script>
+
+  <!-- Then load navigation and initialize flipbook -->
   <script>
     // Wait for everything to load
     window.addEventListener('load', function() {
+      console.log("Window loaded, checking libraries...");
+      
+      // Check if jQuery and turn are loaded
+      if (typeof jQuery === 'undefined') {
+        console.error("jQuery not loaded!");
+        return;
+      }
+      
+      if (typeof jQuery.fn.turn === 'undefined') {
+        console.error("Turn.js not loaded!");
+        return;
+      }
+      
+      console.log("Libraries loaded successfully");
+
       // Load navigation first
       fetch("nav.html")
         .then(response => {
@@ -57,74 +74,78 @@
     });
 
     function initializeFlipbook() {
-      // Wait a bit to ensure DOM is ready
-      setTimeout(function() {
-        try {
-          console.log("Initializing flipbook...");
-          
-          const totalPages = 22;
-          const flipbook = $('#flipbook');
-          
-          // Clear any existing content
-          flipbook.empty();
-          
-          // Create pages
-          for (let i = 1; i <= totalPages; i++) {
-            const page = $('<div>').css({
-              'background-color': 'white',
-              'display': 'flex',
-              'align-items': 'center',
-              'justify-content': 'center',
-              'overflow': 'hidden'
-            });
-            
-            const img = $('<img>')
-              .attr('src', `images/page${i}.jpg`)
-              .attr('alt', `Page ${i}`)
-              .css({
-                'max-width': '95%',
-                'max-height': '95%',
-                'object-fit': 'contain'
-              })
-              .on('error', function() {
-                console.error(`Failed to load image: images/page${i}.jpg`);
-                $(this).replaceWith(
-                  $('<div>').css({
-                    'display': 'flex',
-                    'align-items': 'center',
-                    'justify-content': 'center',
-                    'height': '100%',
-                    'color': '#999',
-                    'font-family': 'Arial, sans-serif'
-                  }).text(`Page ${i}`)
-                );
-              });
-            
-            page.append(img);
-            flipbook.append(page);
-          }
-          
-          // Initialize turn.js with basic settings first
-          flipbook.turn({
-            width: 900,
-            height: 500,
-            autoCenter: true,
-            elevation: 50,
-            gradients: true,
-            duration: 1000
+      console.log("Initializing flipbook...");
+      
+      const totalPages = 22;
+      const flipbook = $('#flipbook');
+      
+      if (flipbook.length === 0) {
+        console.error("Flipbook element not found");
+        return;
+      }
+      
+      // Clear any existing content
+      flipbook.empty();
+      
+      // Create pages
+      for (let i = 1; i <= totalPages; i++) {
+        const page = $('<div>').css({
+          'background-color': 'white',
+          'display': 'flex',
+          'align-items': 'center',
+          'justify-content': 'center',
+          'overflow': 'hidden'
+        });
+        
+        const img = $('<img>')
+          .attr('src', `images/page${i}.jpg`)
+          .attr('alt', `Page ${i}`)
+          .css({
+            'max-width': '95%',
+            'max-height': '95%',
+            'object-fit': 'contain'
+          })
+          .on('error', function() {
+            console.error(`Failed to load image: images/page${i}.jpg`);
+            $(this).replaceWith(
+              $('<div>').css({
+                'display': 'flex',
+                'align-items': 'center',
+                'justify-content': 'center',
+                'height': '100%',
+                'color': '#999',
+                'font-family': 'Arial, sans-serif'
+              }).text(`Page ${i}`)
+            );
           });
-          
-          console.log("Flipbook initialized successfully");
-          
-        } catch (error) {
-          console.error("Error creating flipbook:", error);
-          // Fallback: show a message
-          $('#flipbook').html(
-            '<div style="display:flex; align-items:center; justify-content:center; height:100%; color:#666;">' +
-            'Flipbook loading issue. Please check console for errors.</div>'
-          );
-        }
-      }, 100);
+        
+        page.append(img);
+        flipbook.append(page);
+      }
+      
+      // Initialize turn.js
+      try {
+        flipbook.turn({
+          width: 900,
+          height: 500,
+          autoCenter: true,
+          elevation: 50,
+          gradients: true,
+          duration: 1000
+        });
+        
+        console.log("Flipbook initialized successfully");
+        
+      } catch (error) {
+        console.error("Error initializing flipbook:", error);
+        // Fallback: show a message
+        $('#flipbook').html(
+          '<div style="display:flex; align-items:center; justify-content:center; height:100%; color:#666; flex-direction: column;">' +
+          '<p>Flipbook could not be initialized.</p>' +
+          '<p>Error: ' + error.message + '</p>' +
+          '</div>'
+        );
+      }
     }
   </script>
 </body>
