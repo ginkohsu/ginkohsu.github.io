@@ -10,6 +10,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Additional styles for the flipbook */
+    .flipbook-container {
+      width: 100%;
+      max-width: 700px; /* Reduced for portrait */
+      margin: 40px auto;
+      position: relative;
+    }
+    
+    #flipbook {
+      width: 100%;
+      height: 500px;
+      background: #f5f5f5;
+    }
+    
+    #flipbook .page {
+      background: white;
+      overflow: hidden;
+    }
+    
+    #flipbook img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    
+    /* Navigation controls */
+    .flipbook-controls {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .flipbook-controls button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -19,7 +61,14 @@
       <h1>A long-term project in research phase (to be updated)</h1>
       
       <!-- Flipbook Container -->
-      <div id="flipbook" style="width: 100%; max-width: 900px; height: 500px; margin: 40px auto; background: #f5f5f5;"></div>
+      <div class="flipbook-container">
+        <div id="flipbook"></div>
+        <div class="flipbook-controls">
+          <button id="prev-page">Previous</button>
+          <span id="page-info">Page 1 of 22</span>
+          <button id="next-page">Next</button>
+        </div>
+      </div>
 
       <!-- Your existing content -->
       <img src="resources/chongshan.JPG" alt="photography">
@@ -87,24 +136,21 @@
       // Clear any existing content
       flipbook.empty();
       
+      // Calculate dimensions for portrait pages
+      // Since your images are 1749x2481 (portrait), we need to adjust
+      const containerWidth = $('.flipbook-container').width();
+      const pageWidth = containerWidth / 2; // Each page is half the container width
+      const pageHeight = 500; // Fixed height
+      
+      console.log("Container width:", containerWidth, "Page width:", pageWidth);
+      
       // Create pages
       for (let i = 1; i <= totalPages; i++) {
-        const page = $('<div>').css({
-          'background-color': 'white',
-          'display': 'flex',
-          'align-items': 'center',
-          'justify-content': 'center',
-          'overflow': 'hidden'
-        });
+        const page = $('<div>').addClass('page');
         
         const img = $('<img>')
           .attr('src', `images/page${i}.jpg`)
           .attr('alt', `Page ${i}`)
-          .css({
-            'max-width': '95%',
-            'max-height': '95%',
-            'object-fit': 'contain'
-          })
           .on('error', function() {
             console.error(`Failed to load image: images/page${i}.jpg`);
             $(this).replaceWith(
@@ -123,18 +169,43 @@
         flipbook.append(page);
       }
       
-      // Initialize turn.js
+      // Initialize turn.js with optimized settings for portrait
       try {
         flipbook.turn({
-          width: 900,
-          height: 500,
+          width: containerWidth, // Total width for spread
+          height: pageHeight,    // Height of pages
           autoCenter: true,
-          elevation: 50,
-          gradients: true,
-          duration: 1000
+          elevation: 20,         // Reduced for less distortion
+          gradients: false,      // Disable gradients for cleaner look
+          acceleration: false,   // Disable acceleration for better control
+          duration: 800,         // Slightly slower for smoother animation
+          display: 'double',     // Show two pages
+          turnCorners: 'bl,br',  // Only bottom corners for portrait
+          when: {
+            turning: function(event, page, view) {
+              // Update page info
+              updatePageInfo(page);
+            },
+            turned: function(event, page) {
+              // Update page info after turn complete
+              updatePageInfo(page);
+            }
+          }
         });
         
         console.log("Flipbook initialized successfully");
+        
+        // Add navigation controls
+        $('#prev-page').click(function() {
+          flipbook.turn('previous');
+        });
+        
+        $('#next-page').click(function() {
+          flipbook.turn('next');
+        });
+        
+        // Initialize page info
+        updatePageInfo(1);
         
       } catch (error) {
         console.error("Error initializing flipbook:", error);
@@ -146,6 +217,16 @@
           '</div>'
         );
       }
+    }
+    
+    function updatePageInfo(currentPage) {
+      const totalPages = 22;
+      // Convert from spread page number to actual page number
+      let displayPage = Math.ceil(currentPage / 2);
+      if (displayPage < 1) displayPage = 1;
+      if (displayPage > totalPages) displayPage = totalPages;
+      
+      $('#page-info').text(`Page ${displayPage} of ${totalPages}`);
     }
   </script>
 </body>
