@@ -15,7 +15,7 @@ body, .content {
 /* Container setup */
 .container {
     display: flex;
-    min-height: 100vh; /* Full height of the viewport */
+    min-height: 100vh;
 }
 
 /* Side navigation styling */
@@ -25,7 +25,7 @@ body, .content {
     left: 0;
     z-index: 1000;
     overflow: visible;
-    flex-shrink: 0; 
+    flex-shrink: 0;
     width: 30%;
     height: 100vh;
     padding: 5%;
@@ -79,7 +79,7 @@ body, .content {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 3%; /* 缩小图片间距 */
+    gap: 3%;
     margin: 10px 0;
 }
 
@@ -120,7 +120,7 @@ h2 a:hover, .content a:hover {
 }
 
 .content h2 {
-    margin: 24px 0 12px 0; /* 控制标题和段落间距 */
+    margin: 24px 0 12px 0;
     font-size: 15px;
     color: rgb(160, 154, 154);
 }
@@ -137,7 +137,7 @@ p {
 }
 
 .content p {
-    margin: 12px 0;   /* 控制段落上下间距 */
+    margin: 12px 0;
     padding: 0;
     line-height: 1.6;
 }
@@ -163,7 +163,7 @@ p {
 
 /* Content images styling */
 .content img {
-    padding: 10px 0;   /* 缩小图片上下空间 */
+    padding: 10px 0;
     max-width: 75%;
     height: auto;
     object-fit: cover;
@@ -171,7 +171,7 @@ p {
 
 #small {
     max-width: 70%;
-    height: auto; 
+    height: auto;
 }
 
 #watcherIcon {
@@ -197,7 +197,7 @@ p {
     max-width: 30%;
     height: auto;
     object-fit: cover;
-    margin-right: 20px; 
+    margin-right: 20px;
 }
 
 #page-header {
@@ -209,20 +209,26 @@ p {
 .content .frontpic {
     position: relative;
     height: auto;
-    padding: 10px; /* 减少 padding */
+    padding: 10px;
 }
 
 /* Media queries for responsive */
 @media (min-width: 600px) {
-  .frontpic img { width: 80%; }
+    .frontpic img {
+        width: 80%;
+    }
 }
 
 @media (min-width: 1024px) {
-  .frontpic img { width: 60%; }
+    .frontpic img {
+        width: 60%;
+    }
 }
 
 @media (min-width: 1440px) {
-  .frontpic img { width: 60%; }
+    .frontpic img {
+        width: 60%;
+    }
 }
 
 /* Mobile sidebar fix */
@@ -265,16 +271,11 @@ p {
         opacity: 1;
     }
 
-    .info-container img { display: none; }
-    .info-container h2 a { font-size: 14px; }
-}
+    .info-container img {
+        display: none;
+    }
 
-/* Flipbook image styling */
-#flipbook img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;  /* ensures image fills page proportionally */
-    object-position: center;
-	display: block;
+    .info-container h2 a {
+        font-size: 14px;
+    }
 }
-
