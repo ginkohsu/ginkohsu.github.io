@@ -3,223 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demian | Ginko Hsu</title>
+  <title>Ginko Hsu</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Additional styles for the flipbook */
-    .flipbook-container {
-      width: 100%;
-      max-width: 700px;
-      margin: 40px auto;
-      position: relative;
-    }
-    
-    #flipbook {
-      width: 100%;
-      height: 500px;
-      background: #f5f5f5;
-    }
-    
-    #flipbook .page {
-      background: white;
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
-      border: none;
-    }
-    
-    /* Navigation controls */
-    .flipbook-controls {
-      text-align: center;
-      margin-top: 20px;
-    }
-    
-    .flipbook-controls button {
-      padding: 10px 20px;
-      margin: 0 10px;
-      background: #333;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-      font-family: inherit;
-    }
-    
-    .flipbook-controls button:hover {
-      background: #555;
-    }
-  </style>
 </head>
+
 <body>
   <div class="container">
+
+    <!-- Navigation -->
     <div id="nav-placeholder"></div>
 
+    <!-- Content -->
     <main class="content">
-      <h1>A long-term project in research phase (to be updated)</h1>
-      
-      <!-- Flipbook Container -->
-      <div class="flipbook-container">
-        <div id="flipbook"></div>
-        <div class="flipbook-controls">
-          <button id="prev-page">Previous</button>
-          <button id="next-page">Next</button>
-        </div>
-      </div>
 
-      <!-- Your existing content -->
+      <h1>A long-term project in research phase (to be updated)</h1>
+
       <img src="resources/chongshan.JPG" alt="photography">
       <img src="resources/chongshan_2.jpg" alt="photography">
       <img src="resources/accra.jpg" alt="photography">
 
       <h2>Olla ei mistään kotoisin (Of No Origin)</h2>
-      <p>I came across the Finnish phrase "olla ei mistään kotoisin" when discussing with researcher/artist Dr. Lena Seraphin. Literally meaning "from nowhere," it can imply low quality or no worth. What does it mean to come from nowhere? Who decides whose lives and histories are worth archiving?</p>
+
+      <p>
+        I came across the Finnish phrase "olla ei mistään kotoisin"
+        when discussing with researcher/artist Dr. Lena Seraphin.
+        Literally meaning "from nowhere," it can imply low quality or no worth.
+        What does it mean to come from nowhere? Who decides whose lives and
+        histories are worth archiving?
+      </p>
+
       <!-- Rest of your content -->
+
     </main>
   </div>
 
-  <!-- Load libraries first -->
-  <script src="libs/jquery.min.js"></script>
-  <script src="libs/turn.min.js"></script>
-
-  <!-- Then load navigation and initialize flipbook -->
+  <!-- Load Navigation -->
   <script>
-    // Wait for everything to load
-    window.addEventListener('load', function() {
-      console.log("Window loaded, checking libraries...");
-      
-      // Check if jQuery and turn are loaded
-      if (typeof jQuery === 'undefined') {
-        console.error("jQuery not loaded!");
-        return;
-      }
-      
-      if (typeof jQuery.fn.turn === 'undefined') {
-        console.error("Turn.js not loaded!");
-        return;
-      }
-      
-      console.log("Libraries loaded successfully");
-
-      // Load navigation first
-      fetch("nav.html")
-        .then(response => {
-          if (!response.ok) throw new Error('Network response was not ok');
-          return response.text();
-        })
-        .then(data => {
-          document.getElementById('nav-placeholder').innerHTML = data;
-          // After nav is loaded, initialize flipbook
-          initializeFlipbook();
-        })
-        .catch(error => {
-          console.error('Error loading navigation:', error);
-          // Even if nav fails, try to initialize flipbook
-          initializeFlipbook();
-        });
-    });
-
-    function initializeFlipbook() {
-      console.log("Initializing flipbook...");
-      
-      const totalPages = 22;
-      const flipbook = $('#flipbook');
-      
-      if (flipbook.length === 0) {
-        console.error("Flipbook element not found");
-        return;
-      }
-      
-      // Clear any existing content
-      flipbook.empty();
-      
-      // Calculate dimensions
-      const containerWidth = $('.flipbook-container').width();
-      const pageHeight = 500;
-      
-      console.log("Container width:", containerWidth);
-      
-      // Create pages
-      for (let i = 1; i <= totalPages; i++) {
-        const page = $('<div>').addClass('page');
-        
-        const img = $('<img>')
-          .attr('src', `images/page${i}.jpg`)
-          .attr('alt', `Page ${i}`)
-          .on('error', function() {
-            console.error(`Failed to load image: images/page${i}.jpg`);
-            $(this).replaceWith(
-              $('<div>').css({
-                'display': 'flex',
-                'align-items': 'center',
-                'justify-content': 'center',
-                'height': '100%',
-                'color': '#999',
-                'font-family': 'Arial, sans-serif',
-                'background': '#f0f0f0'
-              }).text(`Page ${i}`)
-            );
-          });
-        
-        page.append(img);
-        flipbook.append(page);
-      }
-      
-      // Initialize turn.js with optimized settings
-      try {
-        flipbook.turn({
-          width: containerWidth,
-          height: pageHeight,
-          autoCenter: true,
-          elevation: 20,
-          gradients: false,
-          acceleration: false,
-          duration: 800,
-          display: 'double',
-          turnCorners: 'bl,br',
-          pageSeparation: 0, // No gap between pages
-          when: {
-            turning: function(event, page, view) {
-              // Optional: Add any custom behavior during page turn
-            }
-          }
-        });
-        
-        console.log("Flipbook initialized successfully");
-        
-        // Add navigation controls
-        $('#prev-page').click(function() {
-          flipbook.turn('previous');
-        });
-        
-        $('#next-page').click(function() {
-          flipbook.turn('next');
-        });
-        
-        // Also allow keyboard navigation
-        $(document).keydown(function(e) {
-          if (e.keyCode == 37) { // Left arrow
-            flipbook.turn('previous');
-          } else if (e.keyCode == 39) { // Right arrow
-            flipbook.turn('next');
-          }
-        });
-        
-      } catch (error) {
-        console.error("Error initializing flipbook:", error);
-        // Fallback: show a message
-        $('#flipbook').html(
-          '<div style="display:flex; align-items:center; justify-content:center; height:100%; color:#666; flex-direction: column;">' +
-          '<p>Flipbook could not be initialized.</p>' +
-          '<p>Error: ' + error.message + '</p>' +
-          '</div>'
-        );
-      }
-    }
+    fetch("nav.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("nav-placeholder").innerHTML = data;
+      })
+      .catch(error => {
+        console.error("Error loading navigation:", error);
+      });
   </script>
+
 </body>
 </html>
