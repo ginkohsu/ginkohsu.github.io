@@ -3,24 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ginko Hsu | Artist</title>
+
+  <title>Ginko Hsu</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
 </head>
-<body>
+
+<body class="home-page">
+
   <div class="container">
-    <!-- nav will be injected here -->
+
+    <!-- Shared navigation -->
     <div id="nav-placeholder"></div>
 
-    <!-- Content Section -->
-    <main class="content">
-      <div class="frontpic">
-        <img src="resources/Xu_04_01_Sleeping with One Eye Open.jpg" alt="glass sculpture">
+    <!-- Homepage -->
+    <main class="content home-content">
+
+      <div class="home-gallery">
+
+        <!-- 01 / Elephant Tale -->
+        <figure class="home-figure home-figure--elephant">
+
+          <a href="oemk-0.html">
+            <img
+              src="resources/elephant_tale_kyykyy.png"
+              alt="Elephant Tale, exhibition view at Kyykky Gallery"
+              fetchpriority="high"
+            >
+          </a>
+
+          <figcaption>
+            Elephant Tale, 2025
+          </figcaption>
+
+        </figure>
+
+
+        <!-- 02 / The Watchers of the Gate -->
+        <figure class="home-figure home-figure--glass">
+
+          <a href="gate.html">
+            <img
+              src="resources/Xu_06_01_The Watchers of the Gate.jpg"
+              alt="The Watchers of the Gate, glass sculpture"
+              loading="lazy"
+            >
+          </a>
+
+          <figcaption>
+            The Watchers of the Gate
+          </figcaption>
+
+        </figure>
+
+
+        <!-- 03 / Manufacturing Gods -->
+        <figure class="home-figure home-figure--gods">
+
+          <img
+            src="resources/manufacturing_gods.png"
+            alt="Manufacturing Gods, exhibition installation"
+            loading="lazy"
+          >
+
+          <figcaption>
+            Manufacturing Gods, 2026
+          </figcaption>
+
+        </figure>
+
       </div>
+
     </main>
+
   </div>
-  <script src="site.js" defer></script>
+
 </body>
 </html>
+

@@ -317,3 +317,174 @@ p {
   .part { width: 100%; }
   .part img { max-width: 100%; }
 }
+
+
+/* =========================================
+   HOMEPAGE — VISUAL INDEX
+   ========================================= */
+
+.home-content {
+  align-items: stretch;
+  padding: 0;
+}
+
+.home-gallery {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+  padding: 85px 7% 130px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 125px;
+}
+
+
+/* Shared image styling */
+
+.home-figure {
+  margin: 0;
+}
+
+.home-figure a {
+  display: block;
+  text-decoration: none;
+}
+
+.content .home-figure img {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+
+  height: auto;
+  padding: 0;
+
+  object-fit: contain;
+}
+
+
+/* Small, quiet captions */
+
+.home-figure figcaption {
+  margin-top: 11px;
+
+  font-family: "Syne Mono", monospace;
+  font-size: 11px;
+  line-height: 1.6;
+
+  color: #929292;
+}
+
+
+/* 01 — Elephant Tale */
+
+.home-figure--elephant {
+  width: 72%;
+  align-self: flex-start;
+}
+
+
+/* 02 — Glass sculpture */
+
+.home-figure--glass {
+  width: 43%;
+
+  align-self: flex-end;
+  margin-right: 3%;
+}
+
+
+/* 03 — Manufacturing Gods */
+
+.home-figure--gods {
+  width: 56%;
+
+  align-self: flex-start;
+  margin-left: 8%;
+}
+
+
+/* Subtle interaction */
+
+.home-figure a img {
+  transition: opacity 0.35s ease;
+}
+
+.home-figure a:hover img {
+  opacity: 0.88;
+}
+
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+
+  .home-gallery {
+    padding: 60px 6% 100px;
+    gap: 95px;
+  }
+
+  .home-figure--elephant {
+    width: 83%;
+  }
+
+  .home-figure--glass {
+    width: 53%;
+  }
+
+  .home-figure--gods {
+    width: 68%;
+    margin-left: 4%;
+  }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .home-content {
+    padding: 0;
+  }
+
+  .home-gallery {
+    padding: 45px 5% 80px;
+    gap: 75px;
+  }
+
+  .home-figure--elephant {
+    width: 100%;
+  }
+
+  .home-figure--glass {
+    width: 69%;
+    margin-right: 0;
+  }
+
+  .home-figure--gods {
+    width: 87%;
+    margin-left: 0;
+  }
+
+  .home-figure figcaption {
+    font-size: 10px;
+  }
+
+}
+
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .home-figure a img {
+    transition: none;
+  }
+
+}
+
