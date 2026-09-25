@@ -2483,3 +2483,43 @@ p {
   .proxies-page .proxies-work-text { margin-top: 18px; }
   .proxies-page .proxies-work-information h2 { font-size: 20px; }
 }
+
+/* ============================================================
+   PROXIES — ARTWORK CAPTIONS MATCH ELEPHANT TALE
+   Three compact lines below the image(s): title/year, medium/size,
+   exhibition/location. Prose below remains ordinary body copy.
+   ============================================================ */
+.proxies-page .proxies-image-group { margin-bottom: 9px; }
+.proxies-page .proxies-work-information { width: min(100%, 620px); max-width: 620px; }
+.proxies-page .proxies-artwork-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  margin: 0;
+  padding: 0;
+  font: 400 11px/1.6 "Syne Mono", monospace;
+  letter-spacing: normal;
+  color: #817c74;
+  text-align: left;
+  text-indent: 0;
+}
+.proxies-page .proxies-work-information .proxies-artwork-caption h2,
+.proxies-page .proxies-artwork-caption span {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  text-align: inherit;
+}
+.proxies-page .proxies-work-information .proxies-work-text {
+  margin-top: 26px;
+}
+@media (max-width: 768px) {
+  .proxies-page .proxies-image-group { margin-bottom: 9px; }
+  .proxies-page .proxies-work-information .proxies-artwork-caption h2 { font-size: 11px; }
+  .proxies-page .proxies-work-information .proxies-work-text { margin-top: 21px; }
+}
