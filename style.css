@@ -2062,3 +2062,94 @@ p {
 /* The second image matches the frame ratio and remains entirely visible.
    Individual framing can be fine-tuned with object-position if required. */
 .elephant-page #elephant-spread-2 img { object-position: center center; }
+
+
+/* ==========================================================
+   ELEPHANT TALE / ONE EDITORIAL TEXT COLUMN
+   A single text rhythm, independent of the staggered images.
+   ========================================================== */
+.elephant-page .elephant-header,
+.elephant-page .elephant-japan-header,
+.elephant-page .elephant-publication-note {
+  width: min(100%, 620px);
+  max-width: 620px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.elephant-page .elephant-header { margin-top: 50px; margin-bottom: 43px; }
+.elephant-page .elephant-intro { width: 100%; max-width: 620px; margin-top: 20px; }
+.elephant-page .elephant-intro p,
+.elephant-page .elephant-japan-header .elephant-japan-intro,
+.elephant-page .elephant-publication-note p {
+  max-width: 620px;
+  margin: 0 0 12px;
+  padding: 0;
+  font: 400 14px/1.68 Helvetica, Arial, sans-serif;
+  color: #625d55;
+  text-indent: 0;
+  text-align: left;
+}
+.elephant-page .elephant-intro p:last-child,
+.elephant-page .elephant-japan-header .elephant-japan-intro:last-child,
+.elephant-page .elephant-publication-note p:last-child { margin-bottom: 0; }
+.elephant-page .elephant-drawing { margin-bottom: 66px; }
+.elephant-page .elephant-publication-layout { margin-bottom: 24px; }
+.elephant-page .elephant-publication-note { margin-top: 0; margin-bottom: 78px; }
+.elephant-page .elephant-japan { margin-top: 0; margin-bottom: 64px; }
+.elephant-page .elephant-japan-header { margin-bottom: 34px; }
+.elephant-page .elephant-japan-header .elephant-japan-intro { margin-top: 0; }
+.elephant-page .elephant-japan-header .elephant-japan-location { margin-bottom: 18px; }
+.elephant-page .japan-image { margin-bottom: 48px; }
+.elephant-page .elephant-footer { margin-top: 48px; }
+@media (max-width: 850px) {
+  .elephant-page .elephant-publication-layout { margin-bottom: 20px; }
+  .elephant-page .elephant-publication-note { margin-bottom: 60px; }
+}
+@media (max-width: 768px) {
+  .elephant-page .elephant-header { margin-top: 37px; margin-bottom: 33px; }
+  .elephant-page .elephant-drawing { margin-bottom: 48px; }
+  .elephant-page .elephant-publication-note { margin-bottom: 54px; }
+  .elephant-page .elephant-japan-header { margin-bottom: 26px; }
+  .elephant-page .japan-image { margin-bottom: 32px; }
+}
+
+
+/* Elephant Tale — September 26 editorial sequence.
+   A single left-aligned text column; images keep their original placement. */
+.elephant-page .elephant-research-note,
+.elephant-page .elephant-publication-note,
+.elephant-page .elephant-header,
+.elephant-page .elephant-japan-header {
+  width: min(100%, 620px);
+  max-width: 620px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.elephant-page .elephant-research-note p,
+.elephant-page .elephant-publication-note p,
+.elephant-page .elephant-intro p,
+.elephant-page .elephant-japan-header .elephant-japan-intro {
+  font: 400 14px/1.7 Helvetica, Arial, sans-serif;
+  color: #625d55;
+  margin: 0 0 14px;
+  padding: 0;
+  text-indent: 0;
+  text-align: left;
+}
+.elephant-page .elephant-research-note p:last-child,
+.elephant-page .elephant-publication-note p:last-child,
+.elephant-page .elephant-intro p:last-child,
+.elephant-page .elephant-japan-header .elephant-japan-intro:last-child {
+  margin-bottom: 0;
+}
+.elephant-page .elephant-intro { margin-top: 18px; }
+.elephant-page .elephant-drawing { margin-bottom: 0; }
+.elephant-page .elephant-research-note { margin-top: 34px; margin-bottom: 47px; }
+.elephant-page .elephant-publication-layout { margin-bottom: 27px; }
+.elephant-page .elephant-publication-note { margin-top: 0; margin-bottom: 0; }
+.elephant-page .elephant-japan { margin-top: 80px; }
+@media (max-width: 768px) {
+  .elephant-page .elephant-research-note { margin-top: 24px; margin-bottom: 37px; }
+  .elephant-page .elephant-publication-layout { margin-bottom: 22px; }
+  .elephant-page .elephant-japan { margin-top: 58px; }
+}
