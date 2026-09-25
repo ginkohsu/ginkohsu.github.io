@@ -7,7 +7,7 @@
     if (!response.ok) throw new Error(`Navigation HTTP ${response.status}`);
     mount.innerHTML = await response.text();
     const page = window.location.pathname.split('/').pop() || 'index.html';
-    const oemkPages = ['oemk.html', 'oemk-0.html', 'oemk-1.html'];
+    const oemkPages = ['oemk.html', 'oemk-0.html', 'oemk-1.html', 'oemk-proxies.html'];
     const menu = document.getElementById('oemk-menu');
     if (menu && oemkPages.includes(page)) menu.open = true;
     mount.querySelectorAll('a[href]').forEach(link => {

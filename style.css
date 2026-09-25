@@ -1289,3 +1289,206 @@ p {
 
 }
 
+
+/* =========================================
+   OEMK — PROXIES
+   ========================================= */
+
+.proxies-page .proxies-content {
+  display: block;
+  min-width: 0;
+  padding: 0 7% 110px;
+}
+
+.proxies-project {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.proxies-eyebrow,
+.proxies-work-details,
+.proxies-footer {
+  font-family: "Syne Mono", monospace;
+  font-size: 11px;
+  line-height: 1.7;
+  color: #89847c;
+}
+
+/* INTRODUCTION */
+
+.proxies-header {
+  margin: 75px 0 115px;
+}
+
+.proxies-header h1 {
+  margin: 20px 0 55px;
+  padding: 0;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: clamp(40px, 5vw, 65px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+
+  color: #37342f;
+}
+
+.proxies-introduction {
+  max-width: 540px;
+  margin: 0 4% 0 auto;
+}
+
+.proxies-introduction p {
+  margin: 0 0 21px;
+  font-size: 15px;
+  line-height: 1.85;
+  color: #625d55;
+}
+
+/* WORK SECTIONS */
+
+.proxies-work {
+  margin-bottom: 155px;
+}
+
+.proxies-work--angel {
+  padding-top: 75px;
+  border-top: 1px solid #dedbd5;
+}
+
+.proxies-figure {
+  margin: 0;
+}
+
+.proxies-page .content .proxies-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  object-fit: contain;
+}
+
+.proxies-figure--primary {
+  width: 93%;
+  margin: 0 0 85px;
+}
+
+.proxies-figure--secondary {
+  width: 76%;
+  margin: 90px 0 0 auto;
+}
+
+/* WORK INFORMATION */
+
+.proxies-work-information {
+  max-width: 570px;
+  margin: 0 5% 0 auto;
+}
+
+.proxies-work-information h2 {
+  margin: 0 0 27px;
+  padding: 0;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: clamp(26px, 3vw, 39px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  color: #37342f;
+}
+
+.proxies-work-information .proxies-work-details {
+  margin: 0 0 22px;
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+.proxies-work-text {
+  margin-top: 40px;
+}
+
+.proxies-work-text p {
+  margin: 0 0 22px;
+  font-size: 15px;
+  line-height: 1.85;
+  color: #625d55;
+}
+
+/* FOOTER */
+
+.proxies-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 25px;
+
+  margin-top: 100px;
+  padding-top: 24px;
+  border-top: 1px solid #dedbd5;
+}
+
+.proxies-footer p {
+  margin: 0;
+  font-size: inherit;
+}
+
+.proxies-page .content .proxies-footer a {
+  color: #686259;
+  text-decoration: none;
+}
+
+.proxies-page .content .proxies-footer a:hover {
+  text-decoration: underline;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .proxies-page .proxies-content {
+    padding: 0 5% 70px;
+  }
+
+  .proxies-header {
+    margin: 45px 0 80px;
+  }
+
+  .proxies-header h1 {
+    margin-bottom: 40px;
+    font-size: 43px;
+  }
+
+  .proxies-introduction,
+  .proxies-work-information {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .proxies-introduction p,
+  .proxies-work-text p {
+    font-size: 14px;
+  }
+
+  .proxies-figure--primary {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  .proxies-figure--secondary {
+    width: 88%;
+    margin-top: 65px;
+  }
+
+  .proxies-work {
+    margin-bottom: 100px;
+  }
+
+  .proxies-work--angel {
+    padding-top: 60px;
+  }
+
+}
+
