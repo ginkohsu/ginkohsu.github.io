@@ -2523,3 +2523,47 @@ p {
   .proxies-page .proxies-work-information .proxies-artwork-caption h2 { font-size: 11px; }
   .proxies-page .proxies-work-information .proxies-work-text { margin-top: 21px; }
 }
+
+
+/* HOMEPAGE — one centered artwork; scoped so project pages are unchanged */
+.home-page .home-content {
+  min-height: 100svh;
+  padding: 30px 5% 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-page .home-single-stage {
+  width: 100%;
+  min-height: calc(100svh - 75px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-page .home-single-artwork {
+  display: block;
+  width: min(55%, 490px);
+  min-width: 0;
+  margin: 0 auto;
+  text-decoration: none;
+}
+.home-page .content .home-single-artwork img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  object-fit: contain;
+}
+.home-page .home-single-artwork:focus-visible {
+  outline: 1px solid #777;
+  outline-offset: 8px;
+}
+@media (max-width: 768px) {
+  .home-page .home-content {
+    min-height: 75svh;
+    padding: 20px 5% 35px;
+  }
+  .home-page .home-single-stage { min-height: 65svh; }
+  .home-page .home-single-artwork { width: min(75%, 420px); }
+}
