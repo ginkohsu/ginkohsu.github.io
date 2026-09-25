@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ginko Hsu</title>
+  <title>Of No Origin (OEMK) | Ginko Hsu</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +21,7 @@
     <!-- Content -->
     <main class="content">
 
-      <h1>A long-term project in research phase (to be updated)</h1>
+      <div class="project-intro"><p class="eyebrow">OEMK / OVERVIEW</p><h1>Of No Origin</h1><p class="project-subtitle">Ongoing artistic research</p></div>
 
       <img src="resources/chongshan.JPG" alt="photography">
       <img src="resources/chongshan_2.jpg" alt="photography">
@@ -37,22 +37,13 @@
         histories are worth archiving?
       </p>
 
-      <!-- Rest of your content -->
+      <p class="project-note">Explore #0 Elephant Tale and #1 Habitat using the OEMK submenu in the left column.</p>
 
     </main>
   </div>
 
   <!-- Load Navigation -->
-  <script>
-    fetch("nav.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("nav-placeholder").innerHTML = data;
-      })
-      .catch(error => {
-        console.error("Error loading navigation:", error);
-      });
-  </script>
+  <script src="site.js" defer></script>
 
 </body>
 </html>
