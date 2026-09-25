@@ -2262,13 +2262,83 @@ p {
 }
 
 
-/* Elephant Tale — tighter spacing for the opening three sentences */
-.elephant-page .elephant-intro p {
-  margin-bottom: 5px;
-  line-height: 1.6;
+/* ============================================================
+   ELEPHANT TALE / JAPAN INSTALLATION PHOTO PILE
+   Existing Yakushi-do hero is full width and never cropped.
+   Six supporting images use a tight two-column editorial mosaic.
+   Scoped to this page; publication slider and other pages unchanged.
+   ============================================================ */
+.elephant-page .elephant-japan .japan-image--hero {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 8px;
 }
-
-.elephant-page .elephant-intro p:last-child {
-  margin-bottom: 0;
+.elephant-page .content .elephant-japan .japan-image--hero img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  object-fit: contain;
 }
-
+.elephant-page .elephant-japan-pile {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+}
+.elephant-page .elephant-japan-pile-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.elephant-page .elephant-japan-pile .japan-pile-image {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #edeae6;
+}
+.elephant-page .elephant-japan-pile .japan-pile-image--four,
+.elephant-page .elephant-japan-pile .japan-pile-image--seven { aspect-ratio: 1 / 1; }
+.elephant-page .elephant-japan-pile .japan-pile-image--three,
+.elephant-page .elephant-japan-pile .japan-pile-image--six,
+.elephant-page .elephant-japan-pile .japan-pile-image--five,
+.elephant-page .elephant-japan-pile .japan-pile-image--one { aspect-ratio: 4 / 5; }
+.elephant-page .content .elephant-japan-pile .japan-pile-image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  padding: 0;
+  object-fit: cover;
+  object-position: center;
+}
+/* Keep the printed works and visitors within the crop where possible. */
+.elephant-page .content .japan-pile-image--four img { object-position: 45% center; }
+.elephant-page .content .japan-pile-image--three img { object-position: 52% center; }
+.elephant-page .content .japan-pile-image--seven img { object-position: 54% 47%; }
+.elephant-page .content .japan-pile-image--five img { object-position: 57% center; }
+.elephant-page .elephant-japan-group-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 13px 0 0;
+  font: 11px/1.6 "Syne Mono", monospace;
+  color: #817c74;
+}
+.elephant-page .elephant-japan .elephant-japan-credit { margin: 25px 0 0; }
+@media (max-width: 600px) {
+  .elephant-page .elephant-japan .japan-image--hero { margin-bottom: 6px; }
+  .elephant-page .elephant-japan-pile,
+  .elephant-page .elephant-japan-pile-column { gap: 6px; }
+}
+@media (max-width: 440px) {
+  .elephant-page .elephant-japan-pile { grid-template-columns: minmax(0, 1fr); }
+  /* On narrow screens, the two columns become a readable image sequence. */
+  .elephant-page .elephant-japan-pile .japan-pile-image { aspect-ratio: 4 / 5; }
+  .elephant-page .elephant-japan-pile .japan-pile-image--four,
+  .elephant-page .elephant-japan-pile .japan-pile-image--seven { aspect-ratio: 1 / 1; }
+}
