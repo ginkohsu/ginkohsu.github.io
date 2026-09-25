@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <script defer="" src="site.js"></script>
-<link href="style.css?v=elephant-reader-1" rel="stylesheet"/></head>
+<link href="style.css?v=elephant-page2-frame-1" rel="stylesheet"/></head>
 <body class="elephant-page">
 <div class="container">
 <!-- Shared left navigation -->
@@ -62,7 +62,7 @@
 <img alt="Elephant Tale publication, elephant imagery and text" loading="lazy" src="resources/oemk0_1.JPG"/>
 </figure>
 <figure class="elephant-reader-slide" id="elephant-spread-2">
-<img alt="Elephant Tale publication, open spread with archival references" loading="lazy" src="resources/oemk0_2.jpeg"/>
+<img alt="Elephant Tale publication, open spread with archival references" loading="eager" src="resources/oemk0_2.jpeg"/>
 </figure>
 <figure class="elephant-reader-slide" id="elephant-spread-3">
 <img alt="Elephant Tale publication, open spread with text and monochrome imagery" loading="lazy" src="resources/oemk0_3.jpeg"/>
@@ -173,6 +173,22 @@
   const viewport = document.getElementById('elephant-reader');
   if (!viewport) return;
   const slides = [...viewport.querySelectorAll('.elephant-reader-slide')];
+  // The second spread sets the frame's actual ratio after its image loads.
+  // Every other spread fills the same frame and may be cropped at the edges.
+  const referenceImage = viewport.querySelector('#elephant-spread-2 img');
+  if (referenceImage) {
+    const setReferenceRatio = () => {
+      if (referenceImage.naturalWidth && referenceImage.naturalHeight) {
+        viewport.style.setProperty(
+          '--elephant-spread-ratio',
+          `${referenceImage.naturalWidth} / ${referenceImage.naturalHeight}`
+        );
+      }
+    };
+    if (referenceImage.complete) setReferenceRatio();
+    else referenceImage.addEventListener('load', setReferenceRatio, { once: true });
+  }
+
   const prev = document.querySelector('[data-elephant-prev]');
   const next = document.querySelector('[data-elephant-next]');
   const current = document.querySelector('[data-elephant-current]');

@@ -2028,3 +2028,37 @@ p {
 @media (prefers-reduced-motion: reduce) {
   .elephant-page .elephant-reader-viewport { scroll-behavior: auto; }
 }
+
+
+/* Elephant Tale: all three spreads use the SECOND spread's actual frame ratio.
+   The JS reads oemk0_2.jpeg's intrinsic dimensions and sets the CSS variable.
+   Cover on the right keeps its natural proportions. */
+.elephant-page .elephant-reader-viewport {
+  --elephant-spread-ratio: 3 / 2; /* temporary layout until spread 2 loads */
+  aspect-ratio: var(--elephant-spread-ratio);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.elephant-page .elephant-reader-track {
+  height: 100%;
+  align-items: stretch;
+}
+.elephant-page .elephant-reader-slide {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.elephant-page .content .elephant-reader-slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  object-fit: cover;
+  object-position: center center;
+}
+/* The second image matches the frame ratio and remains entirely visible.
+   Individual framing can be fine-tuned with object-position if required. */
+.elephant-page #elephant-spread-2 img { object-position: center center; }
