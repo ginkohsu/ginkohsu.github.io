@@ -1,63 +1,95 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ginko Hsu is a Helsinki-based sculptor and interdisciplinary artist. Selected works and Of No Origin, an ongoing research and publication project.">
-  <title>Ginko Hsu — Selected Works</title>
+  <meta name="description" content="Ginko Hsu — artist portfolio and selected works.">
+
+  <title>Ginko Hsu</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=guided-20260925">
-  <script src="site.js?v=guided-20260925" defer></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css?v=homepage2">
+  <script src="site.js" defer></script>
 </head>
+
 <body class="home-page">
+
   <div class="container">
+
+    <!-- Shared navigation -->
     <div id="nav-placeholder"></div>
+
+    <!-- Homepage -->
     <main class="content home-content" id="main-content">
-      <section class="home-hero" aria-labelledby="home-hero-title">
-        <div class="home-hero-intro">
-          <span class="home-kicker">SELECTED WORK / PROLOGUE TO OF NO ORIGIN</span>
-          <a class="home-small-link" href="oemk.html">About the research ↗</a>
-        </div>
-        <h1 id="home-hero-title"><a href="oemk-0.html"><span lang="zh-Hans">亻象</span> <span class="home-title-separator">/</span> Elephant Tale</a></h1>
-        <a class="home-hero-image" href="oemk-0.html" aria-label="Explore Elephant Tale">
-          <img src="resources/elephant_tale_kyykyy.png" alt="Elephant Tale, exhibition view at Kyykky Gallery, Helsinki" fetchpriority="high" decoding="async">
+
+      <div class="home-stage" aria-label="Selected artworks">
+
+        <!-- 01: Elephant Tale -->
+        <a
+          class="home-art home-art--elephant"
+          href="oemk-0.html"
+          aria-label="View Elephant Tale, OEMK phase 0"
+        >
+          <img
+            src="resources/elephant_tale_kyykyy.png"
+            alt="Elephant Tale, exhibition view at Kyykky Gallery"
+            fetchpriority="high"
+            decoding="async"
+          >
+
+          <span class="home-art__caption">
+            Elephant Tale · OEMK #0
+          </span>
         </a>
-        <div class="home-hero-footer">
-          <p>2025–2026 <span aria-hidden="true">·</span> An elephant, an image, a partial view of the whole.</p>
-          <a href="oemk-0.html">Enter the project ↗</a>
-        </div>
-      </section>
 
-      <section class="home-bridge" aria-label="About the practice">
-        <p>Working across sculpture, images and research-based publishing, Ginko Hsu approaches memory and meaning through fragments, objects and the stories they carry.</p>
-        <a href="oemk.html">Follow the research — Of No Origin ↗</a>
-      </section>
 
-      <section class="home-selected" aria-labelledby="home-selected-heading">
-        <div class="home-section-head">
-          <h2 id="home-selected-heading">Other encounters</h2>
-          <span>SELECTED WORKS</span>
-        </div>
-        <div class="home-selected-grid">
-          <article class="home-selected-work home-selected-work--gate">
-            <a class="home-work-image" href="gate.html" aria-label="Explore The Watchers of the Gate">
-              <img src="resources/Xu_06_01_The Watchers of the Gate.jpg" alt="The Watchers of the Gate, glass sculpture" loading="lazy" decoding="async">
-            </a>
-            <h3><a href="gate.html">The Watchers of the Gate</a></h3>
-            <p>Glass sculpture</p>
-          </article>
-          <article class="home-selected-work home-selected-work--gods">
-            <a class="home-work-image" href="oemk-proxies.html#manufacturing-gods" aria-label="Explore Manufacturing Gods within Proxies">
-              <img src="resources/manufacturing_gods.png" alt="Manufacturing Gods, photographic work on handmade paper" loading="lazy" decoding="async">
-            </a>
-            <h3><a href="oemk-proxies.html#manufacturing-gods">Manufacturing Gods</a></h3>
-            <p>2026 · Of No Origin / Proxies</p>
-          </article>
-        </div>
-      </section>
+        <!-- 02: The Watchers of the Gate -->
+        <a
+          class="home-art home-art--glass"
+          href="gate.html"
+          aria-label="View The Watchers of the Gate"
+        >
+          <img
+            src="resources/Xu_06_01_The Watchers of the Gate.jpg"
+            alt="The Watchers of the Gate, glass sculpture"
+            decoding="async"
+          >
+
+          <span class="home-art__caption">
+            The Watchers of the Gate
+          </span>
+        </a>
+
+
+        <!-- 03: Manufacturing Gods -->
+        <figure class="home-art home-art--gods">
+
+          <img
+            src="resources/manufacturing_gods.png"
+            alt="Manufacturing Gods, installation view with works on paper and a checkerboard floor"
+            decoding="async"
+          >
+
+          <figcaption class="home-art__caption">
+            Manufacturing Gods · 2026
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+
     </main>
+
   </div>
+
 </body>
 </html>
+
