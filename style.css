@@ -1794,11 +1794,70 @@ p {
   .oemk-overview-header h1 { font-size: 28px; }
 }
 
+/* ==============================================================
+   GINKO — QUIETER PAGE RHYTHM  |  25 September 2026
+   Append to the END of the existing style.css.
+   Only the OEMK pages change. All texts, images, navigation and
+   homepage placement stay exactly as they are.
+   ============================================================== */
 
+/* 01 — A slightly closer typographic rhythm, without tiny text. */
+.oemk-overview-page .oemk-overview-statement p,
+.elephant-page .elephant-intro p,
+.elephant-page .elephant-japan-intro,
+.habitat-page .habitat-installation-text p,
+.habitat-page .habitat-publication-text p,
+.proxies-page .proxies-introduction p,
+.proxies-page .proxies-work-text p {
+  line-height: 1.68;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
 
+/* Keep descriptions visually attached to the work they describe. */
+.oemk-overview-header,
+.elephant-header,
+.habitat-header,
+.proxies-header { margin-bottom: 40px; }
+.elephant-intro { margin-top: 20px; }
+.elephant-page .elephant-figure figcaption,
+.habitat-page .habitat-figure figcaption { margin-top: 9px; }
 
-    
-  
+/* 02 — Overview: smaller archival images, closer to the research text. */
+.oemk-overview-images { margin: 38px 0 52px; }
+.oemk-overview-image--lead { width: 80%; margin-bottom: 26px; }
+.oemk-overview-image-pair { gap: 18px; }
+.oemk-overview-image-pair .oemk-overview-image:last-child { padding-top: 24px; }
+.oemk-overview-directions { padding-top: 25px; }
+.oemk-overview-footer { margin-top: 54px; }
+
+/* 03 — Elephant Tale: a continuous sequence, still deliberately staggered. */
+.elephant-drawing { width: 81%; margin-bottom: 76px; }
+.elephant-cover { width: 45%; margin-bottom: 70px; }
+.elephant-spreads { gap: 56px; }
+.elephant-spread--one { width: 88%; }
+.elephant-spread--two { width: 75%; }
+.elephant-spread--three { width: 80%; }
+.elephant-japan { margin-top: 88px; margin-bottom: 82px; }
+.elephant-japan-header { margin-bottom: 44px; }
+.elephant-japan-intro { margin-top: 13px; }
+.japan-image { margin-bottom: 54px; }
+.japan-image--one { width: 88%; }
+.japan-image--second-hall { width: 78%; }
+.japan-image--visitors { width: 59%; }
+.japan-image--exterior { width: 73%; }
+.elephant-statement { margin-top: 85px; margin-bottom: 85px; }
+
+/* 04 — Habitat: let installation, details and writing read as one unit. */
+.habitat-image--gathering { width: 88%; margin-bottom: 21px; }
+.habitat-installation-text { max-width: 560px; margin-bottom: 44px; }
+.habitat-installation-text h2 { margin-bottom: 10px; }
+.habitat-image--detail { width: 72%; margin-bottom: 49px; }
+.habitat-image--overhead { width: 83%; }
+.habitat-installation { margin-bottom: 82px; }
+.habitat-publication { padding-top: 38px; }
+.habitat-publication-header { margin-bottom: 24px; }
+.habitat-publication-text { margin-bottom: 32px; }
 .habitat-footer { margin-top: 72px; }
 
 /* 05 — Proxies: the picture, title, metadata and paragraph belong together. */
@@ -1848,3 +1907,4 @@ p {
   .proxies-figure--secondary { width: 87%; margin-top: 23px; }
   .proxies-work { margin-bottom: 53px; }
   .proxies-work--angel { padding-top: 28px; }
+}
