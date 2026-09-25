@@ -1671,3 +1671,125 @@ p {
   .proxies-work { margin-bottom: 75px; }
   .proxies-work--angel { padding-top: 44px; }
 }
+
+
+/* ==========================================================
+   OEMK — FINAL UNIFIED TYPOGRAPHY AND RHYTHM
+   Scope: Overview, Elephant Tale, Habitat, Proxies only.
+   ========================================================== */
+.oemk-overview-page .oemk-overview-content,
+.elephant-page .elephant-content,
+.habitat-page .habitat-content,
+.proxies-page .proxies-content { padding: 0 7% 100px; }
+.oemk-overview-project,.elephant-project,.habitat-project,.proxies-project {
+  width: 100%; max-width: 1050px; margin: 0 auto;
+}
+.oemk-overview-header,.elephant-header,.habitat-header,.proxies-header {
+  max-width: 650px; margin: 55px 0 56px;
+}
+.oemk-overview-eyebrow,.elephant-eyebrow,.habitat-eyebrow,.proxies-eyebrow {
+  margin: 0; font: 400 11px/1.6 "Syne Mono",monospace;
+  letter-spacing: .03em; color: #89847c;
+}
+.oemk-overview-header h1,.elephant-header h1,.habitat-header h1,.proxies-header h1 {
+  margin: 12px 0 0; padding: 0;
+  font: 400 32px/1.26 Helvetica,Arial,sans-serif;
+  letter-spacing: -.025em; color:#37342f;
+}
+.elephant-header h1 {
+  font-family: "Noto Serif CJK SC","Songti SC",SimSun,serif;
+  font-size: 37px; letter-spacing: 0;
+}
+.oemk-overview-subtitle,.elephant-subtitle {
+  margin: 8px 0 0; font: 400 15px/1.5 Helvetica,Arial,sans-serif;
+  color:#625d55;
+}
+.oemk-overview-page .content p,.elephant-intro p,.elephant-japan-intro,
+.habitat-installation-text p,.habitat-publication-text p,
+.proxies-introduction p,.proxies-work-text p {
+  font-family: Helvetica,Arial,sans-serif; font-size:14px; line-height:1.8;
+  color:#625d55;
+}
+.oemk-overview-page .content h2,.elephant-japan-header h2,
+.habitat-installation-text h2,.habitat-publication-header h2 {
+  font:400 23px/1.32 Helvetica,Arial,sans-serif;
+  letter-spacing:-.02em; color:#37342f;
+}
+/* All OEMK body text shares one readable column, while pictures can vary. */
+.oemk-overview-statement,.oemk-overview-directions { max-width:620px; }
+.oemk-overview-statement p { margin:0 0 19px; }
+.oemk-overview-images { margin:65px 0 85px; }
+.oemk-overview-image { margin:0; }
+.oemk-overview-page .content .oemk-overview-image img {
+  display:block; width:100%;max-width:100%;height:auto;padding:0;object-fit:contain;
+}
+.oemk-overview-image--lead { width:88%;margin:0 0 44px; }
+.oemk-overview-image-pair { display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start; }
+.oemk-overview-image-pair .oemk-overview-image:last-child { padding-top:38px; }
+.oemk-overview-directions { border-top:1px solid #dedbd5;padding-top:34px; }
+.oemk-overview-directions h2 { margin:0 0 16px; }
+.oemk-overview-directions>p { margin:0 0 26px; }
+.oemk-overview-links { border-top:1px solid #e7e4de; }
+.oemk-overview-links a,.oemk-overview-link--future {
+  display:flex;justify-content:space-between;align-items:baseline;gap:20px;
+  padding:15px 0;border-bottom:1px solid #e7e4de;
+  color:#37342f;text-decoration:none;font:400 14px/1.5 Helvetica,Arial,sans-serif;
+}
+.oemk-overview-links a span:last-child,.oemk-overview-link--future span:last-child {
+  font:400 11px/1.5 "Syne Mono",monospace;color:#89847c;text-align:right;
+}
+.oemk-overview-link--future { color:#89847c; }
+.oemk-overview-footer {margin-top:75px;padding-top:22px;border-top:1px solid #dedbd5;
+  font:400 11px/1.7 "Syne Mono",monospace;color:#89847c;}
+/* Main images stay editorial, but their captions and explanations stay close. */
+.habitat-image--gathering { margin-bottom:28px; }
+.habitat-installation-text { margin:0 0 68px auto; }
+.habitat-installation-text h2 {margin:0 0 13px;}
+.habitat-publication-header { margin-bottom:35px; }
+.habitat-publication-header h2 {margin:12px 0 8px;}
+.elephant-japan-header h2 {margin:12px 0 8px;}
+.proxies-header {margin-bottom:54px;}
+.proxies-header h1 {margin:12px 0 24px;}
+.proxies-introduction {max-width:620px;margin:0;}
+.proxies-introduction p {margin:0 0 15px;}
+.proxies-work {margin-bottom:98px;}
+.proxies-figure--primary {width:100%;margin:0 0 15px;}
+.proxies-work-information {max-width:620px;margin:0;}
+.proxies-work-information h2 {
+  margin:0 0 7px;padding:0;
+  font:500 20px/1.32 Helvetica,Arial,sans-serif;
+  letter-spacing:-.012em;color:#37342f;
+}
+.proxies-work-information .proxies-work-details {
+  margin:0 0 9px;font:400 12px/1.65 Helvetica,Arial,sans-serif;color:#777168;
+}
+.proxies-work-text {max-width:580px;margin-top:25px;}
+.proxies-work-text p {margin:0 0 16px;}
+.proxies-figure--secondary {width:78%;margin:38px 0 0;}
+.proxies-work--angel {padding-top:54px;}
+@media(max-width:768px) {
+  .oemk-overview-page .oemk-overview-content,.elephant-page .elephant-content,
+  .habitat-page .habitat-content,.proxies-page .proxies-content {padding:0 5% 70px;}
+  .oemk-overview-header,.elephant-header,.habitat-header,.proxies-header {margin:38px 0 44px;}
+  .oemk-overview-header h1,.habitat-header h1,.proxies-header h1 {font-size:29px;}
+  .elephant-header h1 {font-size:34px;}
+  .oemk-overview-image--lead {width:100%;margin-bottom:26px;}
+  .oemk-overview-image-pair {gap:14px;}
+  .oemk-overview-image-pair .oemk-overview-image:last-child {padding-top:20px;}
+  .oemk-overview-images {margin:48px 0 60px;}
+  .oemk-overview-links a,.oemk-overview-link--future {flex-direction:column;align-items:start;gap:4px;}
+  .oemk-overview-links a span:last-child,.oemk-overview-link--future span:last-child {text-align:left;}
+  .habitat-image--gathering {margin-bottom:25px;}
+  .habitat-installation-text {margin:0 0 53px;}
+  .proxies-figure--primary {margin-bottom:12px;}
+  .proxies-work-information h2 {font-size:20px;}
+  .proxies-figure--secondary {width:90%;margin-top:32px;}
+}
+
+/* OEMK overview bilingual title: both languages are the main title. */
+.oemk-overview-header .oemk-title-line { display: block; }
+.oemk-overview-header h1 { max-width: 760px; line-height: 1.18; }
+.oemk-overview-header .oemk-title-line + .oemk-title-line { margin-top: 5px; }
+@media (max-width: 768px) {
+  .oemk-overview-header h1 { font-size: 28px; }
+}
