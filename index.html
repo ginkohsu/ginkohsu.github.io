@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ginko Hsu — artist portfolio and selected works.">
 
   <title>Ginko Hsu</title>
 
@@ -13,7 +15,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=homepage2">
   <script src="site.js" defer></script>
 </head>
 
@@ -25,62 +27,67 @@
     <div id="nav-placeholder"></div>
 
     <!-- Homepage -->
-    <main class="content home-content">
+    <main class="content home-content" id="main-content">
 
-      <div class="home-gallery">
+      <div class="home-stage" aria-label="Selected artworks">
 
-        <!-- 01 / Elephant Tale -->
-        <figure class="home-figure home-figure--elephant">
+        <!-- 01: Elephant Tale -->
+        <a
+          class="home-art home-art--elephant"
+          href="oemk-0.html"
+          aria-label="View Elephant Tale, OEMK phase 0"
+        >
+          <img
+            src="resources/elephant_tale_kyykyy.png"
+            alt="Elephant Tale, exhibition view at Kyykky Gallery"
+            fetchpriority="high"
+            decoding="async"
+          >
 
-          <a href="oemk-0.html">
-            <img
-              src="resources/elephant_tale_kyykyy.png"
-              alt="Elephant Tale, exhibition view at Kyykky Gallery"
-              fetchpriority="high"
-            >
-          </a>
-
-          <figcaption>
-            Elephant Tale, 2025
-          </figcaption>
-
-        </figure>
+          <span class="home-art__caption">
+            Elephant Tale · OEMK #0
+          </span>
+        </a>
 
 
-        <!-- 02 / The Watchers of the Gate -->
-        <figure class="home-figure home-figure--glass">
+        <!-- 02: The Watchers of the Gate -->
+        <a
+          class="home-art home-art--glass"
+          href="gate.html"
+          aria-label="View The Watchers of the Gate"
+        >
+          <img
+            src="resources/Xu_06_01_The Watchers of the Gate.jpg"
+            alt="The Watchers of the Gate, glass sculpture"
+            decoding="async"
+          >
 
-          <a href="gate.html">
-            <img
-              src="resources/Xu_06_01_The Watchers of the Gate.jpg"
-              alt="The Watchers of the Gate, glass sculpture"
-              loading="lazy"
-            >
-          </a>
-
-          <figcaption>
+          <span class="home-art__caption">
             The Watchers of the Gate
-          </figcaption>
+          </span>
+        </a>
 
-        </figure>
 
-
-        <!-- 03 / Manufacturing Gods -->
-        <figure class="home-figure home-figure--gods">
+        <!-- 03: Manufacturing Gods -->
+        <figure class="home-art home-art--gods">
 
           <img
             src="resources/manufacturing_gods.png"
-            alt="Manufacturing Gods, exhibition installation"
-            loading="lazy"
+            alt="Manufacturing Gods, installation view with works on paper and a checkerboard floor"
+            decoding="async"
           >
 
-          <figcaption>
-            Manufacturing Gods, 2026
+          <figcaption class="home-art__caption">
+            Manufacturing Gods · 2026
           </figcaption>
 
         </figure>
 
       </div>
+
+      <p class="home-footnote">
+        Selected images from different moments.
+      </p>
 
     </main>
 
