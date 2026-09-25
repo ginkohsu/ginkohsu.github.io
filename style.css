@@ -1012,3 +1012,280 @@ p {
 
 }
 
+
+/* =========================================
+   OEMK #1 — HABITAT
+   ========================================= */
+
+.habitat-page .habitat-content {
+  display: block;
+  min-width: 0;
+  padding: 0 7% 110px;
+}
+
+.habitat-project {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+
+/* PAGE HEADING */
+
+.habitat-header {
+  max-width: 650px;
+  margin: 75px 0 80px;
+}
+
+.habitat-eyebrow {
+  font-family: "Syne Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  color: #89847c;
+}
+
+.habitat-header h1 {
+  margin: 20px 0 0;
+  padding: 0;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: clamp(40px, 5vw, 65px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+
+  color: #37342f;
+}
+
+
+/* IMAGES */
+
+.habitat-figure {
+  margin: 0;
+}
+
+.habitat-page .content .habitat-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  object-fit: contain;
+}
+
+.habitat-figure figcaption {
+  margin-top: 15px;
+
+  font-family: "Syne Mono", monospace;
+  font-size: 11px;
+  line-height: 1.7;
+
+  color: #89847c;
+}
+
+
+/* SHELL / HABITAT INSTALLATION */
+
+.habitat-installation {
+  margin-bottom: 155px;
+}
+
+.habitat-image--gathering {
+  width: 96%;
+  margin-bottom: 100px;
+}
+
+.habitat-installation-text {
+  max-width: 540px;
+  margin: 0 5% 100px auto;
+}
+
+.habitat-installation-text h2 {
+  margin: 0 0 25px;
+  padding: 0;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: clamp(25px, 3vw, 37px);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+
+  color: #37342f;
+}
+
+.habitat-installation-text p {
+  margin-bottom: 20px;
+
+  font-size: 15px;
+  line-height: 1.85;
+
+  color: #625d55;
+}
+
+
+/* INSTALLATION DETAILS */
+
+.habitat-image--detail {
+  width: 76%;
+  margin: 0 0 105px 4%;
+}
+
+.habitat-image--overhead {
+  width: 89%;
+  margin: 0 0 0 auto;
+}
+
+
+/* FORTHCOMING PUBLICATION */
+
+.habitat-publication {
+  padding-top: 55px;
+  border-top: 1px solid #dedbd5;
+}
+
+.habitat-publication-header {
+  max-width: 650px;
+  margin: 0 0 65px 7%;
+}
+
+.habitat-publication-header h2 {
+  margin: 20px 0 10px;
+  padding: 0;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: clamp(30px, 3.8vw, 49px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+
+  color: #37342f;
+}
+
+.habitat-publication-date {
+  font-family: "Syne Mono", monospace;
+  font-size: 11px;
+  color: #89847c;
+}
+
+.habitat-publication-text {
+  max-width: 570px;
+  margin: 0 5% 55px auto;
+}
+
+.habitat-publication-text p {
+  margin: 0 0 24px;
+
+  font-size: 15px;
+  line-height: 1.85;
+
+  color: #625d55;
+}
+
+.habitat-publication-status {
+  max-width: 570px;
+  margin: 0 5% 0 auto;
+
+  font-family: "Syne Mono", monospace;
+  font-size: 11px;
+
+  color: #89847c;
+}
+
+
+/* FOOTER */
+
+.habitat-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 25px;
+
+  margin-top: 145px;
+  padding-top: 24px;
+
+  border-top: 1px solid #dedbd5;
+
+  font-family: "Syne Mono", monospace;
+  font-size: 11px;
+  line-height: 1.7;
+
+  color: #89847c;
+}
+
+.habitat-footer p {
+  margin: 0;
+  font-size: inherit;
+}
+
+.habitat-page .content .habitat-footer a {
+  color: #686259;
+  text-decoration: none;
+}
+
+.habitat-page .content .habitat-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .habitat-page .habitat-content {
+    padding: 0 5% 70px;
+  }
+
+  .habitat-header {
+    margin: 45px 0 65px;
+  }
+
+  .habitat-header h1 {
+    font-size: 43px;
+  }
+
+  .habitat-installation-text p,
+  .habitat-publication-text p {
+    font-size: 14px;
+  }
+
+  .habitat-image--gathering {
+    width: 100%;
+    margin-bottom: 75px;
+  }
+
+  .habitat-installation-text {
+    margin: 0 0 75px;
+  }
+
+  .habitat-image--detail {
+    width: 87%;
+    margin: 0 0 75px;
+  }
+
+  .habitat-image--overhead {
+    width: 100%;
+    margin: 0;
+  }
+
+  .habitat-installation {
+    margin-bottom: 100px;
+  }
+
+  .habitat-publication-header {
+    margin: 0 0 50px;
+  }
+
+  .habitat-publication-text {
+    margin: 0 0 50px;
+  }
+
+  .habitat-publication-status {
+    margin: 0;
+  }
+
+  .habitat-footer {
+    margin-top: 100px;
+  }
+
+}
+
