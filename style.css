@@ -618,3 +618,259 @@ p {
 
 }
 
+
+/* =========================================
+   OEMK #0 — ELEPHANT TALE
+   ========================================= */
+
+.elephant-page .elephant-content {
+  display: block;
+  min-width: 0;
+  padding: 0 7% 110px;
+}
+
+.elephant-project {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+
+/* INTRODUCTION */
+
+.elephant-header {
+  max-width: 650px;
+  margin: 80px 0 105px;
+}
+
+.elephant-eyebrow {
+  font-family: "Syne Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  color: #89847c;
+}
+
+.elephant-header h1 {
+  margin: 25px 0 5px;
+  padding: 0;
+
+  font-family: "Noto Serif CJK SC", "Songti SC",
+               "SimSun", serif;
+
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 400;
+  line-height: 1.3;
+
+  color: #37342f;
+}
+
+.elephant-subtitle {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+
+  color: #58534d;
+}
+
+.elephant-intro {
+  max-width: 510px;
+  margin-top: 48px;
+}
+
+.elephant-intro p {
+  margin: 0 0 15px;
+
+  font-size: 15px;
+  line-height: 1.8;
+
+  color: #625d55;
+}
+
+
+/* IMAGES */
+
+.elephant-figure {
+  margin: 0;
+}
+
+.elephant-page .content .elephant-figure img {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+
+  padding: 0;
+
+  object-fit: contain;
+}
+
+.elephant-figure figcaption {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+  margin-top: 16px;
+
+  font-family: "Syne Mono", monospace;
+  font-size: 11px;
+  line-height: 1.6;
+
+  color: #817c74;
+}
+
+
+/* DRAWINGS */
+
+.elephant-drawing {
+  width: 88%;
+  margin: 0 0 150px;
+}
+
+
+/* PUBLICATION COVER */
+
+.elephant-cover {
+  width: 49%;
+  max-width: 440px;
+
+  margin: 0 0 135px auto;
+}
+
+
+/* PUBLICATION SPREADS */
+
+.elephant-spreads {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 115px;
+}
+
+.elephant-spread--one {
+  width: 94%;
+  align-self: flex-start;
+}
+
+.elephant-spread--two {
+  width: 78%;
+  align-self: flex-end;
+}
+
+.elephant-spread--three {
+  width: 86%;
+  align-self: flex-start;
+  margin-left: 4%;
+}
+
+
+/* PROJECT STATEMENT */
+
+.elephant-statement {
+  max-width: 580px;
+
+  margin: 145px 0 145px 12%;
+}
+
+.elephant-statement p {
+  font-size: clamp(17px, 2vw, 23px);
+  line-height: 1.65;
+  letter-spacing: -0.02em;
+
+  color: #48433e;
+}
+
+
+/* FOOTER */
+
+.elephant-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+
+  gap: 25px;
+
+  padding-top: 24px;
+  border-top: 1px solid #dedbd5;
+
+  font-family: "Syne Mono", monospace;
+  font-size: 11px;
+  line-height: 1.7;
+
+  color: #89847c;
+}
+
+.elephant-footer p {
+  max-width: 390px;
+  margin: 0;
+  font-size: inherit;
+}
+
+.elephant-page .content .elephant-footer a {
+  color: #686259;
+  text-decoration: none;
+}
+
+.elephant-page .content .elephant-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .elephant-page .elephant-content {
+    padding: 0 5% 70px;
+  }
+
+  .elephant-header {
+    margin: 45px 0 75px;
+  }
+
+  .elephant-header h1 {
+    font-size: 56px;
+  }
+
+  .elephant-intro {
+    margin-top: 35px;
+  }
+
+  .elephant-intro p {
+    font-size: 14px;
+  }
+
+  .elephant-drawing {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+
+  .elephant-cover {
+    width: 78%;
+    margin-bottom: 90px;
+  }
+
+  .elephant-spreads {
+    gap: 75px;
+  }
+
+  .elephant-spread--one,
+  .elephant-spread--two,
+  .elephant-spread--three {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .elephant-statement {
+    margin: 100px 0;
+  }
+
+  .elephant-footer {
+    align-items: flex-start;
+  }
+
+}
+
