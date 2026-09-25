@@ -1,283 +1,408 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* =========================================
-   HOMEPAGE — OVERLAPPING IMAGE INDEX
-   ========================================= */
+/* Body styling */
+body, .content {
+    font-family: Helvetica, sans-serif;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* Container setup */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Side navigation styling */
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: visible;
+    flex-shrink: 0;
+    width: 30%;
+    height: 100vh;
+    padding: 5%;
+    font-family: "Syne Mono", monospace;
+    background-color: #f4f4f4;
+}
+
+/* Info container styling */
+.info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+/* List styling */
+.side-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-nav ul li {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.side-nav ul li a {
+    display: block;
+    color: rgb(15, 15, 15);
+    text-decoration: none;
+    padding: 3px;
+    text-align: left;
+}
+
+.side-nav ul li a:hover {
+    background-color: #dddddd;
+}
+
+/* Main content styling */
+.content {
+    margin-left: 30%;
+    flex-grow: 1;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Part (image row) styling */
+.part {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3%;
+    margin: 10px 0;
+}
+
+.part img {
+    max-width: 45%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Header styling */
+h1 {
+    font-family: "Helvetica", sans-serif;
+    padding-top: 30px;
+    text-align: left;
+    font-size: 25px;
+}
+
+h1 a, .content a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+h1 a:hover {
+    color: rgb(68, 221, 152);
+}
+
+h2, .content h2 {
+    font-family: "Syne Mono", monospace;
+}
+
+h2 a {
+    text-decoration: none;
+    color: rgb(88, 247, 175);
+}
+
+h2 a:hover, .content a:hover {
+    color: rgb(68, 221, 152);
+}
+
+.content h2 {
+    margin: 24px 0 12px 0;
+    font-size: 15px;
+    color: rgb(160, 154, 154);
+}
+
+.side-nav h1, .side-nav h2 {
+    color: #6cf08f;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1.1em;
+}
+
+.content p {
+    margin: 12px 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Info container image styling */
+.info-container img {
+    max-width: 30px;
+    height: auto;
+}
+
+/* Info container heading styling */
+.info-container h2 {
+    margin: 0;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: "Syne Mono", monospace;
+}
+
+.info-container a {
+    text-decoration: none;
+}
+
+/* Content images styling */
+.content img {
+    padding: 10px 0;
+    max-width: 75%;
+    height: auto;
+    object-fit: cover;
+}
+
+#small {
+    max-width: 70%;
+    height: auto;
+}
+
+#watcherIcon {
+    max-width: 25%;
+    height: auto;
+    padding: 50px;
+}
+
+#demian {
+    max-width: 80%;
+    height: auto;
+    object-fit: cover;
+}
+
+#demian2 {
+    max-width: 60%;
+    height: auto;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+#demianStudio {
+    max-width: 30%;
+    height: auto;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+#page-header {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.content .frontpic {
+    position: relative;
+    height: auto;
+    padding: 10px;
+}
+
+/* Media queries for responsive */
+@media (min-width: 600px) {
+    .frontpic img {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .frontpic img {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .frontpic img {
+        width: 60%;
+    }
+}
+
+/* Mobile sidebar fix */
+@media (max-width: 768px) {
+    .side-nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow-y: visible;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 10px 5%;
+    }
+
+    .part {
+        flex-direction: column;
+        gap: 5%;
+    }
+
+    .part img {
+        max-width: 100%;
+    }
+
+    .info-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 8px 12px;
+        border-radius: 12px;
+        z-index: 1000;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .info-container:hover {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    .info-container img {
+        display: none;
+    }
+
+    .info-container h2 a {
+        font-size: 14px;
+    }
+}
 
 
-/* Main homepage area */
+/* ===== 2026: Shared OEMK navigation and project pages ===== */
+.side-nav { display: flex; flex-direction: column; overflow-y: auto; padding: 5%; }
+.side-nav .project-list { margin-bottom: 26px; }
+.side-nav .project-group { margin: 10px 0; }
+.oemk-menu > summary { display: flex; align-items: center; justify-content: space-between; gap: 8px; cursor: pointer; padding: 3px; list-style: none; color: #0f0f0f; }
+.oemk-menu > summary::-webkit-details-marker { display: none; }
+.oemk-menu > summary:hover { background: #ddd; }
+.menu-indicator::before { content: '+'; }
+.oemk-menu[open] .menu-indicator::before { content: '−'; }
+.side-nav .submenu { padding-left: 15px; margin: 5px 0 12px; }
+.side-nav .submenu li { margin: 3px 0; font-size: 13px; }
+.side-nav .submenu a { padding: 5px 3px; }
+.side-nav a[aria-current='page'] { text-decoration: underline; text-underline-offset: 3px; }
+.side-nav .info-container { margin-top: auto; padding-top: 16px; }
+/* Keep the original broad, image-led layout while making editorial text readable. */
+.content .project-intro { width: min(75%, 740px); margin: 38px auto 14px; align-self: center; }
+.content .project-intro h1 { padding-top: 0; font-size: clamp(25px, 3vw, 38px); }
+.content .eyebrow { font-family: 'Syne Mono', monospace; font-size: 12px; letter-spacing: .04em; }
+.content .project-subtitle { color: #777; }
+.content .project-note { width: min(75%, 740px); color: #777; }
+.content .project-figure { width: min(75%, 900px); margin: 24px 0; }
+.content .project-figure img { display: block; max-width: 100%; width: 100%; }
+.content .project-figure figcaption { font-size: 12px; color: #777; padding: 5px 0 18px; }
+.nav-fallback { padding: 20px; }
+@media (max-width: 768px) {
+  .container { display: block; }
+  .side-nav { position: relative; width: 100%; height: auto; max-height: none; overflow: visible; padding: 22px 5%; }
+  .side-nav #page-header { padding-top: 0; }
+  .side-nav .info-container { position: static; background: transparent; box-shadow: none; border-radius: 0; padding: 15px 0 0; margin-top: 12px; }
+  .side-nav .info-container img { display: block; }
+  .content { margin-left: 0; padding: 15px 5% 40px; }
+  .content img { max-width: 100%; }
+  .content .project-intro, .content .project-note, .content .project-figure { width: 100%; }
+  .part { width: 100%; }
+  .part img { max-width: 100%; }
+}
 
+
+/* ===== HOMEPAGE: overlapping image index =====
+   Isolated from other project pages; keep site.js and nav.html unchanged. */
 .home-page .home-content {
   display: block;
   min-width: 0;
   padding: 0;
 }
-
-
-/* The stage holds all three photographs */
-
 .home-stage {
   position: relative;
-
   width: min(100%, 1060px);
   height: clamp(410px, 76svh, 700px);
-
   margin: 0 auto;
-
   isolation: isolate;
 }
-
-
-/* Shared photograph styling */
-
 .home-art {
   --angle: 0deg;
-
   position: absolute;
-
   display: flex;
   flex-direction: column;
-
   margin: 0;
   padding: 7px 7px 5px;
-
   background: #fff;
-
-  border: 1px solid rgba(30, 30, 30, 0.055);
-
-  box-shadow:
-    0 4px 20px rgba(0, 0, 0, 0.11);
-
+  box-shadow: 0 4px 20px rgba(0,0,0,.11);
+  border: 1px solid rgba(30,30,30,.055);
   color: #222;
   text-decoration: none;
-
   transform: rotate(var(--angle));
   transform-origin: center center;
-
-  transition:
-    transform 0.32s cubic-bezier(.2, .78, .2, 1),
-    box-shadow 0.32s ease;
-
+  transition: transform .32s cubic-bezier(.2,.78,.2,1), box-shadow .32s ease;
   will-change: transform;
 }
-
-
-/* Artwork images */
-
 .home-art img,
 .home-page .content .home-art img {
   display: block;
-
   flex: 1 1 auto;
-
   width: 100%;
   max-width: 100%;
-
   min-height: 0;
   height: calc(100% - 25px);
-
-  object-fit: contain;
-
+  object-fit: contain; /* preserve each artwork's full composition */
   padding: 0;
 }
-
-
-/* Small artwork captions */
-
 .home-art__caption {
   display: block;
   flex: 0 0 auto;
-
   padding: 7px 3px 2px;
-
-  font-family: "Syne Mono", monospace;
+  font-family: 'Syne Mono', monospace;
   font-size: 10px;
   line-height: 1.35;
-
   color: #686868;
 }
-
-
-/* =========================================
-   INDIVIDUAL IMAGE POSITIONS
-   ========================================= */
-
-
-/* 01: Elephant Tale — left */
-
-.home-art--elephant {
-  left: 6%;
-  top: 8%;
-
-  width: 53%;
-  height: 58%;
-
-  --angle: -2deg;
-
-  z-index: 2;
-}
-
-
-/* 02: Glass sculpture — right */
-
-.home-art--glass {
-  right: 6%;
-  top: 14%;
-
-  width: 37%;
-  height: 59%;
-
-  --angle: 3deg;
-
-  z-index: 3;
-}
-
-
-/* 03: Manufacturing Gods — overlapping */
-
-.home-art--gods {
-  left: 31%;
-  top: 39%;
-
-  width: 42%;
-  height: 56%;
-
-  --angle: -1.5deg;
-
-  z-index: 4;
-}
-
-
-/* =========================================
-   HOVER INTERACTION
-   ========================================= */
-
+.home-art--elephant { left: 6%; top: 8%; width: 53%; height: 58%; --angle: -2deg; z-index: 2; }
+.home-art--glass { right: 6%; top: 14%; width: 37%; height: 59%; --angle: 3deg; z-index: 3; }
+.home-art--gods { left: 31%; top: 39%; width: 42%; height: 56%; --angle: -1.5deg; z-index: 4; }
 .home-art:hover,
 .home-art:focus-visible,
 .home-art:focus-within {
   z-index: 20;
-
-  transform:
-    rotate(0deg)
-    scale(1.055);
-
-  box-shadow:
-    0 17px 42px rgba(0, 0, 0, 0.20);
+  transform: rotate(0deg) scale(1.055);
+  box-shadow: 0 17px 42px rgba(0,0,0,.20);
 }
-
-
-/* Keyboard accessibility */
-
-.home-art:focus-visible {
-  outline: 2px solid #333;
-  outline-offset: 4px;
-}
-
-
-/* Small text below the composition */
-
+.home-art:focus-visible { outline: 2px solid #333; outline-offset: 4px; }
 .home-footnote {
   margin: 0 6% 30px;
-
-  font:
-    11px/1.5 "Syne Mono", monospace;
-
+  font: 11px/1.5 'Syne Mono', monospace;
   color: #a3a3a3;
 }
-
-
-/* =========================================
-   TABLET
-   ========================================= */
-
 @media (max-width: 1024px) and (min-width: 769px) {
-
-  .home-stage {
-    height: clamp(410px, 70svh, 590px);
-  }
-
-  .home-art__caption {
-    font-size: 9px;
-  }
-
+  .home-stage { height: clamp(410px, 70svh, 590px); }
+  .home-art__caption { font-size: 9px; }
 }
-
-
-/* =========================================
-   MOBILE
-   ========================================= */
-
 @media (max-width: 768px) {
-
-  .home-page .home-content {
-    padding: 0 3% 22px;
-  }
-
-  .home-stage {
-    height: clamp(350px, 108vw, 510px);
-  }
-
-  .home-art {
-    padding: 5px 5px 4px;
-  }
-
-  .home-art--elephant {
-    left: 2%;
-    top: 5%;
-
-    width: 65%;
-    height: 53%;
-  }
-
-  .home-art--glass {
-    right: 1%;
-    top: 15%;
-
-    width: 45%;
-    height: 53%;
-  }
-
-  .home-art--gods {
-    left: 23%;
-    top: 42%;
-
-    width: 55%;
-    height: 53%;
-  }
-
-  .home-art__caption {
-    font-size: 9px;
-    padding-top: 5px;
-  }
-
-  .home-footnote {
-    margin: 0 3% 22px;
-  }
-
+  .home-page .home-content { padding: 0 3% 22px; }
+  .home-stage { height: clamp(350px, 108vw, 510px); }
+  .home-art { padding: 5px 5px 4px; }
+  .home-art--elephant { left: 2%; top: 5%; width: 65%; height: 53%; }
+  .home-art--glass { right: 1%; top: 15%; width: 45%; height: 53%; }
+  .home-art--gods { left: 23%; top: 42%; width: 55%; height: 53%; }
+  .home-art__caption { font-size: 9px; padding-top: 5px; }
+  .home-footnote { margin: 0 3% 22px; }
 }
-
-
-/* Touchscreen interaction */
-
 @media (hover: none) {
-
-  .home-art:active {
-    z-index: 20;
-
-    transform:
-      rotate(0deg)
-      scale(1.035);
-  }
-
+  .home-art:active { z-index: 20; transform: rotate(0deg) scale(1.035); }
 }
-
-
-/* Reduced motion */
-
 @media (prefers-reduced-motion: reduce) {
-
-  .home-art {
-    transition: none;
-  }
-
+  .home-art { transition: none; }
 }
-
