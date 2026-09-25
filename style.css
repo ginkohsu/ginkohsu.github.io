@@ -1492,3 +1492,182 @@ p {
 
 }
 
+/* ============================================================
+   OEMK — SHARED EDITORIAL SYSTEM (September 2026)
+   One consistent typographic hierarchy across Overview,
+   Elephant Tale, Habitat and Proxies. Other website pages,
+   navigation and the homepage remain unchanged.
+   ============================================================ */
+
+/* The original Overview uses .project-intro, without a page class. */
+.content .project-intro:has(> .eyebrow) {
+  margin-top: 56px;
+  margin-bottom: 45px;
+}
+.content .project-intro:has(> .eyebrow) h1 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+.content .project-intro:has(> .eyebrow) .eyebrow {
+  font-size: 11px;
+  letter-spacing: .03em;
+  color: #89847c;
+}
+.content .project-intro:has(> .eyebrow) .project-subtitle {
+  font-size: 12px;
+  color: #777168;
+}
+
+/* Shared page headers: same type scale and vertical rhythm. */
+.elephant-header,
+.habitat-header,
+.proxies-header {
+  margin-top: 56px;
+  margin-bottom: 60px;
+}
+.elephant-eyebrow,
+.habitat-eyebrow,
+.proxies-eyebrow {
+  font-family: "Syne Mono", monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .03em;
+  line-height: 1.6;
+  color: #89847c;
+}
+.elephant-header h1,
+.habitat-header h1,
+.proxies-header h1 {
+  margin: 14px 0 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -.025em;
+  color: #37342f;
+}
+/* Preserve the distinctive Chinese glyph while matching its visual scale. */
+.elephant-header h1 {
+  font-family: "Noto Serif CJK SC", "Songti SC", "SimSun", serif;
+  font-size: 38px;
+  line-height: 1.35;
+}
+.elephant-subtitle {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.elephant-intro {
+  margin-top: 30px;
+}
+
+/* Consistent body copy across the research directions. */
+.elephant-intro p,
+.elephant-japan-intro,
+.habitat-installation-text p,
+.habitat-publication-text p,
+.proxies-introduction p,
+.proxies-work-text p {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #625d55;
+}
+
+/* Section titles have one editorial hierarchy, below page titles. */
+.elephant-japan-header h2,
+.habitat-installation-text h2,
+.habitat-publication-header h2 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -.025em;
+  color: #37342f;
+}
+.habitat-installation-text h2 { margin-bottom: 17px; }
+.habitat-publication-header h2 { margin: 12px 0 8px; }
+.elephant-japan-header h2 { margin: 12px 0 8px; }
+
+/* Habitat: caption and statement remain associated with first image. */
+.habitat-image--gathering { margin-bottom: 45px; }
+.habitat-installation-text { margin-bottom: 74px; }
+.habitat-publication-header { margin-bottom: 38px; }
+
+/* Proxies: the image, title and caption are one artwork unit. */
+.proxies-header { margin-bottom: 65px; }
+.proxies-header h1 { margin-bottom: 28px; }
+.proxies-introduction {
+  max-width: 570px;
+  margin: 0;
+}
+.proxies-introduction p { margin: 0 0 16px; }
+.proxies-work { margin-bottom: 95px; }
+.proxies-figure--primary {
+  width: 100%;
+  margin: 0 0 16px;
+}
+.proxies-work-information {
+  max-width: 650px;
+  margin: 0;
+}
+.proxies-work-information h2 {
+  margin: 0 0 8px;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -.015em;
+  color: #37342f;
+}
+.proxies-work-information .proxies-work-details {
+  margin: 0 0 10px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #777168;
+}
+.proxies-work-text {
+  max-width: 570px;
+  margin-top: 28px;
+}
+.proxies-work-text p { margin: 0 0 17px; }
+.proxies-figure--secondary {
+  width: 78%;
+  margin: 42px 0 0;
+}
+.proxies-work--angel { padding-top: 55px; }
+.proxies-footer { margin-top: 65px; }
+
+/* Mobile: same hierarchy without oversized page headings. */
+@media (max-width: 768px) {
+  .content .project-intro:has(> .eyebrow) { margin-top: 38px; margin-bottom: 34px; }
+  .content .project-intro:has(> .eyebrow) h1 { font-size: 29px; }
+  .elephant-header,
+  .habitat-header,
+  .proxies-header { margin-top: 38px; margin-bottom: 48px; }
+  .elephant-header h1,
+  .habitat-header h1,
+  .proxies-header h1 { font-size: 29px; }
+  .elephant-header h1 { font-size: 34px; }
+  .elephant-japan-header h2,
+  .habitat-installation-text h2,
+  .habitat-publication-header h2 { font-size: 23px; }
+  .habitat-image--gathering { margin-bottom: 34px; }
+  .habitat-installation-text { margin-bottom: 55px; }
+  .habitat-publication-header { margin-bottom: 30px; }
+  .proxies-header h1 { margin-bottom: 24px; }
+  .proxies-figure--primary { width: 100%; margin-bottom: 14px; }
+  .proxies-work-information h2 { font-size: 20px; }
+  .proxies-work-information .proxies-work-details { font-size: 12px; }
+  .proxies-work-text { margin-top: 25px; }
+  .proxies-figure--secondary { width: 90%; margin-top: 34px; }
+  .proxies-work { margin-bottom: 75px; }
+  .proxies-work--angel { padding-top: 44px; }
+}
