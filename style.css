@@ -1793,3 +1793,320 @@ p {
 @media (max-width: 768px) {
   .oemk-overview-header h1 { font-size: 28px; }
 }
+
+
+/* ============================================================
+   GUIDED COMPLEXITY / GINKO HSU — SEPTEMBER 2026
+   Homepage, navigation, OEMK overview and research threads.
+   Previous artwork-page image treatments are preserved.
+   ============================================================ */
+:root {
+  --ginko-ink: #353632;
+  --ginko-muted: #77756d;
+  --ginko-rule: #deded7;
+  --ginko-leaf: #447750;
+  --ginko-paper: #fafaf7;
+}
+body { color: var(--ginko-ink); }
+body a:focus-visible, body summary:focus-visible {
+  outline: 2px solid var(--ginko-leaf);
+  outline-offset: 4px;
+}
+/* Shared nav: three entrances, with the longer lists available on demand. */
+.side-nav {
+  width: 27%;
+  padding: clamp(28px, 3.8vw, 65px) clamp(22px, 3vw, 52px);
+  background: #f7f8f4;
+  overflow-y: auto;
+}
+.content { margin-left: 27%; }
+.side-nav #page-header {
+  margin: 0; padding: 0;
+  font: italic 400 clamp(24px, 2.1vw, 34px)/1.15 Helvetica, Arial, sans-serif;
+  text-align: left; color: var(--ginko-ink);
+}
+.side-nav #page-header a { color: inherit; text-decoration: none; }
+.side-nav #page-header a:hover { color: var(--ginko-leaf); }
+.side-nav .nav-standfirst {
+  margin: 7px 0 0; font: 400 10px/1.6 "Syne Mono", monospace;
+  color: var(--ginko-muted);
+}
+.side-nav .nav-groups { margin-top: clamp(46px, 9vh, 105px); }
+.side-nav .nav-group { margin-bottom: 43px; }
+.side-nav .nav-section-label {
+  margin: 0 0 10px; color: var(--ginko-leaf);
+  font: 400 10px/1.55 "Syne Mono", monospace;
+  letter-spacing: .065em;
+}
+.side-nav .nav-primary {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 14px; padding: 0 0 10px; border-bottom: 1px solid #d8dfd5;
+  color: var(--ginko-ink); text-decoration: none;
+  font: 400 18px/1.4 Helvetica, Arial, sans-serif;
+}
+.side-nav .nav-primary span { font-size: 14px; color: var(--ginko-leaf); }
+.side-nav .nav-primary:hover { color: var(--ginko-leaf); }
+.side-nav details { margin-top: 8px; }
+.side-nav details > summary {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 9px 0; list-style: none;
+  color: #656760; cursor: pointer;
+  font: 400 12px/1.5 "Syne Mono", monospace;
+  border-bottom: 1px solid #e8eae5;
+}
+.side-nav details > summary::-webkit-details-marker { display: none; }
+.side-nav details > summary:hover { color: var(--ginko-leaf); background: transparent; }
+.side-nav details .menu-indicator::before { content: '+'; }
+.side-nav details[open] .menu-indicator::before { content: '−'; }
+.side-nav .submenu { padding: 9px 0 1px 11px; margin: 0; }
+.side-nav .submenu li { margin: 2px 0; font-size: 12px; }
+.side-nav .submenu a, .side-nav .submenu .nav-future {
+  display: block; padding: 6px 2px; color: #55594f;
+  font: 400 12px/1.45 Helvetica, Arial, sans-serif;
+  text-decoration: none;
+}
+.side-nav .submenu a:hover { color: var(--ginko-leaf); background: transparent; }
+.side-nav .submenu .nav-future { color: #8a8b83; }
+.side-nav .nav-future small {
+  display: block; font: 400 10px/1.55 "Syne Mono", monospace;
+  color: #999b94;
+}
+.side-nav .nav-archive {
+  display: block; margin-top: 12px; padding: 2px 0;
+  font: 400 11px/1.5 "Syne Mono", monospace;
+  color: #898b81; text-decoration: none;
+}
+.side-nav .nav-archive:hover { color: var(--ginko-leaf); }
+.side-nav a[aria-current='page'] {
+  color: var(--ginko-leaf); text-decoration: none;
+  font-weight: 600;
+}
+.side-nav .info-container {
+  margin-top: auto; padding-top: 26px;
+  border-top: 1px solid #dfe2dc;
+}
+.side-nav .info-container h2 { margin: 0; font: 400 12px/1.4 "Syne Mono", monospace; }
+.side-nav .info-container h2 a { color: var(--ginko-ink); }
+.side-nav .info-container h2 a:hover { color: var(--ginko-leaf); }
+
+/* Homepage: first encounter, then a quieter pair of doors. */
+.home-page .home-content { display: block; min-width: 0; padding: 0; overflow: visible; }
+.home-hero, .home-bridge, .home-selected {
+  width: min(100% - 12%, 1050px); margin-left: auto; margin-right: auto;
+}
+.home-hero { padding-top: clamp(38px, 5.4vw, 85px); }
+.home-hero-intro, .home-hero-footer, .home-section-head {
+  display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;
+  gap: 12px 25px;
+}
+.home-kicker, .home-small-link, .home-hero-footer, .home-bridge a,
+.home-section-head span, .home-selected-work p {
+  font: 400 11px/1.55 "Syne Mono", monospace;
+  color: var(--ginko-muted);
+}
+.home-small-link { text-decoration: none; }
+.home-page .content .home-small-link:hover { color: var(--ginko-leaf); }
+.home-hero h1 {
+  margin: 23px 0 28px; padding: 0;
+  font: 400 clamp(30px, 3.6vw, 53px)/1.15 Helvetica, Arial, sans-serif;
+  letter-spacing: -.034em; text-align: left;
+}
+.home-hero h1 a { color: var(--ginko-ink); text-decoration: none; }
+.home-hero h1 a:hover { color: var(--ginko-leaf); }
+.home-hero h1 [lang] {
+  font-family: "Noto Serif CJK SC", "Songti SC", SimSun, serif;
+  font-size: 1.06em; letter-spacing: 0;
+}
+.home-title-separator { color: #a3a49b; font-weight: 300; }
+.home-hero-image { display: block; width: 100%; overflow: hidden; }
+.home-page .content .home-hero-image img,
+.home-page .content .home-work-image img {
+  display: block; width: 100%; max-width: 100%; height: auto;
+  margin: 0; padding: 0; object-fit: contain;
+}
+.home-hero-footer { padding-top: 15px; }
+.home-hero-footer p { margin: 0; font: inherit; }
+.home-hero-footer a, .home-bridge a {
+  color: var(--ginko-ink); text-decoration: none;
+}
+.home-hero-footer a:hover, .home-bridge a:hover { color: var(--ginko-leaf); }
+.home-bridge {
+  display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(150px, .55fr);
+  gap: 30px; align-items: end; margin-top: clamp(75px, 12vw, 170px);
+  padding: 28px 0 35px; border-top: 1px solid var(--ginko-rule);
+  border-bottom: 1px solid var(--ginko-rule);
+}
+.home-page .content .home-bridge p {
+  max-width: 620px; margin: 0;
+  color: #565a53; font: 400 clamp(19px, 2.05vw, 27px)/1.45 Helvetica, Arial, sans-serif;
+  letter-spacing: -.015em;
+}
+.home-bridge a { justify-self: end; text-align: right; }
+.home-selected { padding: clamp(66px, 9vw, 120px) 0 140px; }
+.home-section-head { padding-bottom: 16px; border-bottom: 1px solid var(--ginko-rule); }
+.home-page .content .home-section-head h2 {
+  margin: 0; color: var(--ginko-ink);
+  font: 400 clamp(19px, 2vw, 26px)/1.2 Helvetica, Arial, sans-serif;
+  letter-spacing: -.02em;
+}
+.home-selected-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 80px); }
+.home-selected-work { min-width: 0; padding-top: 34px; }
+.home-selected-work--gods { padding-top: clamp(78px, 11vw, 170px); }
+.home-work-image { display: block; }
+.home-work-image:hover img { opacity: .92; }
+.home-selected-work h3 {
+  margin: 14px 0 4px; color: var(--ginko-ink);
+  font: 400 clamp(17px, 1.9vw, 23px)/1.3 Helvetica, Arial, sans-serif;
+}
+.home-selected-work h3 a { text-decoration: none; color: inherit; }
+.home-selected-work h3 a:hover { color: var(--ginko-leaf); }
+.home-page .content .home-selected-work p { margin: 0; font-size: 11px; }
+
+/* OEMK: show the thread early, preserve the full family/archival account below. */
+.oemk-overview-page .oemk-overview-content { display: block; }
+.oemk-overview-project { max-width: 1050px; }
+.oemk-overview-page .oemk-overview-header { margin-bottom: 29px; }
+.oemk-orientation { max-width: 640px; margin: 0 0 50px; }
+.oemk-overview-page .content .oemk-orientation p {
+  margin: 0 0 16px; color: #62645d;
+  font: 400 14px/1.8 Helvetica, Arial, sans-serif;
+}
+.oemk-overview-page .content .oemk-orientation-lead {
+  color: var(--ginko-ink); font-size: clamp(18px, 1.9vw, 23px); line-height: 1.55;
+  letter-spacing: -.012em;
+}
+.oemk-overview-page .oemk-overview-image--lead { width: min(90%, 900px); margin: 0 0 95px; }
+.oemk-overview-directions { max-width: none; padding-top: 31px; }
+.oemk-directions-header { max-width: 640px; margin-bottom: 27px; }
+.oemk-overview-page .content .oemk-directions-header h2 {
+  margin: 11px 0 12px; color: var(--ginko-ink);
+  font: 400 clamp(22px, 2.35vw, 31px)/1.28 Helvetica, Arial, sans-serif;
+  letter-spacing: -.027em;
+}
+.oemk-overview-page .content .oemk-directions-header > p:last-child {
+  margin: 0; font-size: 13px; color: var(--ginko-muted);
+}
+.oemk-direction-list { border-top: 1px solid var(--ginko-rule); }
+.oemk-direction {
+  display: grid; grid-template-columns: 122px minmax(0, 1fr) 20px;
+  gap: 16px; align-items: start; padding: 21px 0 24px;
+  border-bottom: 1px solid var(--ginko-rule);
+  color: var(--ginko-ink); text-decoration: none;
+}
+.oemk-direction:hover .oemk-direction-main strong,
+.oemk-direction:hover .oemk-direction-end { color: var(--ginko-leaf); }
+.oemk-direction-num, .oemk-direction-end {
+  padding-top: 3px; font: 400 10px/1.6 "Syne Mono", monospace;
+  color: var(--ginko-muted);
+}
+.oemk-direction-end { text-align: right; font-size: 15px; }
+.oemk-direction-main { display: block; }
+.oemk-direction-main strong {
+  display: block; margin: 0 0 5px;
+  font: 400 clamp(19px, 2.2vw, 27px)/1.35 Helvetica, Arial, sans-serif;
+  letter-spacing: -.02em;
+}
+.oemk-direction-main strong [lang] {
+  font-family: "Noto Serif CJK SC", "Songti SC", SimSun, serif;
+}
+.oemk-direction-main > span:last-child {
+  display: block; color: var(--ginko-muted);
+  font: 400 13px/1.65 Helvetica, Arial, sans-serif;
+}
+.oemk-direction--future { opacity: .65; }
+.oemk-elephant-key {
+  display: grid; grid-template-columns: clamp(75px, 11vw, 143px) minmax(0, 520px);
+  gap: clamp(22px, 4vw, 60px); align-items: start;
+  margin: 90px 0 75px; padding-top: 28px; border-top: 1px solid var(--ginko-rule);
+}
+.oemk-key-glyph {
+  font: 400 clamp(68px, 9vw, 125px)/1.1 "Noto Serif CJK SC", "Songti SC", SimSun, serif;
+  color: #687e63;
+}
+.oemk-overview-page .content .oemk-elephant-key p:last-child {
+  margin: 12px 0 0; color: #62645d; font: 400 14px/1.8 Helvetica, Arial, sans-serif;
+}
+.oemk-elephant-key a { color: var(--ginko-leaf); text-decoration: underline; text-underline-offset: 3px; }
+.oemk-background { max-width: 720px; border-top: 1px solid var(--ginko-rule); }
+.oemk-background > summary {
+  display: flex; justify-content: space-between; gap: 20px; padding: 22px 0;
+  cursor: pointer; list-style: none; color: var(--ginko-ink);
+  font: 400 17px/1.4 Helvetica, Arial, sans-serif;
+}
+.oemk-background > summary::-webkit-details-marker { display: none; }
+.oemk-background[open] > summary span { transform: rotate(45deg); }
+.oemk-overview-page .oemk-background .oemk-overview-statement {
+  max-width: 660px; padding: 12px 0 34px;
+}
+.oemk-overview-page .oemk-overview-images { max-width: 900px; margin: 45px 0 0; }
+.oemk-overview-page .oemk-overview-image-pair { gap: 24px; }
+.oemk-overview-footer { margin-top: 100px; }
+
+/* A quiet link across research directions, not a forced chronological step. */
+.oemk-thread {
+  max-width: 650px; margin: 105px 0 35px;
+  padding: 25px 0 30px; border-top: 1px solid var(--ginko-rule);
+}
+.content .oemk-thread .oemk-thread-eyebrow {
+  margin: 0 0 14px; color: var(--ginko-muted);
+  font: 400 10px/1.55 "Syne Mono", monospace; letter-spacing: .04em;
+}
+.content .oemk-thread p:not(.oemk-thread-eyebrow) {
+  max-width: 550px; margin: 0 0 15px;
+  color: #62645d; font: 400 14px/1.8 Helvetica, Arial, sans-serif;
+}
+.content .oemk-thread a {
+  color: var(--ginko-leaf); font: 400 12px/1.55 "Syne Mono", monospace;
+  text-decoration: none;
+}
+.content .oemk-thread a:hover { text-decoration: underline; text-underline-offset: 4px; }
+#manufacturing-gods { scroll-margin-top: 28px; }
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .side-nav { width: 29%; padding: 35px 26px; }
+  .content { margin-left: 29%; }
+  .home-hero, .home-bridge, .home-selected { width: min(100% - 11%, 1050px); }
+}
+@media (max-width: 768px) {
+  .container { display: block; }
+  .side-nav { position: relative; width: 100%; height: auto; max-height: none; overflow: visible; padding: 24px 5% 20px; }
+  .side-nav .nav-groups { margin-top: 27px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .side-nav .nav-group { margin-bottom: 12px; }
+  .side-nav .nav-primary { font-size: 15px; }
+  .side-nav .info-container {
+    position: static; margin-top: 12px; padding: 13px 0 0;
+    border-radius: 0; background: transparent; box-shadow: none;
+    transform: none; opacity: 1;
+  }
+  .side-nav .info-container img { display: block; }
+  .content { margin-left: 0; }
+  .home-page .home-content { padding: 0 5%; }
+  .home-hero, .home-bridge, .home-selected { width: 100%; }
+  .home-hero { padding-top: 42px; }
+  .home-hero h1 { margin: 17px 0 22px; font-size: clamp(29px, 7.2vw, 42px); }
+  .home-hero-footer { flex-direction: column; align-items: flex-start; }
+  .home-bridge { grid-template-columns: 1fr; margin-top: 80px; }
+  .home-bridge a { justify-self: start; text-align: left; }
+  .home-selected { padding: 75px 0 90px; }
+  .home-selected-grid { gap: 17px; }
+  .home-selected-work--gods { padding-top: 70px; }
+  .home-selected-work h3 { font-size: 17px; }
+  .oemk-overview-page .oemk-overview-image--lead { width: 100%; margin-bottom: 65px; }
+  .oemk-direction { grid-template-columns: 74px minmax(0,1fr) 15px; gap: 10px; padding: 18px 0 21px; }
+  .oemk-direction-num { font-size: 9px; }
+  .oemk-direction-main strong { font-size: 19px; }
+  .oemk-direction-main > span:last-child { font-size: 12px; }
+  .oemk-elephant-key { grid-template-columns: 65px minmax(0,1fr); gap: 18px; margin: 65px 0 55px; }
+  .oemk-key-glyph { font-size: 67px; }
+  .oemk-thread { margin-top: 75px; }
+}
+@media (max-width: 380px) {
+  .side-nav .nav-groups { grid-template-columns: 1fr; gap: 5px; }
+  .home-selected-grid { grid-template-columns: 1fr; }
+  .home-selected-work--gods { padding-top: 30px; }
+  .oemk-direction { grid-template-columns: 1fr 17px; }
+  .oemk-direction-num { grid-column: 1 / -1; padding: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-work-image img { transition: none; }
+}
