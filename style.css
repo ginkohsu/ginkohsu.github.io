@@ -2153,3 +2153,110 @@ p {
   .elephant-page .elephant-publication-layout { margin-bottom: 22px; }
   .elephant-page .elephant-japan { margin-top: 58px; }
 }
+
+
+/* ==============================================================
+   ELEPHANT TALE — FINAL PAGE-SCOPED EDITORIAL REFINEMENT
+   September 26, 2026. Does not change other OEMK pages.
+   ============================================================== */
+.elephant-page .elephant-subtitle {
+  margin: 4px 0 0;
+  font: 600 21px/1.35 Helvetica, Arial, sans-serif;
+  letter-spacing: -.025em;
+  color: #37342f;
+}
+/* Identical reading column, alignment and type for all body paragraphs. */
+.elephant-page .elephant-header,
+.elephant-page .elephant-research-note,
+.elephant-page .elephant-publication-note,
+.elephant-page .elephant-japan-header {
+  width: min(100%, 620px);
+  max-width: 620px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.elephant-page .elephant-intro {
+  width: 100%;
+  max-width: none;
+  margin: 23px 0 0;
+}
+.elephant-page .elephant-intro p,
+.elephant-page .elephant-research-note p,
+.elephant-page .elephant-publication-note p,
+.elephant-page .elephant-japan-header .elephant-japan-intro {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 15px;
+  padding: 0;
+  font: 400 14px/1.72 Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+  color: #625d55;
+  text-align: left;
+  text-indent: 0;
+  word-spacing: normal;
+}
+.elephant-page .elephant-intro p:last-child,
+.elephant-page .elephant-research-note p:last-child,
+.elephant-page .elephant-publication-note p:last-child,
+.elephant-page .elephant-japan-header .elephant-japan-intro:last-child {
+  margin-bottom: 0;
+}
+.elephant-page .elephant-header { margin-top: 50px; margin-bottom: 42px; }
+.elephant-page .elephant-drawing { width: 85%; margin: 0; }
+.elephant-page .elephant-research-note { margin-top: 36px; margin-bottom: 54px; }
+.elephant-page .elephant-publication-layout { margin-bottom: 28px; }
+.elephant-page .elephant-publication-note { margin-top: 0; margin-bottom: 0; }
+.elephant-page .elephant-japan { margin-top: 82px; margin-bottom: 58px; }
+.elephant-page .elephant-japan-header { margin-bottom: 33px; }
+.elephant-page .elephant-japan-header .elephant-japan-location { margin-bottom: 18px; }
+.elephant-page .elephant-japan-header .elephant-japan-intro + .elephant-japan-intro { margin-top: 15px; }
+/* Four photographs, with the two middle installation views as one unit. */
+.elephant-page .japan-image--one {
+  width: 89%;
+  margin: 0 0 30px;
+}
+.elephant-page .elephant-japan-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  align-items: start;
+  column-gap: 22px;
+  margin: 0 0 28px;
+}
+.elephant-page .elephant-japan-pair .japan-image {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+.elephant-page .elephant-japan-pair .japan-image--visitors { padding-top: 43px; }
+.elephant-page .japan-image--exterior {
+  width: 75%;
+  margin: 0 0 0 auto;
+}
+.elephant-page .elephant-japan-credit { margin: 24px 0 0; }
+@media (max-width: 768px) {
+  .elephant-page .elephant-subtitle { font-size: 19px; }
+  .elephant-page .elephant-header { margin-top: 37px; margin-bottom: 32px; }
+  .elephant-page .elephant-drawing { width: 100%; }
+  .elephant-page .elephant-research-note { margin-top: 26px; margin-bottom: 40px; }
+  .elephant-page .elephant-japan { margin-top: 60px; }
+  .elephant-page .elephant-japan-header { margin-bottom: 27px; }
+  .elephant-page .japan-image--one { width: 100%; margin-bottom: 21px; }
+  .elephant-page .elephant-japan-pair { column-gap: 12px; margin-bottom: 23px; }
+  .elephant-page .elephant-japan-pair .japan-image--visitors { padding-top: 24px; }
+  .elephant-page .japan-image--exterior { width: 84%; }
+}
+@media (max-width: 480px) {
+  .elephant-page .elephant-japan-pair {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 21px;
+  }
+  .elephant-page .elephant-japan-pair .japan-image--second-hall { width: 100%; }
+  .elephant-page .elephant-japan-pair .japan-image--visitors {
+    width: 78%;
+    margin-left: auto;
+    padding-top: 0;
+  }
+  .elephant-page .japan-image--exterior { width: 91%; }
+}
