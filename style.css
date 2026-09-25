@@ -2367,3 +2367,119 @@ p {
 @media (max-width: 768px) {
   .elephant-page .elephant-japan-description { margin-top: 20px; }
 }
+
+
+/* ============================================================
+   PROXIES — SAME EDITORIAL RHYTHM AS ELEPHANT TALE
+   Scoped to the Proxies page. All original writing and image paths kept.
+   ============================================================ */
+.proxies-page .proxies-header {
+  width: min(100%, 620px);
+  max-width: 620px;
+  margin: 50px 0 42px;
+}
+.proxies-page .proxies-header h1 {
+  margin: 14px 0 0;
+  padding: 0;
+  font: 400 38px/1.35 Helvetica, Arial, sans-serif;
+  letter-spacing: -.025em;
+  color: #37342f;
+}
+.proxies-page .proxies-introduction {
+  width: 100%;
+  max-width: none;
+  margin: 23px 0 0;
+}
+.proxies-page .proxies-introduction p,
+.proxies-page .proxies-work-text p {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 15px;
+  padding: 0;
+  font: 400 14px/1.72 Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #625d55;
+  text-align: left;
+  text-indent: 0;
+}
+.proxies-page .proxies-introduction p:last-child,
+.proxies-page .proxies-work-text p:last-child { margin-bottom: 0; }
+.proxies-page .proxies-work {
+  width: 100%;
+  margin: 0 0 82px;
+  padding: 0;
+  border: 0;
+}
+.proxies-page .proxies-image-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  margin: 0 0 20px;
+}
+.proxies-page .proxies-image-group .proxies-figure {
+  width: 86%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+/* The second photo is supporting documentation, not a new chapter. */
+.proxies-page .proxies-image-group .proxies-figure--secondary {
+  width: 70%;
+  align-self: flex-end;
+}
+.proxies-page .content .proxies-image-group img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  object-fit: contain;
+}
+.proxies-page .proxies-work-information {
+  width: min(100%, 620px);
+  max-width: 620px;
+  margin: 0;
+}
+.proxies-page .proxies-work-information h2 {
+  margin: 0 0 9px;
+  padding: 0;
+  font: 500 21px/1.35 Helvetica, Arial, sans-serif;
+  letter-spacing: -.015em;
+  color: #37342f;
+}
+.proxies-page .proxies-work-information .proxies-work-details {
+  max-width: none;
+  margin: 0 0 3px;
+  padding: 0;
+  font: 400 11px/1.6 "Syne Mono", monospace;
+  color: #817c74;
+  text-align: left;
+  text-indent: 0;
+}
+.proxies-page .proxies-work-text {
+  width: 100%;
+  max-width: none;
+  margin: 22px 0 0;
+}
+.proxies-page .proxies-work--angel {
+  padding-top: 46px;
+  border-top: 1px solid #dedbd5;
+}
+.proxies-page .proxies-footer {
+  margin-top: 4px;
+  padding-top: 24px;
+}
+@media (max-width: 768px) {
+  .proxies-page .proxies-header { margin: 37px 0 33px; }
+  .proxies-page .proxies-header h1 { font-size: 34px; }
+  .proxies-page .proxies-image-group { gap: 7px; margin-bottom: 17px; }
+  .proxies-page .proxies-image-group .proxies-figure--primary { width: 100%; }
+  .proxies-page .proxies-image-group .proxies-figure--secondary { width: 84%; }
+  .proxies-page .proxies-work { margin-bottom: 59px; }
+  .proxies-page .proxies-work--angel { padding-top: 32px; }
+  .proxies-page .proxies-work-text { margin-top: 18px; }
+  .proxies-page .proxies-work-information h2 { font-size: 20px; }
+}
