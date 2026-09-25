@@ -2260,3 +2260,15 @@ p {
   }
   .elephant-page .japan-image--exterior { width: 91%; }
 }
+
+
+/* Elephant Tale — tighter spacing for the opening three sentences */
+.elephant-page .elephant-intro p {
+  margin-bottom: 5px;
+  line-height: 1.6;
+}
+
+.elephant-page .elephant-intro p:last-child {
+  margin-bottom: 0;
+}
+
