@@ -319,90 +319,302 @@ p {
 }
 
 
-/* ===== HOMEPAGE: overlapping image index =====
-   Isolated from other project pages; keep site.js and nav.html unchanged. */
+/* =========================================
+   HOMEPAGE — SCATTERED IMAGE INDEX
+   ========================================= */
+
 .home-page .home-content {
   display: block;
   min-width: 0;
   padding: 0;
+  overflow: visible;
 }
+
+/* An open composition, rather than a grid */
+
 .home-stage {
   position: relative;
-  width: min(100%, 1060px);
-  height: clamp(410px, 76svh, 700px);
+
+  width: min(100%, 1100px);
+  height: clamp(650px, 88svh, 900px);
+
   margin: 0 auto;
+
   isolation: isolate;
+  overflow: visible;
 }
+
+/* Shared artwork styling */
+
 .home-art {
   --angle: 0deg;
+  --hover-scale: 1.2;
+
   position: absolute;
-  display: flex;
-  flex-direction: column;
+  display: block;
+
   margin: 0;
-  padding: 7px 7px 5px;
-  background: #fff;
-  box-shadow: 0 4px 20px rgba(0,0,0,.11);
-  border: 1px solid rgba(30,30,30,.055);
+  padding: 0;
+
+  background: transparent;
+  border: none;
+
   color: #222;
   text-decoration: none;
+
   transform: rotate(var(--angle));
   transform-origin: center center;
-  transition: transform .32s cubic-bezier(.2,.78,.2,1), box-shadow .32s ease;
-  will-change: transform;
+
+  transition:
+    transform 480ms cubic-bezier(.2, .85, .2, 1),
+    filter 480ms ease;
+
+  cursor: pointer;
 }
+
+/* Preserve each photograph's original proportions */
+
 .home-art img,
 .home-page .content .home-art img {
   display: block;
-  flex: 1 1 auto;
+
   width: 100%;
   max-width: 100%;
-  min-height: 0;
-  height: calc(100% - 25px);
-  object-fit: contain; /* preserve each artwork's full composition */
+  height: auto;
+
   padding: 0;
+  object-fit: contain;
+
+  filter: drop-shadow(
+    0 3px 5px rgba(0, 0, 0, 0.06)
+  );
 }
+
+/* Captions are almost invisible until interaction */
+
 .home-art__caption {
   display: block;
-  flex: 0 0 auto;
-  padding: 7px 3px 2px;
-  font-family: 'Syne Mono', monospace;
+
+  margin-top: 8px;
+  padding: 0;
+
+  font-family: "Syne Mono", monospace;
   font-size: 10px;
-  line-height: 1.35;
-  color: #686868;
+  line-height: 1.4;
+
+  color: #777;
+
+  opacity: 0.35;
+
+  transition: opacity 300ms ease;
 }
-.home-art--elephant { left: 6%; top: 8%; width: 53%; height: 58%; --angle: -2deg; z-index: 2; }
-.home-art--glass { right: 6%; top: 14%; width: 37%; height: 59%; --angle: 3deg; z-index: 3; }
-.home-art--gods { left: 31%; top: 39%; width: 42%; height: 56%; --angle: -1.5deg; z-index: 4; }
-.home-art:hover,
-.home-art:focus-visible,
-.home-art:focus-within {
-  z-index: 20;
-  transform: rotate(0deg) scale(1.055);
-  box-shadow: 0 17px 42px rgba(0,0,0,.20);
+
+
+/* =========================================
+   INDIVIDUAL IMAGE PLACEMENT
+   ========================================= */
+
+/* Elephant Tale — the visual anchor */
+
+.home-art--elephant {
+  left: 1%;
+  top: 4%;
+
+  width: 54%;
+
+  --angle: -3deg;
+  --hover-scale: 1.22;
+
+  z-index: 2;
 }
-.home-art:focus-visible { outline: 2px solid #333; outline-offset: 4px; }
+
+
+/* The Watchers of the Gate — a smaller fragment */
+
+.home-art--glass {
+  right: 8%;
+  top: 11%;
+
+  width: 25%;
+
+  --angle: 6deg;
+  --hover-scale: 1.48;
+
+  z-index: 3;
+}
+
+
+/* Manufacturing Gods — lower, partially overlapping */
+
+.home-art--gods {
+  left: 39%;
+  top: 37%;
+
+  width: 34%;
+
+  --angle: -2deg;
+  --hover-scale: 1.28;
+
+  z-index: 4;
+}
+
+
+/* =========================================
+   HOVER — BRING THE IMAGE FORWARD
+   ========================================= */
+
+@media (hover: hover) {
+
+  .home-art:hover {
+    z-index: 30;
+
+    transform:
+      translateY(-14px)
+      rotate(0deg)
+      scale(var(--hover-scale));
+
+    filter: drop-shadow(
+      0 20px 20px rgba(0, 0, 0, 0.13)
+    );
+  }
+
+  .home-art:hover .home-art__caption {
+    opacity: 1;
+  }
+
+}
+
+/* Keyboard interaction */
+
+.home-art:focus-visible {
+  z-index: 30;
+
+  transform:
+    translateY(-10px)
+    rotate(0deg)
+    scale(var(--hover-scale));
+
+  outline: 1px solid #555;
+  outline-offset: 6px;
+}
+
+.home-art:focus-visible .home-art__caption {
+  opacity: 1;
+}
+
+
+/* Small note below the composition */
+
 .home-footnote {
-  margin: 0 6% 30px;
-  font: 11px/1.5 'Syne Mono', monospace;
-  color: #a3a3a3;
+  margin: 0 7% 32px;
+
+  font:
+    10px/1.5 "Syne Mono", monospace;
+
+  color: #aaa;
 }
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
 @media (max-width: 1024px) and (min-width: 769px) {
-  .home-stage { height: clamp(410px, 70svh, 590px); }
-  .home-art__caption { font-size: 9px; }
+
+  .home-stage {
+    height: clamp(550px, 80svh, 760px);
+  }
+
+  .home-art--elephant {
+    width: 57%;
+    left: 1%;
+    top: 5%;
+  }
+
+  .home-art--glass {
+    width: 29%;
+    right: 5%;
+    top: 13%;
+  }
+
+  .home-art--gods {
+    width: 39%;
+    left: 35%;
+    top: 39%;
+  }
+
 }
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
 @media (max-width: 768px) {
-  .home-page .home-content { padding: 0 3% 22px; }
-  .home-stage { height: clamp(350px, 108vw, 510px); }
-  .home-art { padding: 5px 5px 4px; }
-  .home-art--elephant { left: 2%; top: 5%; width: 65%; height: 53%; }
-  .home-art--glass { right: 1%; top: 15%; width: 45%; height: 53%; }
-  .home-art--gods { left: 23%; top: 42%; width: 55%; height: 53%; }
-  .home-art__caption { font-size: 9px; padding-top: 5px; }
-  .home-footnote { margin: 0 3% 22px; }
+
+  .home-page .home-content {
+    padding: 0 3%;
+  }
+
+  .home-stage {
+    width: 100%;
+    height: clamp(480px, 135vw, 700px);
+  }
+
+  .home-art--elephant {
+    width: 68%;
+    left: 1%;
+    top: 5%;
+
+    --angle: -2deg;
+  }
+
+  .home-art--glass {
+    width: 36%;
+    right: 1%;
+    top: 19%;
+
+    --angle: 4deg;
+  }
+
+  .home-art--gods {
+    width: 49%;
+    left: 26%;
+    top: 46%;
+
+    --angle: -1.5deg;
+  }
+
+  .home-art__caption {
+    font-size: 9px;
+    opacity: 0.8;
+  }
+
+  .home-footnote {
+    margin: 0 3% 24px;
+  }
+
+  /* Avoid large image jumps on touchscreens */
+
+  .home-art:active {
+    z-index: 30;
+
+    transform:
+      rotate(0deg)
+      scale(1.04);
+  }
+
 }
-@media (hover: none) {
-  .home-art:active { z-index: 20; transform: rotate(0deg) scale(1.035); }
-}
+
+
+/* Reduced motion */
+
 @media (prefers-reduced-motion: reduce) {
-  .home-art { transition: none; }
+
+  .home-art,
+  .home-art__caption {
+    transition: none;
+  }
+
 }
+
