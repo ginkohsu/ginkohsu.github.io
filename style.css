@@ -1908,3 +1908,123 @@ p {
   .proxies-work { margin-bottom: 53px; }
   .proxies-work--angel { padding-top: 28px; }
 }
+
+
+/* ================================================================
+   ELEPHANT TALE / PUBLICATION READER
+   Three inner spreads scroll left/right; publication cover stays right.
+   Scoped to Elephant Tale only. All original artworks are untouched.
+   ================================================================ */
+.elephant-page .elephant-publication { width: 100%; }
+.elephant-page .elephant-publication-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(170px, .75fr);
+  align-items: start;
+  gap: clamp(20px, 3.5vw, 48px);
+  margin: 0 0 76px;
+}
+.elephant-page .elephant-publication-reader { min-width: 0; }
+.elephant-page .elephant-publication-kicker {
+  margin: 0 0 14px;
+  font: 400 10px/1.55 "Syne Mono", monospace;
+  letter-spacing: .045em;
+  color: #89847c;
+}
+.elephant-page .elephant-reader-viewport {
+  width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.elephant-page .elephant-reader-viewport::-webkit-scrollbar { display: none; }
+.elephant-page .elephant-reader-viewport:focus-visible {
+  outline: 1px solid #888077;
+  outline-offset: 5px;
+}
+.elephant-page .elephant-reader-track { display: flex; align-items: flex-start; }
+.elephant-page .elephant-reader-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+.elephant-page .content .elephant-reader-slide img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 465px;
+  padding: 0;
+  object-fit: contain;
+  object-position: center top;
+}
+.elephant-page .elephant-reader-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 21px;
+  padding: 13px 0 0;
+}
+.elephant-page .elephant-reader-arrow {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #625d55;
+  font: 400 20px/1 Helvetica, Arial, sans-serif;
+  padding: 6px 9px;
+  cursor: pointer;
+}
+.elephant-page .elephant-reader-arrow:hover:not(:disabled) { color: #23211e; }
+.elephant-page .elephant-reader-arrow:focus-visible { outline: 1px solid #888077; }
+.elephant-page .elephant-reader-arrow:disabled { opacity: .23; cursor: default; }
+.elephant-page .elephant-reader-count {
+  min-width: 34px;
+  text-align: center;
+  font: 400 11px/1.4 "Syne Mono", monospace;
+  color: #89847c;
+}
+.elephant-page .elephant-publication-cover {
+  width: 100%;
+  max-width: 310px;
+  margin: 24px 0 0 auto;
+  align-self: start;
+}
+.elephant-page .content .elephant-publication-cover img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  object-fit: contain;
+}
+.elephant-page .elephant-publication-cover figcaption {
+  margin-top: 10px;
+  gap: 2px;
+  font-size: 10px;
+}
+/* Below tablet width, give the images enough room to read. */
+@media (max-width: 850px) {
+  .elephant-page .elephant-publication-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    margin-bottom: 62px;
+  }
+  .elephant-page .elephant-publication-cover {
+    width: 58%;
+    max-width: 300px;
+    margin: 0 0 0 auto;
+  }
+  .elephant-page .content .elephant-reader-slide img { max-height: 450px; }
+}
+@media (max-width: 480px) {
+  .elephant-page .elephant-publication-layout { gap: 26px; }
+  .elephant-page .elephant-publication-cover { width: 67%; }
+  .elephant-page .content .elephant-reader-slide img { max-height: 380px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .elephant-page .elephant-reader-viewport { scroll-behavior: auto; }
+}

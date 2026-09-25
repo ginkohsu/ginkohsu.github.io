@@ -9,10 +9,8 @@
 <title>Elephant Tale — Ginko Hsu</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-
-
 <script defer="" src="site.js"></script>
-<link href="style.css?v=oemk-final-20260925" rel="stylesheet"/></head>
+<link href="style.css?v=elephant-reader-1" rel="stylesheet"/></head>
 <body class="elephant-page">
 <div class="container">
 <!-- Shared left navigation -->
@@ -54,24 +52,36 @@
 </figure>
 </section>
 <!-- PUBLICATION -->
-<section class="elephant-section elephant-publication">
-<figure class="elephant-figure elephant-cover">
+<section aria-label="Elephant Tale publication" class="elephant-section elephant-publication">
+<div class="elephant-publication-layout">
+<div aria-label="Selected pages from Elephant Tale" class="elephant-publication-reader">
+<p class="elephant-publication-kicker">OEMK VOL. 0 / SELECTED SPREADS</p>
+<div aria-label="Three publication spreads. Swipe or use the previous and next buttons." class="elephant-reader-viewport" id="elephant-reader" tabindex="0">
+<div class="elephant-reader-track">
+<figure class="elephant-reader-slide" id="elephant-spread-1">
+<img alt="Elephant Tale publication, elephant imagery and text" loading="lazy" src="resources/oemk0_1.JPG"/>
+</figure>
+<figure class="elephant-reader-slide" id="elephant-spread-2">
+<img alt="Elephant Tale publication, open spread with archival references" loading="lazy" src="resources/oemk0_2.jpeg"/>
+</figure>
+<figure class="elephant-reader-slide" id="elephant-spread-3">
+<img alt="Elephant Tale publication, open spread with text and monochrome imagery" loading="lazy" src="resources/oemk0_3.jpeg"/>
+</figure>
+</div>
+</div>
+<div aria-label="Publication navigation" class="elephant-reader-controls">
+<button aria-label="Previous publication spread" class="elephant-reader-arrow" data-elephant-prev="" disabled="" type="button">←</button>
+<span aria-atomic="true" aria-live="polite" class="elephant-reader-count"><span data-elephant-current="">1</span> / 3</span>
+<button aria-label="Next publication spread" class="elephant-reader-arrow" data-elephant-next="" type="button">→</button>
+</div>
+</div>
+<figure class="elephant-figure elephant-cover elephant-publication-cover">
 <img alt="Elephant Tale, OEMK Zine Vol. 0, handmade publication cover" loading="lazy" src="resources/oemk0_0.JPG"/>
 <figcaption>
 <span>Elephant Tale, OEMK Zine Vol. 0</span>
 <span>2026 · Publication</span>
 <span>Edition of 20</span>
 </figcaption>
-</figure>
-<div class="elephant-spreads">
-<figure class="elephant-figure elephant-spread elephant-spread--one">
-<img alt="Elephant Tale publication, elephant imagery and text" loading="lazy" src="resources/oemk0_1.JPG"/>
-</figure>
-<figure class="elephant-figure elephant-spread elephant-spread--two">
-<img alt="Elephant Tale publication, open spread with archival references" loading="lazy" src="resources/oemk0_2.jpeg"/>
-</figure>
-<figure class="elephant-figure elephant-spread elephant-spread--three">
-<img alt="Elephant Tale publication, open spread with text and monochrome imagery" loading="lazy" src="resources/oemk0_3.jpeg"/>
 </figure>
 </div>
 </section>
@@ -157,6 +167,44 @@
 </article>
 </main>
 </div>
-</body>
-</html>
 
+<script>
+(() => {
+  const viewport = document.getElementById('elephant-reader');
+  if (!viewport) return;
+  const slides = [...viewport.querySelectorAll('.elephant-reader-slide')];
+  const prev = document.querySelector('[data-elephant-prev]');
+  const next = document.querySelector('[data-elephant-next]');
+  const current = document.querySelector('[data-elephant-current]');
+  let index = 0;
+  let raf = 0;
+  const update = (nextIndex) => {
+    index = Math.max(0, Math.min(slides.length - 1, nextIndex));
+    current.textContent = String(index + 1);
+    prev.disabled = index === 0;
+    next.disabled = index === slides.length - 1;
+  };
+  const show = (nextIndex) => {
+    update(nextIndex);
+    slides[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  };
+  prev.addEventListener('click', () => show(index - 1));
+  next.addEventListener('click', () => show(index + 1));
+  viewport.addEventListener('scroll', () => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      const x = viewport.scrollLeft;
+      const closest = slides.reduce((best, slide, i) =>
+        Math.abs(slide.offsetLeft - slides[0].offsetLeft - x) <
+        Math.abs(slides[best].offsetLeft - slides[0].offsetLeft - x) ? i : best, 0);
+      update(closest);
+    });
+  }, { passive: true });
+  viewport.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight') { event.preventDefault(); show(index + 1); }
+    if (event.key === 'ArrowLeft') { event.preventDefault(); show(index - 1); }
+  });
+  update(0);
+})();
+</script></body>
+</html>
