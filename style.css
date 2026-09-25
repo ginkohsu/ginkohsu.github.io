@@ -1793,3 +1793,58 @@ p {
 @media (max-width: 768px) {
   .oemk-overview-header h1 { font-size: 28px; }
 }
+
+
+
+
+    
+  
+.habitat-footer { margin-top: 72px; }
+
+/* 05 — Proxies: the picture, title, metadata and paragraph belong together. */
+.proxies-header { margin-bottom: 40px; }
+.proxies-header h1 { margin-bottom: 18px; }
+.proxies-figure--primary { width: 86%; margin-bottom: 12px; }
+.proxies-work-information h2 { margin-bottom: 6px; }
+.proxies-work-information .proxies-work-details { margin-bottom: 6px; }
+.proxies-work-text { margin-top: 15px; }
+.proxies-figure--secondary { width: 70%; margin-top: 26px; }
+.proxies-work { margin-bottom: 68px; }
+.proxies-work--angel { padding-top: 34px; }
+.proxies-footer { margin-top: 58px; }
+
+/* Mobile: keep artworks legible, tighten the gaps rather than shrinking
+   every image. The original irregular alignments remain in place. */
+@media (max-width: 768px) {
+  .oemk-overview-header,
+  .elephant-header,
+  .habitat-header,
+  .proxies-header { margin-bottom: 31px; }
+  .oemk-overview-images { margin: 29px 0 42px; }
+  .oemk-overview-image--lead { width: 92%; margin-bottom: 19px; }
+  .oemk-overview-image-pair { gap: 12px; }
+  .elephant-drawing { width: 100%; margin-bottom: 54px; }
+  .elephant-cover { width: 75%; margin-bottom: 48px; }
+  .elephant-spreads { gap: 38px; }
+  .elephant-spread--one,
+  .elephant-spread--two,
+  .elephant-spread--three { width: 100%; }
+  .elephant-japan { margin-top: 64px; margin-bottom: 57px; }
+  .elephant-japan-header { margin-bottom: 31px; }
+  .japan-image { margin-bottom: 36px; }
+  .japan-image--one,
+  .japan-image--second-hall,
+  .japan-image--exterior { width: 100%; }
+  .elephant-statement { margin-top: 63px; margin-bottom: 63px; }
+  .habitat-image--gathering { width: 100%; margin-bottom: 18px; }
+  .habitat-installation-text { margin-bottom: 37px; }
+  .habitat-image--detail { width: 85%; margin-bottom: 36px; }
+  .habitat-image--overhead { width: 100%; }
+  .habitat-installation { margin-bottom: 60px; }
+  .habitat-publication-header { margin-bottom: 19px; }
+  .habitat-footer { margin-top: 53px; }
+  .proxies-header { margin-bottom: 31px; }
+  .proxies-figure--primary { width: 100%; margin-bottom: 11px; }
+  .proxies-figure--secondary { width: 87%; margin-top: 23px; }
+  .proxies-work { margin-bottom: 53px; }
+  .proxies-work--angel { padding-top: 28px; }
