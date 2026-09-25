@@ -2342,3 +2342,28 @@ p {
   .elephant-page .elephant-japan-pile .japan-pile-image--four,
   .elephant-page .elephant-japan-pile .japan-pile-image--seven { aspect-ratio: 1 / 1; }
 }
+
+
+/* Japan exhibition: photographs first, shared caption and description below. */
+.elephant-page .elephant-japan-description {
+  width: min(100%, 620px);
+  max-width: 620px;
+  margin: 25px 0 0;
+}
+.elephant-page .elephant-japan-description .elephant-japan-intro {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 15px;
+  padding: 0;
+  font: 400 14px/1.72 Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+  color: #625d55;
+  text-align: left;
+  text-indent: 0;
+  word-spacing: normal;
+}
+.elephant-page .elephant-japan-description .elephant-japan-intro:last-child { margin-bottom: 0; }
+.elephant-page .elephant-japan .elephant-japan-credit { margin: 22px 0 0; }
+@media (max-width: 768px) {
+  .elephant-page .elephant-japan-description { margin-top: 20px; }
+}
