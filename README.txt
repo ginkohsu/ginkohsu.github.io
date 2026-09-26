@@ -1,0 +1,1 @@
+Upload robbed.html and nav.html to your website root. Upload the five PNG images inside resources/ to your existing resources folder. Leave your existing style.css and site.js unchanged. The nav.html provided is based on your previously uploaded navigation; compare it with any newer edits before replacing.
