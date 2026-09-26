@@ -1,88 +1,72 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Once in a While, a series of installations and participatory rituals by Ginko Hsu.">
-  <title>Once in a While | Ginko Hsu</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Only this project page; existing site navigation and styles remain intact. */
-    .once-page .once-content { display: block; min-width: 0; padding: 0 7% 100px; }
-    .once-project { width: 100%; max-width: 1050px; margin: 0 auto; }
-    .once-introduction { max-width: 640px; margin: 55px 0 40px; }
-    .once-page .content .once-introduction p { margin: 0 0 15px; padding: 0; font: 400 14px/1.72 Helvetica, Arial, sans-serif; color: #625d55; text-align: left; text-indent: 0; }
-    .once-works { max-width: 640px; margin: 0 0 42px; display: grid; gap: 25px; }
-    .once-work-info { display: flex; flex-direction: column; gap: 3px; color: #817c74; font: 400 11px/1.65 "Syne Mono", monospace; }
-    .once-work-info span { display: block; }
-    .once-images { display: flex; flex-direction: column; align-items: center; gap: 32px; }
-    .once-figure { width: min(100%, 790px); margin: 0; }
-    .once-page .content .once-figure img { display: block; width: 100%; max-width: 100%; height: auto; padding: 0; object-fit: contain; }
-    .once-listening { max-width: 640px; margin: 65px 0 55px; }
-    .once-listening-label { margin: 0 0 12px; color: #817c74; font: 400 11px/1.65 "Syne Mono", monospace; }
-    .once-listening audio { display: block; width: min(100%, 390px); }
-    .once-ritual { width: min(70%, 610px); margin: 0 auto; }
-    .once-page .content .once-ritual img { display: block; width: 100%; max-width: 100%; height: auto; padding: 0; object-fit: contain; }
-    .once-ritual figcaption { margin: 10px 0 0; color: #817c74; font: 400 11px/1.6 "Syne Mono", monospace; }
-    @media (max-width: 768px) {
-      .once-page .once-content { padding: 0 5% 75px; }
-      .once-introduction { margin-top: 37px; }
-      .once-images { gap: 24px; }
-      .once-figure { width: 100%; }
-      .once-listening { margin: 48px 0 40px; }
-      .once-ritual { width: 90%; }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Once in a While, a series of installations and participatory rituals by Ginko Hsu." name="description"/>
+<title>Once in a While | Ginko Hsu</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
+    /* Scoped to Once in a While: image-led reading order. */
+    .once-page .once-content { display:block; min-width:0; padding:0 7% 100px; }
+    .once-project { width:100%; max-width:1050px; margin:0 auto; }
+    .once-images { display:flex; flex-direction:column; align-items:center; gap:36px; margin-top:55px; }
+    .once-figure { width:min(100%,790px); margin:0; }
+    .once-page .content .once-figure img,
+    .once-page .content .once-image-pair img { display:block; width:100%; max-width:100%; height:auto; padding:0; object-fit:contain; }
+    .once-work-info { display:flex; flex-direction:column; gap:3px; margin:13px 0 0; color:#817c74; font:400 11px/1.65 "Syne Mono",monospace; text-align:left; }
+    .once-work-info span { display:block; }
+    .once-image-pair { width:min(100%,920px); margin:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; align-items:start; }
+    .once-image-pair figure { margin:0; min-width:0; }
+    .once-image-pair .once-work-info { grid-column:1/-1; margin-top:0; }
+    .once-listening { width:min(100%,790px); margin:0 auto; }
+    .once-listening-label { margin:0 0 12px; color:#817c74; font:400 11px/1.65 "Syne Mono",monospace; }
+    .once-listening audio { display:block; width:min(100%,390px); }
+    .once-statement { max-width:640px; margin:65px 0 0; }
+    .once-page .content .once-statement p { margin:0 0 15px; padding:0; font:400 14px/1.72 Helvetica,Arial,sans-serif; color:#625d55; text-align:left; text-indent:0; }
+    @media (max-width:768px) {
+      .once-page .once-content { padding:0 5% 75px; }
+      .once-images { margin-top:37px; gap:27px; }
+      .once-figure { width:100%; }
+      .once-image-pair { gap:10px; }
+      .once-statement { margin-top:48px; }
+    }
+    @media (max-width:480px) {
+      .once-image-pair { grid-template-columns:1fr; gap:16px; }
+      .once-image-pair .once-work-info { margin-top:0; }
     }
   </style>
 </head>
 <body class="once-page">
-  <div class="container">
-    <div id="nav-placeholder"></div>
-    <main class="content once-content" id="main-content">
-      <article class="once-project">
-        <div class="once-introduction">
-          <p>The installations transform traces of the past into tangible forms—sculptures, sound work of poetry, and participatory rituals—inviting viewers to engage with the body, objects, and spaces as sites of remembrance and reflection. The series addresses how to access fragmented memories across feminist, queer, and postcolonial frameworks.</p>
-          <p>Through these works, I explore the legacies of migration, trauma, and cultural memory, while giving form to stories that cannot be fully spoken, allowing absence and loss to inhabit space and matter.</p>
-        </div>
+<div class="container">
+<div id="nav-placeholder"></div>
+<main class="content once-content" id="main-content">
+<article class="once-project">
 
-        <!-- Both works are identified separately without assuming which existing photographs document each one. -->
-        <section class="once-works" aria-label="Works in the series">
-          <div class="once-work-info" aria-label="Who Will You Turn To? artwork information">
-            <span>Who Will You Turn To?, 2025</span>
-            <span>Glazed ceramics, glass, wool felting on polyurethane, acrylic beads</span>
-            <span>Interactive installation · Various dimensions · Sound, 2 min 37 sec</span>
-          </div>
-          <div class="once-work-info" aria-label="In Order to Become a Child Again artwork information">
-            <span>In Order to Become a Child Again, 2025</span>
-            <span>Hand-tufted wool textile, cast glass, pâte de verre, atelier glass, aluminum, stone</span>
-            <span>Installation · Various dimensions</span>
-          </div>
-        </section>
-
-        <div class="once-images" aria-label="Selected installation photographs">
-          <figure class="once-figure"><img src="resources/once_0.png" alt="Once in a While, installation photograph 1" fetchpriority="high"></figure>
-          <figure class="once-figure"><img src="resources/once_1.png" alt="Once in a While, installation photograph 2" loading="lazy"></figure>
-          <figure class="once-figure"><img src="resources/once_2.png" alt="Once in a While, installation photograph 3" loading="lazy"></figure>
-          <figure class="once-figure"><img src="resources/once_3.png" alt="Once in a While, installation photograph 4" loading="lazy"></figure>
-        </div>
-
-        <section class="once-listening" aria-label="Poem recording">
-          <p class="once-listening-label">Poem / audio recording</p>
-          <audio controls preload="metadata">
-            <source src="resources/once.mp3" type="audio/mpeg">
+<div aria-label="Selected installation photographs" class="once-images"><figure class="once-figure"><img alt="Once in a While, installation photograph 1" fetchpriority="high" src="resources/once_0.png"/></figure><figure class="once-figure"><img alt="Once in a While, installation photograph 2" loading="lazy" src="resources/once_1.png"/><div aria-label="Who Will You Turn To? artwork information" class="once-work-info">
+<span>Who Will You Turn To?, 2025</span>
+<span>Glazed ceramics, glass, wool felting on polyurethane, acrylic beads</span>
+<span>Interactive installation · Various dimensions · Sound, 2 min 37 sec</span>
+</div></figure><section aria-label="Poem recording" class="once-listening">
+<p class="once-listening-label">Poem / audio recording</p>
+<audio controls="" preload="metadata">
+<source src="resources/once.mp3" type="audio/mpeg"/>
             Your browser does not support audio playback.
           </audio>
-        </section>
-
-        <figure class="once-ritual">
-          <img src="resources/once_ritual.png" alt="Participatory ritual: handwritten prompts and materials inviting visitors to reflect on uncertainty" loading="lazy">
-          <figcaption>Participatory ritual / installation detail</figcaption>
-        </figure>
-      </article>
-    </main>
-  </div>
-  <script src="site.js" defer></script>
+</section><figure class="once-figure"><img alt="In Order to Become a Child Again, installation photograph" loading="lazy" src="resources/once_2.png"/></figure><div aria-label="In Order to Become a Child Again and participatory ritual photographs" class="once-image-pair"><figure class="once-figure"><img alt="In Order to Become a Child Again, installation view" loading="lazy" src="resources/once_3.png"/></figure><figure class="once-figure"><img alt="Participatory ritual, installation detail" loading="lazy" src="resources/once_ritual.png"/></figure><div aria-label="In Order to Become a Child Again artwork information" class="once-work-info">
+<span>In Order to Become a Child Again, 2025</span>
+<span>Hand-tufted wool textile, cast glass, pâte de verre, atelier glass, aluminum, stone</span>
+<span>Installation · Various dimensions</span>
+</div></div></div><div class="once-statement">
+<p>The installations transform traces of the past into tangible forms—sculptures, sound work of poetry, and participatory rituals—inviting viewers to engage with the body, objects, and spaces as sites of remembrance and reflection. The series addresses how to access fragmented memories across feminist, queer, and postcolonial frameworks.</p>
+<p>Through these works, I explore the legacies of migration, trauma, and cultural memory, while giving form to stories that cannot be fully spoken, allowing absence and loss to inhabit space and matter.</p>
+</div></article>
+</main>
+</div>
+<script defer="" src="site.js"></script>
 </body>
 </html>
