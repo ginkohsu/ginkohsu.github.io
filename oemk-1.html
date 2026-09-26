@@ -12,7 +12,26 @@
 
 
 <script defer="" src="site.js"></script>
-<link href="style.css?v=oemk-final-20260925" rel="stylesheet"/></head>
+<link href="style.css?v=oemk-final-20260925" rel="stylesheet"/><style>
+/* Habitat only: four photographs documenting the participatory revealing process. */
+.habitat-process { width: 100%; margin: 0 0 58px; }
+.habitat-process-pair { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); gap: 18px; align-items: end; margin: 0 0 29px; }
+.habitat-process .habitat-process-image { margin: 0; min-width: 0; }
+.habitat-process .habitat-process-image--wide { width: 92%; margin: 0 auto 29px; }
+.habitat-process .habitat-process-image--final { width: 80%; margin: 0 0 0 auto; }
+.habitat-page .content .habitat-process-image img { display: block; width: 100%; max-width: 100%; height: auto; padding: 0; object-fit: contain; }
+@media (max-width: 768px) {
+  .habitat-process { margin-bottom: 44px; }
+  .habitat-process-pair { gap: 10px; margin-bottom: 19px; }
+  .habitat-process .habitat-process-image--wide { width: 100%; margin-bottom: 19px; }
+  .habitat-process .habitat-process-image--final { width: 90%; }
+}
+@media (max-width: 480px) {
+  .habitat-process-pair { grid-template-columns: 1fr; gap: 19px; }
+  .habitat-process-pair .habitat-process-image:first-child { width: 75%; }
+}
+</style>
+</head>
 <body class="habitat-page">
 <div class="container">
 <!-- Shared navigation -->
@@ -56,6 +75,15 @@
               flowers, photographs and stories of past memories
               begin to reveal themselves.
             </p>
+</div>
+<!-- PARTICIPATORY PROCESS: food is taken away and the images below become visible. -->
+<div class="habitat-process" aria-label="Shell/Habitat participatory process, from shared food to revealed imagery">
+  <div class="habitat-process-pair">
+    <figure class="habitat-process-image"><img src="resources/shell_p1.png" alt="Food resting over photographic imagery and fragments of text in Shell/Habitat" loading="lazy"/></figure>
+    <figure class="habitat-process-image"><img src="resources/shell_p2.png" alt="Participants take food from the installation during the shared ritual" loading="lazy"/></figure>
+  </div>
+  <figure class="habitat-process-image habitat-process-image--wide"><img src="resources/shell_p3.png" alt="Installation with food partly removed, revealing photographs and writing below" loading="lazy"/></figure>
+  <figure class="habitat-process-image habitat-process-image--final"><img src="resources/shell_p4.png" alt="Close-up of the imagery and writing revealed beneath the materials" loading="lazy"/></figure>
 </div>
 <!-- 02: Material detail -->
 <figure class="habitat-figure habitat-image--detail">
