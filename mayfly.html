@@ -16,15 +16,7 @@
       min-width: 0;
       padding: 0 7% 100px;
     }
-    .mayfly-project { width: 100%; max-width: 1050px; margin: 0 auto; }
-    .mayfly-header { margin: 56px 0 42px; }
-    .mayfly-header h1 {
-      padding: 0;
-      margin: 0;
-      font: 400 32px/1.26 Helvetica, Arial, sans-serif;
-      letter-spacing: -.025em;
-      color: #37342f;
-    }
+    .mayfly-project { width: 100%; max-width: 860px; margin: 54px auto 0; }
     .mayfly-figure { margin: 0; }
     .mayfly-page .content .mayfly-figure img {
       display: block;
@@ -34,7 +26,8 @@
       padding: 0;
       object-fit: contain;
     }
-    .mayfly-hero { width: 100%; }
+    .mayfly-hero,
+    .mayfly-detail { width: 100%; }
     .mayfly-caption {
       display: flex;
       flex-direction: column;
@@ -56,27 +49,24 @@
       text-indent: 0;
       color: #625d55;
     }
-    .mayfly-detail { width: 82%; margin: 0 0 18px auto; }
+    .mayfly-detail { margin: 0 0 14px; }
     .mayfly-documentation {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 18px;
+      gap: 14px;
       align-items: start;
       margin: 0 0 68px;
     }
-    .mayfly-documentation .mayfly-figure:nth-child(2) { margin-top: 34px; }
+    .mayfly-documentation .mayfly-figure { aspect-ratio: 4 / 3; overflow: hidden; background: #f4f1ed; }
+    .mayfly-page .content .mayfly-documentation img { height: 100%; object-fit: contain; }
     @media (max-width: 768px) {
       .mayfly-page .mayfly-content { padding: 0 5% 70px; }
-      .mayfly-header { margin: 38px 0 31px; }
-      .mayfly-header h1 { font-size: 29px; }
+      .mayfly-project { margin-top: 38px; }
       .mayfly-statement { margin: 29px 0 43px; }
-      .mayfly-detail { width: 100%; }
       .mayfly-documentation { gap: 10px; margin-bottom: 45px; }
-      .mayfly-documentation .mayfly-figure:nth-child(2) { margin-top: 18px; }
     }
     @media (max-width: 440px) {
       .mayfly-documentation { grid-template-columns: 1fr; gap: 16px; }
-      .mayfly-documentation .mayfly-figure:nth-child(2) { margin-top: 0; }
     }
   </style>
 </head>
@@ -85,10 +75,6 @@
     <div id="nav-placeholder"></div>
     <main class="content mayfly-content" id="main-content">
       <article class="mayfly-project">
-        <header class="mayfly-header">
-          <h1>Encounter with a Mayfly</h1>
-        </header>
-
         <figure class="mayfly-figure mayfly-hero">
           <img src="resources/Xu_02_01_Encounter with a Mayfly.jpg" alt="Encounter with a Mayfly, glass sculpture" fetchpriority="high">
           <figcaption class="mayfly-caption">
