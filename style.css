@@ -126,10 +126,20 @@ h2 a:hover, .content a:hover {
 }
 
 .side-nav h1, .side-nav h2 {
-    color: #6cf08f;
     margin-top: 30px;
     font-size: 18px;
 }
+
+/* Keep the site name as it was; make only navigation section headings rose. */
+.side-nav h1 { color: #6cf08f; }
+.side-nav > h2,
+.side-nav .info-container h2 { color: #C87999; }
+.side-nav .info-container h2 > a,
+.side-nav .info-container h2 > a:link,
+.side-nav .info-container h2 > a:visited,
+.side-nav .info-container h2 > a:hover,
+.side-nav .info-container h2 > a:focus-visible,
+.side-nav .info-container h2 > a:active { color: #C87999; }
 
 /* Paragraph styling */
 p {
@@ -2566,21 +2576,4 @@ p {
   }
   .home-page .home-single-stage { min-height: 65svh; }
   .home-page .home-single-artwork { width: min(75%, 420px); }
-}
-
-
-/* Projects and INFO — rose accent on every page, including hover/focus.
-   Scoped to the shared nav: artwork, site title, and other links unchanged. */
-.side-nav > h2,
-.side-nav > h2:hover {
-  color: #C87999;
-}
-.side-nav .info-container h2,
-.side-nav .info-container h2 a,
-.side-nav .info-container h2 a:link,
-.side-nav .info-container h2 a:visited,
-.side-nav .info-container h2 a:hover,
-.side-nav .info-container h2 a:focus-visible,
-.side-nav .info-container h2 a:active {
-  color: #C87999;
 }
