@@ -2567,3 +2567,11 @@ p {
   .home-page .home-single-stage { min-height: 65svh; }
   .home-page .home-single-artwork { width: min(75%, 420px); }
 }
+
+/* Navigation — Sanyu-inspired accent for Projects and INFO only */
+.side-nav > h2,
+.side-nav .info-container h2 a,
+.side-nav .info-container h2 a:hover,
+.side-nav .info-container h2 a:focus-visible {
+  color: #B57F83;
+}
