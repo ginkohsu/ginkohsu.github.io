@@ -10,15 +10,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Artwork caption only; shared website styles remain unchanged. */
+    .dormant-page .dormant-caption {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      width: 75%;
+      margin: 3px 0 32px;
+      color: #817c74;
+      font: 400 11px/1.6 "Syne Mono", monospace;
+      text-align: left;
+      align-self: center;
+    }
+    @media (max-width: 768px) {
+      .dormant-page .dormant-caption { width: 85%; }
+    }
+  </style>
 </head>
-<body>
+<body class="dormant-page">
   <div class="container">
     <!-- nav will be injected here -->
     <div id="nav-placeholder"></div>
 
  <!-- Content Section -->
  <main class="content">
-  <img src="resources/Xu_03_01_Dormant.jpg" alt="glass_sculpture_dormant">
+  <img src="resources/Xu_03_01_Dormant.jpg" alt="Dormant, glass and ceramic sculpture">
+  <div class="dormant-caption" aria-label="Artwork information">
+    <span>Dormant, 2024</span>
+    <span>Glass, ceramics · 42 × 25 × 15 cm</span>
+    <span>Taka-Tila, Helsinki, Finland</span>
+  </div>
   <img src="resources/Xu_03_02_Dormant.jpg" alt="glass_sculpture_dormant">
 
   <div class="part">
