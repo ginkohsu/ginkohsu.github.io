@@ -9,66 +9,85 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
 <style>
-    /* Scoped to Once in a While: image-led reading order. */
-    .once-page .once-content { display:block; min-width:0; padding:0 7% 100px; }
-    .once-project { width:100%; max-width:1050px; margin:0 auto; }
-    .once-images { display:flex; flex-direction:column; align-items:center; gap:36px; margin-top:55px; }
-    .once-figure { width:min(100%,790px); margin:0; }
-    .once-page .content .once-figure img,
-    .once-page .content .once-image-pair img { display:block; width:100%; max-width:100%; height:auto; padding:0; object-fit:contain; }
-    .once-work-info { display:flex; flex-direction:column; gap:3px; margin:13px 0 0; color:#817c74; font:400 11px/1.65 "Syne Mono",monospace; text-align:left; }
-    .once-work-info span { display:block; }
-    .once-image-pair { width:min(100%,920px); margin:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; align-items:start; }
-    .once-image-pair figure { margin:0; min-width:0; }
-    .once-image-pair .once-work-info { grid-column:1/-1; margin-top:0; }
-    .once-listening { width:min(100%,790px); margin:0 auto; }
-    .once-listening-label { margin:0 0 12px; color:#817c74; font:400 11px/1.65 "Syne Mono",monospace; }
-    .once-listening audio { display:block; width:min(100%,390px); }
-    .once-statement { max-width:640px; margin:65px 0 0; }
-    .once-page .content .once-statement p { margin:0 0 15px; padding:0; font:400 14px/1.72 Helvetica,Arial,sans-serif; color:#625d55; text-align:left; text-indent:0; }
-    @media (max-width:768px) {
-      .once-page .once-content { padding:0 5% 75px; }
-      .once-images { margin-top:37px; gap:27px; }
-      .once-figure { width:100%; }
-      .once-image-pair { gap:10px; }
-      .once-statement { margin-top:48px; }
-    }
-    @media (max-width:480px) {
-      .once-image-pair { grid-template-columns:1fr; gap:16px; }
-      .once-image-pair .once-work-info { margin-top:0; }
-    }
-  
-    /* Three documentary details form a compact visual coda, not another full-width sequence. */
-    .once-detail-sequence { width:min(100%,920px); margin:60px auto 0; }
-    .once-detail-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; align-items:start; }
-    .once-detail-sequence figure { min-width:0; margin:0; }
-    .once-page .content .once-detail-sequence img { display:block; width:100%; max-width:100%; height:auto; padding:0; object-fit:contain; }
-    .once-detail-dagger { width:min(68%,640px); margin:24px auto 0 !important; }
-    @media (max-width:768px) {
-      .once-detail-sequence { margin-top:42px; }
-      .once-detail-pair { gap:10px; }
-      .once-detail-dagger { width:82%; margin-top:19px !important; }
-    }
-    @media (max-width:480px) {
-      .once-detail-pair { grid-template-columns:1fr; gap:18px; }
-      .once-detail-dagger { width:100%; }
-    }
-
-    /* Additional presentation of In Order to Become a Child Again. */
-    .once-other-setting { width:min(72%,650px); margin:4px auto 10px; }
-    .once-other-setting figcaption { display:flex; flex-direction:column; gap:3px; margin-top:12px; font:400 11px/1.65 "Syne Mono",monospace; color:#817c74; text-align:left; }
-    .once-page .content .once-other-setting img { display:block; width:100%; max-width:100%; height:auto; padding:0; object-fit:contain; }
-    /* The poem is live text, with its original lines and stanza breaks retained. */
-    .once-poem { width:min(100%,790px); margin:35px auto 0; padding:0 0 5px; }
-    .once-poem-stanza { margin:0 0 28px; }
-    .once-page .content .once-poem-line { margin:0 0 8px; padding:0; font:400 14px/1.85 Helvetica,Arial,sans-serif; color:#625d55; text-align:left; text-indent:0; }
-    @media(max-width:768px) {
-      .once-other-setting { width:88%; }
-      .once-poem { margin-top:28px; }
-      .once-poem-stanza { margin-bottom:23px; }
-    }
+/* Once in a While: consistent image edges and work-specific spacing. */
+.once-page .once-content { display:block; min-width:0; padding:0 7% 100px; }
+.once-project { width:100%; max-width:1050px; margin:0 auto; }
+/* A shared visual column; the individual works retain their own rhythm. */
+.once-images, .once-listening, .once-poem, .once-detail-sequence, .once-statement {
+  width:min(100%,820px); margin-left:auto; margin-right:auto;
+}
+.once-images { display:block; margin-top:55px; }
+.once-work-section { width:100%; }
+.once-work-section + .once-work-section { margin-top:86px; }
+.once-figure { display:block; width:100%; margin:0; }
+.once-work-section--child > .once-figure + .once-figure { margin-top:26px; }
+.once-page .content .once-figure img,
+.once-page .content .once-image-pair img,
+.once-page .content .once-other-setting img,
+.once-page .content .once-detail-sequence img {
+  display:block; width:100%; max-width:100%; height:auto; padding:0; object-fit:contain;
+}
+.once-work-info, .once-other-setting figcaption {
+  display:flex; flex-direction:column; gap:3px; margin:12px 0 0;
+  color:#817c74; font:400 11px/1.65 "Syne Mono",monospace; text-align:left;
+}
+.once-work-info span, .once-other-setting figcaption span { display:block; }
+/* A quieter second setting, deliberately anchored to the same left edge. */
+.once-other-setting { display:block; width:min(72%,590px); margin:38px 0 0; }
+.once-image-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px; width:100%; margin:26px 0 0; align-items:start; }
+.once-image-pair figure { margin:0; min-width:0; }
+.once-image-pair .once-work-info { grid-column:1/-1; margin-top:0; }
+/* Sound and poem form a single reading/listening passage. */
+.once-listening { margin-top:38px; }
+.once-listening-label { margin:0 0 12px; color:#817c74; font:400 11px/1.65 "Syne Mono",monospace; }
+.once-listening audio { display:block; width:min(100%,390px); }
+/* Poem: a softer, italic voice distinct from the artwork statement. */
+.once-poem { margin-top:34px; padding:0; }
+.once-poem-stanza { margin:0 0 29px; }
+.once-poem-stanza:last-child { margin-bottom:0; }
+.once-page .content .once-poem-line {
+  margin:0 0 4px; padding:0;
+  font-family:"Instrument Serif",Georgia,"Times New Roman",serif;
+  font-size:clamp(20px,1.65vw,24px); font-weight:400; font-style:italic;
+  line-height:1.48; letter-spacing:.005em;
+  color:#58534f; text-align:left; text-indent:0;
+}
+/* Documentary details: paired close-ups, then an isolated final image. */
+.once-detail-sequence { margin-top:70px; }
+.once-detail-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; align-items:start; }
+.once-detail-sequence figure { min-width:0; margin:0; }
+.once-detail-dagger { width:min(68%,610px); margin:25px 0 0 auto !important; }
+/* A quieter closing statement aligned with the images, not the outer article. */
+.once-statement { max-width:820px; margin-top:72px; }
+.once-page .content .once-statement p {
+  max-width:640px; margin:0 0 15px; padding:0;
+  font:400 14px/1.72 Helvetica,Arial,sans-serif;
+  color:#625d55; text-align:left; text-indent:0;
+}
+@media (max-width:768px) {
+  .once-page .once-content { padding:0 5% 75px; }
+  .once-images { margin-top:36px; }
+  .once-work-section + .once-work-section { margin-top:62px; }
+  .once-other-setting { width:80%; margin-top:29px; }
+  .once-image-pair, .once-detail-pair { gap:10px; }
+  .once-listening { margin-top:31px; }
+  .once-poem { margin-top:29px; }
+  .once-poem-stanza { margin-bottom:24px; }
+  .once-page .content .once-poem-line { font-size:21px; line-height:1.5; }
+  .once-detail-sequence { margin-top:50px; }
+  .once-detail-dagger { width:78%; margin-top:20px !important; }
+  .once-statement { margin-top:54px; }
+}
+@media (max-width:480px) {
+  .once-image-pair, .once-detail-pair { grid-template-columns:1fr; gap:16px; }
+  .once-image-pair .once-work-info { margin-top:0; }
+  .once-other-setting { width:86%; }
+  .once-detail-dagger { width:100%; }
+}
 </style>
 </head>
 <body class="once-page">
@@ -76,15 +95,15 @@
 <div id="nav-placeholder"></div>
 <main class="content once-content" id="main-content">
 <article class="once-project">
-<div aria-label="Selected installation photographs" class="once-images"><figure class="once-figure"><img alt="Once in a While, installation photograph 1" fetchpriority="high" src="resources/once_0.png"/></figure><figure class="once-figure"><img alt="Once in a While, installation photograph 2" loading="lazy" src="resources/once_1.png"/><div aria-label="In Order to Become a Child Again artwork information" class="once-work-info">
+<div aria-label="Selected installation photographs" class="once-images"><section aria-label="In Order to Become a Child Again, photographs" class="once-work-section once-work-section--child"><figure class="once-figure"><img alt="Once in a While, installation photograph 1" fetchpriority="high" src="resources/once_0.png"/></figure><figure class="once-figure"><img alt="Once in a While, installation photograph 2" loading="lazy" src="resources/once_1.png"/><div aria-label="In Order to Become a Child Again artwork information" class="once-work-info">
 <span>In Order to Become a Child Again, 2025</span>
 <span>Hand-tufted wool textile, cast glass, pâte de verre, atelier glass, aluminum, stone</span>
 <span>Installation · Various dimensions</span>
-</div></figure><figure class="once-other-setting"><img alt="In Order to Become a Child Again, textile work installed among plants at Light-Harvesting Complex, Vantaa" loading="lazy" src="resources/LHC_2025.09.jpg"/><figcaption><span>In Order to Become a Child Again, 2025</span><span><em>The Day It Rains Jellyfish</em>, Light-Harvesting Complex, Vantaa</span><span>Curated by Text My Sister</span></figcaption></figure><figure class="once-figure"><img alt="Installation photograph" loading="lazy" src="resources/once_2.png"/></figure><div aria-label="Who Will You Turn To? and participatory ritual photographs" class="once-image-pair"><figure class="once-figure"><img alt="Installation view" loading="lazy" src="resources/once_3.png"/></figure><figure class="once-figure"><img alt="Participatory ritual, installation detail" loading="lazy" src="resources/once_ritual.png"/></figure><div aria-label="Who Will You Turn To? artwork information" class="once-work-info">
+</div></figure><figure class="once-other-setting"><img alt="In Order to Become a Child Again, textile work installed among plants at Light-Harvesting Complex, Vantaa" loading="lazy" src="resources/LHC_2025.09.jpg"/><figcaption><span>In Order to Become a Child Again, 2025</span><span><em>The Day It Rains Jellyfish</em>, Light-Harvesting Complex, Vantaa</span><span>Curated by Text My Sister</span></figcaption></figure></section><section aria-label="Who Will You Turn To?, photographs" class="once-work-section once-work-section--turn"><figure class="once-figure"><img alt="Installation photograph" loading="lazy" src="resources/once_2.png"/></figure><div aria-label="Who Will You Turn To? and participatory ritual photographs" class="once-image-pair"><figure class="once-figure"><img alt="Installation view" loading="lazy" src="resources/once_3.png"/></figure><figure class="once-figure"><img alt="Participatory ritual, installation detail" loading="lazy" src="resources/once_ritual.png"/></figure><div aria-label="Who Will You Turn To? artwork information" class="once-work-info">
 <span>Who Will You Turn To?, 2025</span>
 <span>Glazed ceramics, glass, wool felting on polyurethane, acrylic beads</span>
 <span>Interactive installation · Various dimensions · Sound, 2 min 37 sec</span>
-</div></div></div><section aria-label="Poem recording" class="once-listening">
+</div></div></section></div><section aria-label="Poem recording" class="once-listening">
 <p class="once-listening-label">Poem / audio recording</p>
 <audio controls="" preload="metadata">
 <source src="resources/once.mp3" type="audio/mpeg"/>
