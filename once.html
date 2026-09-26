@@ -39,14 +39,29 @@
       .once-image-pair { grid-template-columns:1fr; gap:16px; }
       .once-image-pair .once-work-info { margin-top:0; }
     }
-  </style>
+  
+    /* Three documentary details form a compact visual coda, not another full-width sequence. */
+    .once-detail-sequence { width:min(100%,920px); margin:60px auto 0; }
+    .once-detail-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; align-items:start; }
+    .once-detail-sequence figure { min-width:0; margin:0; }
+    .once-page .content .once-detail-sequence img { display:block; width:100%; max-width:100%; height:auto; padding:0; object-fit:contain; }
+    .once-detail-dagger { width:min(68%,640px); margin:24px auto 0 !important; }
+    @media (max-width:768px) {
+      .once-detail-sequence { margin-top:42px; }
+      .once-detail-pair { gap:10px; }
+      .once-detail-dagger { width:82%; margin-top:19px !important; }
+    }
+    @media (max-width:480px) {
+      .once-detail-pair { grid-template-columns:1fr; gap:18px; }
+      .once-detail-dagger { width:100%; }
+    }
+</style>
 </head>
 <body class="once-page">
 <div class="container">
 <div id="nav-placeholder"></div>
 <main class="content once-content" id="main-content">
 <article class="once-project">
-
 <div aria-label="Selected installation photographs" class="once-images"><figure class="once-figure"><img alt="Once in a While, installation photograph 1" fetchpriority="high" src="resources/once_0.png"/></figure><figure class="once-figure"><img alt="Once in a While, installation photograph 2" loading="lazy" src="resources/once_1.png"/><div aria-label="In Order to Become a Child Again artwork information" class="once-work-info">
 <span>In Order to Become a Child Again, 2025</span>
 <span>Hand-tufted wool textile, cast glass, pâte de verre, atelier glass, aluminum, stone</span>
@@ -61,6 +76,12 @@
 <source src="resources/once.mp3" type="audio/mpeg"/>
             Your browser does not support audio playback.
           </audio>
+</section><section aria-label="Once in a While, selected installation details" class="once-detail-sequence">
+<div class="once-detail-pair">
+<figure><img alt="Installation detail: tree-like form on the green sculptural body" loading="lazy" src="resources/once_tree.jpg"/></figure>
+<figure><img alt="Installation detail: sculptural body with glass and ceramic forms" loading="lazy" src="resources/once_closeup.png"/></figure>
+</div>
+<figure class="once-detail-dagger"><img alt="Installation detail: isolated suspended sculptural form" loading="lazy" src="resources/once_dagger.JPG"/></figure>
 </section><div class="once-statement">
 <p>The installations transform traces of the past into tangible forms—sculptures, sound work of poetry, and participatory rituals—inviting viewers to engage with the body, objects, and spaces as sites of remembrance and reflection. The series addresses how to access fragmented memories across feminist, queer, and postcolonial frameworks.</p>
 <p>Through these works, I explore the legacies of migration, trauma, and cultural memory, while giving form to stories that cannot be fully spoken, allowing absence and loss to inhabit space and matter.</p>
