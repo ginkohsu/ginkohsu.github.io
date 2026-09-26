@@ -1,116 +1,127 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Encounter with a Mayfly (2023), a glass work by Ginko Hsu, exhibited at Fondia, Helsinki.">
-  <title>Encounter with a Mayfly | Ginko Hsu</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Only this artwork page; the site's shared navigation is unchanged. */
-    .mayfly-page .mayfly-content {
-      display: block;
-      min-width: 0;
-      padding: 0 7% 100px;
-    }
-    .mayfly-project { width: 100%; max-width: 860px; margin: 54px auto 0; }
-    .mayfly-figure { margin: 0; }
-    .mayfly-page .content .mayfly-figure img {
-      display: block;
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      padding: 0;
-      object-fit: contain;
-    }
-    /* Keep the glass sculpture photographs quieter than the full page width. */
-    .mayfly-hero,
-    .mayfly-detail {
-      width: 72%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .mayfly-caption {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      margin: 11px 0 0;
-      font: 400 11px/1.6 "Syne Mono", monospace;
-      color: #817c74;
-    }
-    .mayfly-statement {
-      width: 100%;
-      max-width: 620px;
-      margin: 37px 0 57px;
-    }
-    .mayfly-page .content .mayfly-statement p {
-      margin: 0 0 15px;
-      padding: 0;
-      font: 400 14px/1.72 Helvetica, Arial, sans-serif;
-      text-align: left;
-      text-indent: 0;
-      color: #625d55;
-    }
-    .mayfly-detail { margin-bottom: 14px; }
-    .mayfly-documentation {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 14px;
-      align-items: start;
-      margin: 0 0 68px;
-    }
-    .mayfly-documentation .mayfly-figure { aspect-ratio: 4 / 3; overflow: hidden; background: #f4f1ed; }
-    .mayfly-page .content .mayfly-documentation img { height: 100%; object-fit: contain; }
-    @media (max-width: 768px) {
-      .mayfly-page .mayfly-content { padding: 0 5% 70px; }
-      .mayfly-project { margin-top: 38px; }
-      .mayfly-hero, .mayfly-detail { width: min(88%, 560px); }
-      .mayfly-statement { margin: 29px 0 43px; }
-      .mayfly-documentation { gap: 10px; margin-bottom: 45px; }
-    }
-    @media (max-width: 440px) {
-      .mayfly-documentation { grid-template-columns: 1fr; gap: 16px; }
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Encounter with a Mayfly (2023), a glass work by Ginko Hsu, exhibited at Fondia, Helsinki." name="description"/>
+<title>Encounter with a Mayfly | Ginko Hsu</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
+/* Scoped to this page; shared navigation and site CSS stay unchanged. */
+.mayfly-page .mayfly-content { display:block; min-width:0; padding:0 7% 100px; }
+.mayfly-project { width:100%; max-width:980px; margin:54px auto 0; }
+.mayfly-gallery { width:100%; margin:0 0 35px; }
+.mayfly-gallery-viewport {
+  width:100%; overflow-x:auto; overflow-y:hidden;
+  scroll-snap-type:x mandatory; overscroll-behavior-x:contain;
+  scrollbar-width:none; -webkit-overflow-scrolling:touch;
+  background:#f4f1ed;
+}
+.mayfly-gallery-viewport::-webkit-scrollbar { display:none; }
+.mayfly-gallery-track { display:flex; width:100%; }
+.mayfly-gallery-slide {
+  flex:0 0 100%; min-width:0; margin:0;
+  height:clamp(340px, 57vw, 650px);
+  scroll-snap-align:start; scroll-snap-stop:always;
+  display:flex; align-items:center; justify-content:center;
+}
+.mayfly-page .content .mayfly-gallery-slide img {
+  display:block; width:100%; max-width:100%; height:100%;
+  padding:0; object-fit:contain; object-position:center;
+}
+.mayfly-gallery-controls { display:flex; align-items:center; justify-content:center; gap:23px; margin-top:12px; }
+.mayfly-gallery-arrow { border:0; background:transparent; color:#625d55; font:400 21px/1 Helvetica,Arial,sans-serif; padding:5px 8px; cursor:pointer; }
+.mayfly-gallery-arrow:hover:not(:disabled),.mayfly-gallery-arrow:focus-visible { color:#A45B66; }
+.mayfly-gallery-arrow:disabled { opacity:.25; cursor:default; }
+.mayfly-gallery-counter { color:#817c74; font:400 11px/1.6 'Syne Mono',monospace; min-width:38px; text-align:center; }
+.mayfly-caption { display:flex; flex-direction:column; gap:3px; margin:22px 0 0; font:400 11px/1.6 'Syne Mono',monospace; color:#817c74; }
+.mayfly-statement { width:100%; max-width:620px; margin:34px 0 0; }
+.mayfly-page .content .mayfly-statement p { margin:0 0 15px; padding:0; font:400 14px/1.72 Helvetica,Arial,sans-serif; text-align:left; text-indent:0; color:#625d55; }
+@media (max-width:768px) {
+  .mayfly-page .mayfly-content { padding:0 5% 70px; }
+  .mayfly-project { margin-top:38px; }
+  .mayfly-gallery-slide { height:clamp(280px, 87vw, 500px); }
+  .mayfly-statement { margin-top:28px; }
+}
+@media (prefers-reduced-motion:reduce) { .mayfly-gallery-viewport { scroll-behavior:auto; } }
+</style>
 </head>
 <body class="mayfly-page">
-  <div class="container">
-    <div id="nav-placeholder"></div>
-    <main class="content mayfly-content" id="main-content">
-      <article class="mayfly-project">
-        <figure class="mayfly-figure mayfly-hero">
-          <img src="resources/Xu_02_01_Encounter with a Mayfly.jpg" alt="Encounter with a Mayfly, glass sculpture" fetchpriority="high">
-          <figcaption class="mayfly-caption">
-            <span>Encounter with a Mayfly, 2023</span>
-            <span>Glass, 17 × 12 × 10 cm</span>
-            <span>Fondia, Helsinki</span>
-          </figcaption>
-        </figure>
-
-        <div class="mayfly-statement">
-          <p>Once, I had a strange encounter with an insect—a mayfly. It was late spring, at a ceramics workshop in a village. At dusk, the air was humid and warm. The mayfly landed on my worktable.</p>
-          <p>Having grown up in a city, I had never seen a mayfly in real life. I had heard that a mayfly lives for only a day after growing its wings, and that it would soon die. Somehow, it stayed on my table for a long time. I was observing it. Or perhaps it was observing me.</p>
-          <p>I thought about how precious that one day was, and here it was, wasting the last bit of its life with me… What did this encounter mean to it, or to me? Was it already dying? What was the message sent here?</p>
-        </div>
-
-        <figure class="mayfly-figure mayfly-detail">
-          <img src="resources/Mayfly_s.jpg" alt="Detail of Encounter with a Mayfly glass sculpture" loading="lazy">
-        </figure>
-
-        <div class="mayfly-documentation" aria-label="Installation and publication images">
-          <figure class="mayfly-figure">
-            <img src="resources/Mayfly_install.jpg" alt="Encounter with a Mayfly, installation view" loading="lazy">
-          </figure>
-          <figure class="mayfly-figure">
-            <img src="resources/mayfly_publication.png" alt="Encounter with a Mayfly, publication documentation" loading="lazy">
-          </figure>
-        </div>
-      </article>
-    </main>
-  </div>
-  <script src="site.js" defer></script>
-</body>
+<div class="container">
+<div id="nav-placeholder"></div>
+<main class="content mayfly-content" id="main-content">
+<article class="mayfly-project">
+<div aria-label="Encounter with a Mayfly photo gallery" class="mayfly-gallery">
+<div aria-label="Four artwork photographs. Swipe, or use the arrows to change photos." class="mayfly-gallery-viewport" id="mayfly-gallery" tabindex="0">
+<div class="mayfly-gallery-track">
+<figure class="mayfly-gallery-slide"><img alt="Encounter with a Mayfly, glass sculpture" fetchpriority="high" src="resources/Xu_02_01_Encounter with a Mayfly.jpg"/></figure>
+<figure class="mayfly-gallery-slide"><img alt="Detail of Encounter with a Mayfly glass sculpture" loading="lazy" src="resources/Mayfly_s.jpg"/></figure>
+<figure class="mayfly-gallery-slide"><img alt="Encounter with a Mayfly, installation view" loading="lazy" src="resources/Mayfly_install.jpg"/></figure>
+<figure class="mayfly-gallery-slide"><img alt="Encounter with a Mayfly, publication documentation" loading="lazy" src="resources/mayfly_publication.png"/></figure>
+</div>
+</div>
+<div aria-label="Photo navigation" class="mayfly-gallery-controls">
+<button aria-label="Previous photograph" class="mayfly-gallery-arrow" data-mayfly-prev="" disabled="" type="button">←</button>
+<span aria-atomic="true" aria-live="polite" class="mayfly-gallery-counter"><span data-mayfly-current="">1</span> / 4</span>
+<button aria-label="Next photograph" class="mayfly-gallery-arrow" data-mayfly-next="" type="button">→</button>
+</div>
+<div class="mayfly-caption">
+<span>Encounter with a Mayfly, 2023</span>
+<span>Glass, 17 × 12 × 10 cm</span>
+<span>Fondia, Helsinki</span>
+</div>
+</div>
+<div class="mayfly-statement">
+<p>Once, I had a strange encounter with an insect—a mayfly. It was late spring, at a ceramics workshop in a village. At dusk, the air was humid and warm. The mayfly landed on my worktable.</p>
+<p>Having grown up in a city, I had never seen a mayfly in real life. I had heard that a mayfly lives for only a day after growing its wings, and that it would soon die. Somehow, it stayed on my table for a long time. I was observing it. Or perhaps it was observing me.</p>
+<p>I thought about how precious that one day was, and here it was, wasting the last bit of its life with me… What did this encounter mean to it, or to me? Was it already dying? What was the message sent here?</p>
+</div>
+</article>
+</main>
+</div>
+<script defer="" src="site.js"></script>
+<script>
+(() => {
+  const viewport = document.getElementById('mayfly-gallery');
+  if (!viewport) return;
+  const slides = [...viewport.querySelectorAll('.mayfly-gallery-slide')];
+  const prev = document.querySelector('[data-mayfly-prev]');
+  const next = document.querySelector('[data-mayfly-next]');
+  const current = document.querySelector('[data-mayfly-current]');
+  let index = 0;
+  let raf = 0;
+  function update(i) {
+    index = Math.max(0, Math.min(slides.length - 1, i));
+    current.textContent = String(index + 1);
+    prev.disabled = index === 0;
+    next.disabled = index === slides.length - 1;
+  }
+  function show(i) {
+    update(i);
+    viewport.scrollTo({ left: slides[index].offsetLeft - slides[0].offsetLeft,
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  }
+  prev.addEventListener('click', () => show(index - 1));
+  next.addEventListener('click', () => show(index + 1));
+  viewport.addEventListener('scroll', () => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      const x = viewport.scrollLeft;
+      const closest = slides.reduce((best, slide, i) =>
+        Math.abs(slide.offsetLeft - slides[0].offsetLeft - x) <
+        Math.abs(slides[best].offsetLeft - slides[0].offsetLeft - x) ? i : best, 0);
+      update(closest);
+    });
+  }, { passive:true });
+  viewport.addEventListener('keydown', event => {
+    if (event.key === 'ArrowRight') { event.preventDefault(); show(index + 1); }
+    if (event.key === 'ArrowLeft') { event.preventDefault(); show(index - 1); }
+  });
+  update(0);
+})();
+</script></body>
 </html>
