@@ -26,8 +26,13 @@
       padding: 0;
       object-fit: contain;
     }
+    /* Keep the glass sculpture photographs quieter than the full page width. */
     .mayfly-hero,
-    .mayfly-detail { width: 100%; }
+    .mayfly-detail {
+      width: 72%;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .mayfly-caption {
       display: flex;
       flex-direction: column;
@@ -49,7 +54,7 @@
       text-indent: 0;
       color: #625d55;
     }
-    .mayfly-detail { margin: 0 0 14px; }
+    .mayfly-detail { margin-bottom: 14px; }
     .mayfly-documentation {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -62,6 +67,7 @@
     @media (max-width: 768px) {
       .mayfly-page .mayfly-content { padding: 0 5% 70px; }
       .mayfly-project { margin-top: 38px; }
+      .mayfly-hero, .mayfly-detail { width: min(88%, 560px); }
       .mayfly-statement { margin: 29px 0 43px; }
       .mayfly-documentation { gap: 10px; margin-bottom: 45px; }
     }
