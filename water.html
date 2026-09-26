@@ -3,30 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Le Poisson Rêveur | Ginko Hsu</title>
-
+  <meta name="description" content="Le poisson rêveur (The Dreamy Fish), a 2023 moving-image and installation work by Ginko Hsu, presented at Kuva/Tila, Helsinki.">
+  <title>Le poisson rêveur (The Dreamy Fish) | Ginko Hsu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Scoped to this artwork page; the shared navigation and other pages are unchanged. */
+    .poisson-page .poisson-content {
+      display: block;
+      min-width: 0;
+      padding: 0 7% 90px;
+    }
+    .poisson-project { width: 100%; max-width: 1050px; margin: 0 auto; }
+    .poisson-heading { margin: 56px 0 38px; }
+    .poisson-heading h1 {
+      margin: 0; padding: 0; text-align: left;
+      font: 400 34px/1.25 Helvetica, Arial, sans-serif;
+      letter-spacing: -.025em; color: #37342f;
+    }
+    .poisson-figure { margin: 0; }
+    .poisson-page .content .poisson-figure img {
+      display: block; width: 100%; max-width: 100%; height: auto;
+      padding: 0; object-fit: contain;
+    }
+    .poisson-hero { width: 100%; }
+    .poisson-hero figcaption, .poisson-work-info {
+      display: flex; flex-direction: column; gap: 3px;
+      margin: 12px 0 0; padding: 0;
+      color: #817c74; font: 400 11px/1.6 'Syne Mono', monospace;
+    }
+    .poisson-detail { width: min(62%, 570px); margin: 35px 0 0 auto; }
+    .poisson-description {
+      width: min(100%, 620px); margin: 48px 0 55px;
+      font: 400 14px/1.72 Helvetica, Arial, sans-serif;
+      color: #625d55; text-align: left; text-indent: 0;
+    }
+    .poisson-description p { margin: 0 0 15px; font: inherit; color: inherit; text-align: inherit; text-indent: 0; }
+    .poisson-description p:last-child { margin-bottom: 0; }
+    .poisson-video-block { margin: 0 0 55px; }
+    .poisson-video-heading {
+      margin: 0 0 12px; font: 400 11px/1.6 'Syne Mono', monospace;
+      color: #817c74;
+    }
+    .poisson-video { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #161616; }
+    .poisson-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .poisson-page .content .poisson-video-link { display: inline-block; margin-top: 10px; font-size: 12px; color: #625d55; }
+    .poisson-more-heading { margin: 0 0 14px; font: 400 11px/1.6 'Syne Mono', monospace; color: #817c74; }
+    .poisson-more-images { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 12px; }
+    .poisson-more-images .poisson-figure { min-width: 0; }
+    .poisson-footer { margin-top: 70px; padding-top: 22px; border-top: 1px solid #dedbd5; }
+    .poisson-page .content .poisson-footer a { color: #686259; font: 400 11px/1.7 'Syne Mono', monospace; text-decoration: none; }
+    .poisson-page .content .poisson-footer a:hover { text-decoration: underline; }
+    @media (max-width: 768px) {
+      .poisson-page .poisson-content { padding: 0 5% 70px; }
+      .poisson-heading { margin: 38px 0 28px; }
+      .poisson-heading h1 { font-size: 29px; }
+      .poisson-detail { width: 82%; margin-top: 22px; }
+      .poisson-description { margin: 35px 0 40px; }
+      .poisson-more-images { grid-template-columns: 1fr; gap: 14px; }
+      .poisson-video-block { margin-bottom: 40px; }
+    }
+  </style>
+  <script defer src="site.js"></script>
 </head>
-<body>
+<body class="poisson-page">
   <div class="container">
-    <!-- nav will be injected here -->
     <div id="nav-placeholder"></div>
+    <main class="content poisson-content" id="main-content">
+      <article class="poisson-project">
+        <header class="poisson-heading">
+          <h1>Le poisson rêveur (The Dreamy Fish)</h1>
+        </header>
 
- <!-- Content Section -->
- <main class="content">
-  <img src="resources/Xu_01_01_Here Be the Water.jpg" alt="ceramic_porcelain_sculpture">
-  <img src="resources/Ginko Hsu2.jpg" alt="ceramic_porcelain_sculpture">
-  <img src="resources/Here, be the water.jpg" alt="ceramic_porcelain_sculpture">
-  <img src="resources/water_2.JPG" alt="ceramic_porcelain_sculpture">
- 
-</main>
-</div>
+        <figure class="poisson-figure poisson-hero">
+          <img src="resources/poisson.png" alt="Le poisson rêveur installation at Kuva/Tila, with sculptures, sand, stones and moving-image projection" fetchpriority="high">
+          <figcaption>
+            <span>Le poisson rêveur (The Dreamy Fish), 2023</span>
+            <span>Moving image, sound, ceramics, stone, sand, found objects · 7 min 30 sec · Various dimensions</span>
+            <span>Kuva/Tila, Helsinki</span>
+          </figcaption>
+        </figure>
 
-<!-- Load nav.html dynamically -->
-  <script src="site.js" defer></script>
+        <figure class="poisson-figure poisson-detail">
+          <img src="resources/poisson1.png" alt="Detail of Le poisson rêveur installation with ceramics, stone, sand and metal fencing" loading="lazy">
+        </figure>
+
+        <div class="poisson-description">
+          <p>The project includes a short film and installation.</p>
+          <p>Inspired by an ancient fictional story written by Pu Songling, the artist imagined a post-apocalyptic land where the protagonist encounters a group of non-human beings. Through a loose narrative of self-discovery, the work examines the signification of societal norms. Its almost detached monotone speaks to the blurred line between humans and nonhumans, reality and phantom.</p>
+        </div>
+
+        <section class="poisson-video-block" aria-label="Le poisson rêveur short film">
+          <h2 class="poisson-video-heading">MOVING IMAGE / 7 MIN 30 SEC</h2>
+          <div class="poisson-video">
+            <iframe src="https://www.youtube-nocookie.com/embed/s4l6r87spFM" title="Le poisson rêveur (The Dreamy Fish) — short film" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <a class="poisson-video-link" href="https://youtu.be/s4l6r87spFM" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+        </section>
+
+        <section aria-label="Further installation documentation">
+          <h2 class="poisson-more-heading">INSTALLATION DOCUMENTATION</h2>
+          <div class="poisson-more-images">
+            <figure class="poisson-figure"><img src="resources/Xu_01_01_Here Be the Water.jpg" alt="Le poisson rêveur, additional installation documentation 1" loading="lazy"></figure>
+            <figure class="poisson-figure"><img src="resources/Ginko Hsu2.jpg" alt="Le poisson rêveur, additional installation documentation 2" loading="lazy"></figure>
+            <figure class="poisson-figure"><img src="resources/Here, be the water.jpg" alt="Le poisson rêveur, additional installation documentation 3" loading="lazy"></figure>
+            <figure class="poisson-figure"><img src="resources/water_2.JPG" alt="Le poisson rêveur, additional installation documentation 4" loading="lazy"></figure>
+          </div>
+        </section>
+        <footer class="poisson-footer"><a href="index.html">← Back to works</a></footer>
+      </article>
+    </main>
+  </div>
 </body>
 </html>
