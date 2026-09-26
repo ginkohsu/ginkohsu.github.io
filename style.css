@@ -126,20 +126,10 @@ h2 a:hover, .content a:hover {
 }
 
 .side-nav h1, .side-nav h2 {
+    color: #6cf08f;
     margin-top: 30px;
     font-size: 18px;
 }
-
-/* Keep the site name as it was; make only navigation section headings rose. */
-.side-nav h1 { color: #6cf08f; }
-.side-nav > h2,
-.side-nav .info-container h2 { color: #C87999; }
-.side-nav .info-container h2 > a,
-.side-nav .info-container h2 > a:link,
-.side-nav .info-container h2 > a:visited,
-.side-nav .info-container h2 > a:hover,
-.side-nav .info-container h2 > a:focus-visible,
-.side-nav .info-container h2 > a:active { color: #C87999; }
 
 /* Paragraph styling */
 p {
@@ -2576,4 +2566,58 @@ p {
   }
   .home-page .home-single-stage { min-height: 65svh; }
   .home-page .home-single-artwork { width: min(75%, 420px); }
+}
+
+/* ============================================================
+   NAVIGATION — warm paper / ink / old rose
+   Scoped to the shared .side-nav on every page.
+   ============================================================ */
+.side-nav {
+  background-color: #F3EEE9;
+}
+
+/* Site name: ink normally, old rose on interaction. */
+.side-nav #page-header,
+.side-nav #page-header a,
+.side-nav #page-header a:link,
+.side-nav #page-header a:visited {
+  color: #38332F;
+}
+.side-nav #page-header a:hover,
+.side-nav #page-header a:focus-visible,
+.side-nav #page-header a:active {
+  color: #A45B66;
+}
+
+/* Category headings: Projects and INFO. */
+.side-nav > h2,
+.side-nav .info-container h2,
+.side-nav .info-container h2 a,
+.side-nav .info-container h2 a:link,
+.side-nav .info-container h2 a:visited,
+.side-nav .info-container h2 a:hover,
+.side-nav .info-container h2 a:focus-visible,
+.side-nav .info-container h2 a:active {
+  color: #A45B66;
+}
+
+/* Project links, including the expandable OEMK heading. */
+.side-nav .project-list a,
+.side-nav .project-list a:link,
+.side-nav .project-list a:visited,
+.side-nav .oemk-menu > summary {
+  color: #38332F;
+}
+.side-nav .project-list a:hover,
+.side-nav .project-list a:focus-visible,
+.side-nav .project-list a:active,
+.side-nav .oemk-menu > summary:hover,
+.side-nav .oemk-menu > summary:focus-visible {
+  color: #38332F;
+  background-color: #EEDFE0;
+}
+
+/* Keep INFO readable when the mobile navigation is flattened. */
+@media (max-width: 768px) {
+  .side-nav .info-container { background: transparent; }
 }
