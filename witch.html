@@ -10,6 +10,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Artwork information only; preserve the existing image layout. */
+    .witch-caption {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      width: 75%;
+      margin: 4px auto 32px;
+      font: 400 11px/1.6 "Syne Mono", monospace;
+      color: #817c74;
+      text-align: left;
+    }
+    @media (max-width: 768px) {
+      .witch-caption { width: 88%; }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -18,8 +34,12 @@
 
  <!-- Content Section -->
  <main class="content">
-  <p></p>
-  <img src="resources/Xu_04_01_Sleeping with One Eye Open.jpg" alt="glass sculpture">
+  <img src="resources/Xu_04_01_Sleeping with One Eye Open.jpg" alt="Sleeping with One Eye Open, glass sculpture">
+  <div class="witch-caption" aria-label="Artwork information">
+    <span>Sleeping with One Eye Open, 2024</span>
+    <span>Glass, pigment</span>
+    <span>34 × 27 × 19 cm</span>
+  </div>
   <img src="resources/Xu_04_02_Sleeping with One Eye Open.jpg" alt="glass sculpture">
   <div class="part">
     <img src="resources/witch_wax.jpg" alt="Wax model">
